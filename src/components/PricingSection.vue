@@ -134,7 +134,7 @@ export default {
   data: () => ({
     items: [
       {
-        img: require("@/assets/img/doutora.jpg"),
+        img: require("@/assets/img/MD.jpg"),
         title: 'Ana paula',
         subtitle: 'Psicologa',
         text2: 'bla, bla, bla, bla,bla, bla,bla, bla,bla, bla,bla, bla',
