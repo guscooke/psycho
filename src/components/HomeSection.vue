@@ -96,7 +96,8 @@
                 </a>
                 <p class="subheading ml-2 mb-0">Assista o vídeo</p>
               </div> -->
-            </v-col> </v-flex>
+            </v-col> 
+            </v-flex>
             <v-col cols="12" md="6" xl="4" class="hidden-md-sm-and-down"> </v-col>
           </v-row>
         </v-col>
