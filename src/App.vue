@@ -5,7 +5,6 @@
       <home />
       <download />
       <about />
-      
       <pricing />
       <contact />
     </v-main>
@@ -76,7 +75,7 @@ export default {
   watch: {
     fab(value) {
       if (value) {
-        this.color = "secondary";
+        this.color = "primary";
         this.flat = false;
       } else {
         this.color = "transparent";
