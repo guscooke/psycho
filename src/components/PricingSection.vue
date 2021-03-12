@@ -148,7 +148,7 @@ export default {
 
         },
          {
-        img: require("@/assets/img/doutora.jpg"),
+        img: require("@/assets/img/au.jpg"),
         title: 'João silva',
         subtitle: 'Psicologo',
         text2: 'bla, bla, bla, bla,bla, bla,bla, bla,bla, bla,bla, bla',
