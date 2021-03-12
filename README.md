@@ -20,7 +20,7 @@ npm run build
 
 ### Live preview
 
-See [Vuetify Landing Page Template](https://landingpagecalangoweb.web.app/).
+<!-- See [Vuetify Landing Page Template](https://landingpagecalangoweb.web.app/). -->
 
 ### Customize configuration
 

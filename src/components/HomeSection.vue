@@ -1,16 +1,24 @@
 <template>
   <section id="hero">
-       
+      
     <v-parallax dark src="@/assets/img/xx.png" height="780">
       <vue-particles color="#dedede"></vue-particles>
         <div class="centered-text">
       
-      <v-row  class="d-flex pa-2" align="center" justify="center" no-gutters>
+      <v-row  
+      class="d-flex pa-2" 
+      align="center" 
+      justify="center" 
+      no-gutters
+      align-md
+      align-sm="center"
+      align-lg>
+        
         <v-col cols="10"
         md="10">    
        
           <v-row align="center" justify="center">
-            <v-col cols="12" md="6" xl="12">
+            <v-col cols="12" md="6" xl="6">
               <h1 class=" display-3 font-weight-bold mb-4">Dr Phsyco</h1>
               <h1 class="font-weight-dark col-12 justify">
                 Norman Bates está esperando por você no Motel mais famoso do mundo,
@@ -27,18 +35,21 @@
                 Saiba mais
                 <v-icon class="ml-2">mdi-arrow-down</v-icon>
               </v-btn>  
-              </v-col>
-              <v-col cols="6" sm="4" md="6" xl="12" class="hidden-xs-only ">
-              <v-row class="d-flex pa-2">
+              </v-col><v-flex sm12 md6>
+              <v-col cols="12" >
+              <v-row cols="6" >
                     <!-- <kinesis-container> -->
             <!-- <kinesis-element
                :strength="50"
             
             > -->
-              <v-img src="@/assets/img/yyy.png" height="800"/>
+            
+              <v-img  src="@/assets/img/yyy.png" height="800"/>
+           
             <!-- </kinesis-element>
                     </kinesis-container> -->
               </v-row>
+            
            
             
             
@@ -85,7 +96,7 @@
                 </a>
                 <p class="subheading ml-2 mb-0">Assista o vídeo</p>
               </div> -->
-            </v-col>
+            </v-col> </v-flex>
             <v-col cols="12" md="6" xl="4" class="hidden-md-sm-and-down"> </v-col>
           </v-row>
         </v-col>
@@ -149,6 +160,7 @@
     <div class="svg-border-waves hidden-sm-only">
       <img src="~@/assets/img/wave2.svg" />
     </div>
+
   </section> 
 </template>
 
