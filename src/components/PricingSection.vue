@@ -1,118 +1,111 @@
 <template>
-  <section id="pricing" class="pb-8">
-    <v-container fluid>
+  <section id="pricing" class="pa-2">
+      <v-container fluid id="features" class="mt-2">  
+        <h1 class="font-weight-Bold display-1 mb-6" justify="center">
+                Marque sua Consulta!
+              </h1> 
       <v-row align="center" justify="center">
         <v-col cols="10">
-          <v-card style="width: 100%">
-            <h1 class="text-center pt-6 font-weight-light display-2">Planos</h1>
-            <v-divider class="my-6"></v-divider>
-            <v-row class="text-center">
-              <v-col class="col-12 col-sm-6 col-md-4">
-                <div class="flex-center">
-                  <v-card-text>
-                    <div class="flex-center">
-                      <div class="circle1">
-                        <div class="circle2">
-                          <v-img src="~@/assets/img/paperplane.svg"></v-img>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="text--disabled text-uppercase text-h5 my-2">Básico</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Domínios personalizados</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Limite de 1000 acessos diários</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Outras características...</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase text-h4 mt-6 blue--text">R$ 20,00</div>
-                    <v-btn
-                        v-bind="size"
-                        rounded
-                        outlined
-                        color="blue"
-                        class="mt-6"
-                    >
-                      Comece Agora!
-                    </v-btn>
-                  </v-card-text>
-                  <v-divider style="margin-right: -23px" vertical v-if="this.$vuetify.breakpoint.smAndUp"></v-divider>
-                </div>
-                <v-divider class="mx-4" v-if="!this.$vuetify.breakpoint.smAndUp"></v-divider>
-              </v-col>
-              <v-col class="col-12 col-sm-6 col-md-4">
-                <div class="flex-center">
-                  <v-card-text>
-                    <div class="flex-center">
-                      <div class="circle1">
-                        <div class="circle2">
-                          <v-img src="~@/assets/img/airplane.svg"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="text--disabled text-uppercase text-h5 my-2">Padrão</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Domínios personalizados</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Limite de 10000 acessos diários</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Outras características...</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase text-h4 mt-6 blue--text">R$ 100,00</div>
-                    <v-btn
-                        v-bind="size"
-                        rounded
-                        outlined
-                        color="blue"
-                        class="mt-6"
-                    >
-                      Comece Agora!
-                    </v-btn>
-                  </v-card-text>
-                  <v-divider style="margin-right: -23px" vertical v-if="this.$vuetify.breakpoint.mdAndUp"></v-divider>
-                </div>
-                <v-divider class="mx-4" v-if="!this.$vuetify.breakpoint.smAndUp"></v-divider>
-              </v-col>
-              <v-col class="col-12 col-md-4">
-                <v-divider v-if="this.$vuetify.breakpoint.smOnly" class="mx-4"></v-divider>
+          <v-row align="center" justify="space-around">
+            <v-col cols="12"
+                  sm="4"
+                  class="text-center"
+                  v-for="(item, i) in items"
+                  :key="i">
+        
+                <!-- <template v-for="(item, i) in items"> -->
+        <v-hover v-slot:default="{ hover }">
+        <v-card
+        max-width="374"
+        outlined
+        shaped
+        :key="i"
+        :elevation="hover ? 10 : 4"
+        :class="{ up: hover }"
+  >
+    <template slot="progress">
+      <v-progress-linear
+        color="deep-purple"
+        height="10"
+        indeterminate
+      ></v-progress-linear>
+    </template>
 
-                <div class="flex-center">
-                  <v-card-text>
-                    <div class="flex-center">
-                      <div class="circle1">
-                        <div class="circle2">
-                          <v-img src="~@/assets/img/aeroplane.svg"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="text--disabled text-uppercase text-h5 my-2">Empresarial</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Domínios personalizados</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Acessos ilimitados</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase blue--text">Outras características...</div>
-                    <v-divider class="my-2"/>
-                    <div class="text-uppercase text-h4 mt-6 blue--text">R$ 500,00</div>
-                    <v-btn
-                        v-bind="size"
-                        rounded
-                        outlined
-                        color="blue"
-                        class="mt-6"
-                    >
-                      Comece Agora!
-                    </v-btn>
-                  </v-card-text>
-                </div>
-              </v-col>
-            </v-row>
-          </v-card>
+    <v-img
+      height="250"
+      :src="item.img"
+    ></v-img>
+
+    <v-card-title>{{ item.title}}</v-card-title>
+
+    <v-card-text>
+      <v-row
+        align="center"
+        class="mx-0"
+      >
+        <v-rating
+          :value="4.5"
+          color="amber"
+          dense
+          half-increments
+          readonly
+          size="14"
+        ></v-rating>
+
+        <div class="grey--text ml-4">
+          4.5 (413)
+        </div>
+      </v-row>
+
+      <div class="my-4 subtitle-1">
+        {{ item.subtitle }}
+      </div>
+
+      <div>{{ item.text2 }} </div>
+    </v-card-text>
+
+    <v-divider class="mx-4"></v-divider>
+
+    <v-card-title>Horários Disponíveis</v-card-title>
+
+    <v-card-text>
+      <v-chip-group
+        v-model="selection"
+        active-class="deep-purple accent-4 white--text"
+        column
+      >
+        <v-chip>5:30PM</v-chip>
+
+        <v-chip>7:30PM</v-chip>
+
+        <v-chip>8:00PM</v-chip>
+
+        <v-chip>9:00PM</v-chip>
+      </v-chip-group>
+    </v-card-text>
+
+    <v-card-actions>
+      <v-btn
+        color="deep-purple lighten-2"
+        text
+        @click="reserve"
+      >
+        Agende
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+        </v-hover>
+                <!-- </template> -->
+        </v-col>
+          </v-row>
         </v-col>
       </v-row>
+
+
+
     </v-container>
     <div class="svg-border-rounded text-light">
-      <!-- <svg
+      <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 144.54 17.34"
         preserveAspectRatio="none"
@@ -121,7 +114,7 @@
         <path
           d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"
         />
-      </svg> -->
+      </svg>
       <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
@@ -135,6 +128,39 @@
     </div>
   </section>
 </template>
+<script>
+
+export default {
+  data: () => ({
+    items: [
+      {
+        img: require("@/assets/img/doutora.jpg"),
+        title: 'Ana paula',
+        subtitle: 'Psicologa',
+        text2: 'bla, bla, bla, bla,bla, bla,bla, bla,bla, bla,bla, bla',
+
+        },
+         {
+        img: require("@/assets/img/doutora.jpg"),
+        title: 'Roberta Albert',
+        subtitle: 'Psicologa',
+        text2: 'bla, bla, bla, bla,bla, bla,bla, bla,bla, bla,bla, bla',
+
+        },
+         {
+        img: require("@/assets/img/doutora.jpg"),
+        title: 'João silva',
+        subtitle: 'Psicologo',
+        text2: 'bla, bla, bla, bla,bla, bla,bla, bla,bla, bla,bla, bla',
+
+        }
+        
+    ]
+  })
+}
+  
+</script>
+
 
 <style lang="scss">
 $main_color: #283e79;
@@ -225,130 +251,3 @@ section {
   position: relative;
 }
 </style>
-
-<script>
-export default {
-  data: () => ({
-    planos: [
-      {
-        title: "Básico",
-        price: "R$100,00",
-        img: "f1.png",
-        features: [
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 1",
-          },
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 2",
-          },
-          {
-            icon: {
-              text: "mdi-cancel",
-              color: "red",
-            },
-            text: "Feature 3",
-          },
-          {
-            icon: {
-              text: "mdi-cancel",
-              color: "red",
-            },
-            text: "Feature 4",
-          },
-        ],
-      },
-      {
-        title: "Padrão",
-        price: "R$150,00",
-        img: "f2.png",
-        features: [
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 1",
-            color: "success",
-          },
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 2",
-          },
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 3",
-            color: "success",
-          },
-          {
-            icon: {
-              text: "mdi-cancel",
-              color: "red",
-            },
-            text: "Feature 4",
-          },
-        ],
-      },
-      {
-        title: "Premium",
-        price: "R$250,00",
-        img: "f3.png",
-        features: [
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 1",
-            color: "success",
-          },
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 2",
-          },
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 3",
-            color: "success",
-          },
-          {
-            icon: {
-              text: "mdi-check",
-              color: "success",
-            },
-            text: "Feature 4",
-            color: "success",
-          },
-        ],
-      },
-    ],
-  }),
-  computed: {
-    size() {
-      const size = {md: "large", xl: "x-large"}[
-          this.$vuetify.breakpoint.name
-          ];
-      return size ? {[size]: true} : {};
-    }
-  },
-};
-</script>

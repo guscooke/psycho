@@ -5,20 +5,28 @@
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col sm="4" class="hidden-xs-only">
-              <v-img src="@/assets/img/ill2.svg" class="d-block ml-auto mr-auto" max-width="350px" />
+            <kinesis-container>
+            <kinesis-element
+             :strength="50"
+              :distance="100"
+            >
+              <v-img src="@/assets/img/10.png" class="d-block ml-auto mr-auto" max-width="2000"
+             />
+                 </Kinesis-element>
+          </Kinesis-container>
             </v-col>
             <v-col cols="12" sm="8" class="white--text text-left">
-              <h1 class="font-weight-light display-2 mb-2">Baixar Demonstração</h1>
+              <h1 class="dark--text font-weight-bold display-2 mb-2">Os sintomas que você vê são somente a ponta do Iceberg!</h1>
               <h1 class="font-weight-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ex
-                animi quod laboriosam vel blanditiis labore alias, aliquid,
-                tempora repellendus non.
+                Você não desconfia de que exista uma causa real para seus problemas existirem? É claro que existe! E ela está dentro do seu subconsciente, juntamente com suas crenças e suas emoções.
+
+A falta de aprofundamento envolvendo o subconsciente é....
               </h1>
               <v-btn rounded outlined href="https://github.com/Joabsonlg/Landing-Page" target="_blank" large color="white" class="mt-4">
                 <v-icon class="mr-2">
-                  mdi-github
+                  mdi-book
                 </v-icon>
-                Git Hub
+                Agende sua Consulta
               </v-btn>
             </v-col>
           </v-row>
@@ -30,12 +38,12 @@
 
 <style scoped>
 #download {
-  background-image: url("~@/assets/img/bgDownload.jpg");
+  background-image: url("~@/assets/img/iceberg3.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 700px;
 }
 
 #download .container,
@@ -43,3 +51,13 @@
   height: 100%;
 }
 </style>
+
+<script>
+import Vue from 'vue'
+  import { KinesisContainer, KinesisElement } from 'vue-kinesis'
+  Vue.component('kinesis-container', KinesisContainer)
+  Vue.component('kinesis-element', KinesisElement)
+export default {
+  
+}
+</script>

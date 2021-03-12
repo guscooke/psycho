@@ -1,15 +1,20 @@
 <template>
   <section id="hero">
-    <v-parallax dark src="@/assets/img/bgHero.jpg" height="750">
-      <v-row align="center" justify="center">
-        <v-col cols="10">
+       
+    <v-parallax dark src="@/assets/img/xx.png" height="780">
+      <vue-particles color="#dedede"></vue-particles>
+        <div class="centered-text">
+      
+      <v-row  class="d-flex pa-2" align="center" justify="center" no-gutters>
+        <v-col cols="10"
+        md="10">    
+       
           <v-row align="center" justify="center">
-            <v-col cols="12" md="6" xl="8">
-              <h1 class="display-2 font-weight-bold mb-4">Vuetify.js</h1>
-              <h1 class="font-weight-light">
-                Lorem ipsum dolor sit amet consectetur <br />
-                adipisicing elit. Maiores porro voluptatibus <br />
-                delectus nam optio harum!
+            <v-col cols="12" md="6" xl="12">
+              <h1 class=" display-3 font-weight-bold mb-4">Dr Phsyco</h1>
+              <h1 class="font-weight-dark col-12 justify">
+                Norman Bates está esperando por você no Motel mais famoso do mundo,
+                escolha o profissional ideal e receba muitas facadas ao final.
               </h1>
               <v-btn
                 rounded
@@ -21,8 +26,23 @@
               >
                 Saiba mais
                 <v-icon class="ml-2">mdi-arrow-down</v-icon>
-              </v-btn>
-              <div class="video d-flex align-center py-4">
+              </v-btn>  
+              </v-col>
+              <v-col cols="6" sm="4" md="6" xl="12" class="hidden-xs-only ">
+              <v-row class="d-flex pa-2">
+                    <!-- <kinesis-container> -->
+            <!-- <kinesis-element
+               :strength="50"
+            
+            > -->
+              <v-img src="@/assets/img/yyy.png" height="800"/>
+            <!-- </kinesis-element>
+                    </kinesis-container> -->
+              </v-row>
+           
+            
+            
+              <!-- <div class="video d-flex align-center py-4">
                 <a @click.stop="dialog = true" class="playBut">
                   <svg
                     version="1.1"
@@ -60,18 +80,21 @@
                       cy="106.8"
                       r="103.3"
                     />
+            
                   </svg>
                 </a>
                 <p class="subheading ml-2 mb-0">Assista o vídeo</p>
-              </div>
+              </div> -->
             </v-col>
-            <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"> </v-col>
+            <v-col cols="12" md="6" xl="4" class="hidden-md-sm-and-down"> </v-col>
           </v-row>
         </v-col>
-      </v-row>
+      </v-row></div>
       <div class="svg-border-waves text-white">
         <v-img src="@/assets/img/borderWaves.svg" />
       </div>
+        
+     
     </v-parallax>
     <v-container fluid id="features" class="mt-2">
       <v-row align="center" justify="center">
@@ -80,7 +103,7 @@
             <!-- <v-col cols="12" class="text-center">
               <h1 class="font-weight-light display-2">Title</h1>
               <h1 class="font-weight-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                .
               </h1>
             </v-col> -->
             <v-col
@@ -123,13 +146,17 @@
         ></youtube>
       </v-card>
     </v-dialog>
-    <div class="svg-border-waves">
+    <div class="svg-border-waves hidden-sm-only">
       <img src="~@/assets/img/wave2.svg" />
     </div>
-  </section>
+  </section> 
 </template>
 
 <script>
+import Vue from 'vue'
+  import { KinesisContainer, KinesisElement } from 'vue-kinesis'
+  Vue.component('kinesis-container', KinesisContainer)
+  Vue.component('kinesis-element', KinesisElement)
 export default {
   data() {
     return {
@@ -137,19 +164,19 @@ export default {
       videoId: "i8IvvHJssWE",
       features: [
         {
-          img: require("@/assets/img/icon2.png"),
-          title: "Design Limpo",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          img: require("@/assets/img/ansiedade.png"),
+          title: "Ansiedade",
+          text: "Com a ansiedade surge a constante preocupação com o futuro e a falta de segurança e autoconfiança.",
         },
         {
-          img: require("@/assets/img/icon1.png"),
-          title: "Dados Seguros",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          img: require("@/assets/img/panic-attack.png"),
+          title: "Sindrome do Pânico",
+          text: "Tratar a causa dos gatilhos que acionam as crises de pânico é o que trará controle emocional em momentos difíceis.",
         },
         {
-          img: require("@/assets/img/icon3.png"),
-          title: "Código Aberto",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          img: require("@/assets/img/depression.png"),
+          title: "Depressão",
+          text: "A depressão é a responsável por alterações no cérebro que afetam drasticamente as emoções e a qualidade de vida.",
         },
       ],
     };
@@ -186,6 +213,18 @@ export default {
 </script>
 
 <style lang="scss">
+
+.particles-js {
+  height: 1vh;
+}
+
+.centered-text {
+  color: #ffffff;
+  position: absolute;
+  text-align: center;
+  top: 10%;
+  width: 100%;
+}
 .circle {
   stroke: white;
   stroke-dasharray: 650;
