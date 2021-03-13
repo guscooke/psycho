@@ -6,7 +6,7 @@
       <download />
       <about />
       <pricing />
-      <counter />
+      <!-- <counter /> -->
       <contact />
     </v-main>
     <v-scale-transition>
@@ -45,7 +45,7 @@ import about from "./components/AboutSection";
 import download from "./components/DownloadSection";
 import pricing from "./components/PricingSection";
 import contact from "./components/ContactSection";
-import counter from "./components/Counter";
+// import counter from "./components/Counter";
 
 export default {
   name: "App",
@@ -58,7 +58,7 @@ export default {
     download,
     pricing,
     contact,
-    counter,
+    // counter,
   },
 
   data: () => ({
