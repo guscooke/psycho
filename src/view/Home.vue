@@ -5,7 +5,7 @@
       <home />
       <download />
       <about />
-      <pricing />
+      <pisico />
       <contact />
     </v-main>
     <v-scale-transition>
@@ -51,7 +51,7 @@ export default {
 import home from "../components/HomeSection";
 import about from "../components/AboutSection";
 import download from "../components/DownloadSection";
-import pricing from "../components/PricingSection";
+import pisico from "../components/PisicoDiv";
 import contact from "../components/ContactSection";
 import navigation from "../components/Navigation";
 
@@ -64,7 +64,7 @@ export default {
     home,
     about,
     download,
-    pricing,
+    pisico,
     contact,
 
   

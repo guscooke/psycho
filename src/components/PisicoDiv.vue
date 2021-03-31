@@ -2,27 +2,12 @@
   <section id="pricing" class="pa-2">
     <view-router/>
       <v-container fluid id="features" class="mt-4"> 
+        <v-row align="center" justify="space-around">
+          <v-col
+            cols="6"
+            md="3"
           
-             <!-- <v-col
-              cols="6"
-              md="4"
-              >
-              <h1 class="font-weight-Bold display-1 mb-6 blue--text" justify="center">
-                      Nossos Profissionais       
-              </h1> 
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
-                  The point of using Lorem Ipsum.web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
-                  will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes</p>
-                    </v-col> -->
-          
-          <!-- <v-row align="left" justify="center"> -->
-            <!-- <v-col cols="12"> -->
-            <v-row align="center" justify="space-around">
-                   <v-col
-                    cols="6"
-                    md="3"
-                    sm="12"
-                    >
+          >
                  <h1 class="font-weight-Bold display-1 mb-12 blue--text" >
                       Nossos Profissionais       
               </h1 > 
