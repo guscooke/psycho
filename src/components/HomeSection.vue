@@ -1,6 +1,5 @@
 <template>
-  <section id="hero">
-      
+  <section id="hero">  
     <v-parallax dark src="@/assets/img/xx.png" height="780">
       <vue-particles color="#dedede"></vue-particles>
         <div class="centered-text">
@@ -16,88 +15,42 @@
         
         <v-col cols="10"
         md="10">    
-       
           <v-row align="center" justify="center">
             <v-col cols="12" md="6" xl="6">
               <h1 class=" display-3 font-weight-bold mb-4">Dr Phsyco</h1>
-              <h1 class="font-weight-dark col-12 justify">
-                Norman Bates está esperando por você no Motel mais famoso do mundo,
-                escolha o profissional ideal e receba muitas facadas ao final.
-              </h1>
-              <v-btn
-                rounded
-                outlined
-                large
-                dark
-                @click="$vuetify.goTo('#features')"
-                class="mt-5"
-              >
-                Saiba mais
+                <h1 class="font-weight-dark col-12 justify">
+                  Norman Bates está esperando por você no Motel mais famoso do mundo,
+                  escolha o profissional ideal e receba muitas facadas ao final.
+                </h1>
+                  <v-btn
+                    rounded
+                    outlined
+                    large
+                    dark
+                    @click="$vuetify.goTo('#features')"
+                    class="mt-5"
+                  > Saiba mais
                 <v-icon class="ml-2">mdi-arrow-down</v-icon>
-              </v-btn>  
-              </v-col><v-flex sm12 md6>
-              <v-col cols="12" >
-              <v-row cols="6" >
+                </v-btn>  
+            </v-col>
+
+              <v-flex sm12 md6>
+                <v-col cols="12" >
+                  <v-row cols="6" >
                     <!-- <kinesis-container> -->
             <!-- <kinesis-element
                :strength="50"
             
             > -->
             
-              <v-img  src="@/assets/img/yyy.png" height="800"/>
+                <v-img  src="@/assets/img/yyy.png" height="800"/>
            
             <!-- </kinesis-element>
                     </kinesis-container> -->
               </v-row>
-            
-           
-            
-            
-              <!-- <div class="video d-flex align-center py-4">
-                <a @click.stop="dialog = true" class="playBut">
-                  <svg
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-                    x="0px"
-                    y="0px"
-                    width="60px"
-                    height="60px"
-                    viewBox="0 0 213.7 213.7"
-                    enable-background="new 0 0 213.7 213.7"
-                    xml:space="preserve"
-                  >
-                    <polygon
-                      class="triangle"
-                      id="XMLID_18_"
-                      fill="none"
-                      stroke-width="7"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-miterlimit="10"
-                      points="73.5,62.5 148.5,105.8 73.5,149.1 "
-                    />
-
-                    <circle
-                      class="circle"
-                      id="XMLID_17_"
-                      fill="none"
-                      stroke-width="7"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-miterlimit="10"
-                      cx="106.8"
-                      cy="106.8"
-                      r="103.3"
-                    />
-            
-                  </svg>
-                </a>
-                <p class="subheading ml-2 mb-0">Assista o vídeo</p>
-              </div> -->
+             
             </v-col> 
-            </v-flex>
+              </v-flex>
             <v-col cols="12" md="6" xl="4" class="hidden-md-sm-and-down"> </v-col>
           </v-row>
         </v-col>
@@ -166,15 +119,14 @@
 </template>
 
 <script>
-import Vue from 'vue'
+  import Vue from 'vue'
   import { KinesisContainer, KinesisElement } from 'vue-kinesis'
   Vue.component('kinesis-container', KinesisContainer)
   Vue.component('kinesis-element', KinesisElement)
 export default {
   data() {
     return {
-      dialog: false,
-      videoId: "i8IvvHJssWE",
+     
       features: [
         {
           img: require("@/assets/img/ansiedade.png"),
@@ -201,31 +153,31 @@ export default {
       }
     },
   },
-  methods: {
-    ready(event) {
-      this.player = event.target;
-    },
-    playing(event) {
-      // The player is playing a video.
-    },
-    change() {
-      // when you change the value, the player will also change.
-      // If you would like to change `playerVars`, please change it before you change `videoId`.
-      // If `playerVars.autoplay` is 1, `loadVideoById` will be called.
-      // If `playerVars.autoplay` is 0, `cueVideoById` will be called.
-      this.videoId = "another video id";
-    },
-    stop() {
-      this.player.stopVideo();
-    },
-    pause() {
-      this.player.pauseVideo();
-    },
-  },
+  // methods: {
+  //   ready(event) {
+  //     this.player = event.target;
+  //   },
+  //   playing(event) {
+  //     // The player is playing a video.
+  //   },
+  //   change() {
+  //     // when you change the value, the player will also change.
+  //     // If you would like to change `playerVars`, please change it before you change `videoId`.
+  //     // If `playerVars.autoplay` is 1, `loadVideoById` will be called.
+  //     // If `playerVars.autoplay` is 0, `cueVideoById` will be called.
+  //     this.videoId = "another video id";
+  //   },
+  //   stop() {
+  //     this.player.stopVideo();
+  //   },
+  //   pause() {
+  //     this.player.pauseVideo();
+  //   },
+  
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .particles-js {
   height: 1vh;
