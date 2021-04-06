@@ -25,7 +25,8 @@
         {{ new Date().getFullYear() }} — <strong>Psycho WEB</strong>
       </v-card-text>
     </v-card>
-  </v-footer>
+   
+  </v-footer>   
 </template>
 
 <style scoped>
@@ -58,3 +59,27 @@ export default {
   }),
 };
 </script>
+
+
+<style lang="scss" scoped>
+svg-border-waves .v-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+#hero {
+  z-index: 0;
+}
+.svg-border-waves img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: -2px;
+  z-index: -1;
+}
+</style>

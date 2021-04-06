@@ -1,6 +1,6 @@
 <template>
-  <section id="hero">  
-    <v-parallax dark src="@/assets/img/xx.png" height="780">
+  <section class="BG" id="hero">  
+    <v-parallax dark src="" height="780">
       <vue-particles color="#dedede"></vue-particles>
         <div class="centered-text">
       
@@ -9,9 +9,8 @@
       align="center" 
       justify="center" 
       no-gutters
-      align-md
       align-sm="center"
-      align-lg>
+     >
         
         <v-col cols="10"
         md="10">    
@@ -37,16 +36,11 @@
               <v-flex sm12 md6>
                 <v-col cols="12" >
                   <v-row cols="6" >
-                    <!-- <kinesis-container> -->
-            <!-- <kinesis-element
-               :strength="50"
-            
-            > -->
+                   
             
                 <v-img  src="@/assets/img/yyy.png" height="800"/>
            
-            <!-- </kinesis-element>
-                    </kinesis-container> -->
+            
               </v-row>
              
             </v-col> 
@@ -54,6 +48,7 @@
             <v-col cols="12" md="6" xl="4" class="hidden-md-sm-and-down"> </v-col>
           </v-row>
         </v-col>
+        
       </v-row></div>
       <div class="svg-border-waves text-white">
         <v-img src="@/assets/img/borderWaves.svg" />
@@ -61,16 +56,18 @@
         
      
     </v-parallax>
-    <v-container fluid id="features" class="mt-2">
+    
+    <v-container fluid id="features" class="mt-2 BG1">
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="space-around">
-            <!-- <v-col cols="12" class="text-center">
-              <h1 class="font-weight-light display-2">Title</h1>
+            <v-col cols="12" class="text-center">
+              <h3 class="font-weight-light display-1">O que você sente ?</h3>
               <h1 class="font-weight-light">
                 .
               </h1>
-            </v-col> -->
+            </v-col>
+            
             <v-col
               cols="12"
               sm="4"
@@ -101,15 +98,11 @@
           </v-row>
         </v-col>
       </v-row>
+
     </v-container>
+ 
     <v-dialog v-model="dialog" max-width="640px">
-      <v-card>
-        <youtube
-          :video-id="videoId"
-          @ready="ready"
-          @playing="playing"
-        ></youtube>
-      </v-card>
+
     </v-dialog>
     <div class="svg-border-waves hidden-sm-only">
       <img src="~@/assets/img/wave2.svg" />
@@ -146,41 +139,24 @@ export default {
       ],
     };
   },
-  watch: {
-    dialog(value) {
-      if (!value) {
-        this.pause();
-      }
-    },
-  },
-  // methods: {
-  //   ready(event) {
-  //     this.player = event.target;
-  //   },
-  //   playing(event) {
-  //     // The player is playing a video.
-  //   },
-  //   change() {
-  //     // when you change the value, the player will also change.
-  //     // If you would like to change `playerVars`, please change it before you change `videoId`.
-  //     // If `playerVars.autoplay` is 1, `loadVideoById` will be called.
-  //     // If `playerVars.autoplay` is 0, `cueVideoById` will be called.
-  //     this.videoId = "another video id";
-  //   },
-  //   stop() {
-  //     this.player.stopVideo();
-  //   },
-  //   pause() {
-  //     this.player.pauseVideo();
-  //   },
+ 
   
 };
 </script>
 
 <style lang="scss" scoped>
 
-.particles-js {
-  height: 1vh;
+// .particles-js {
+//   height: 1vh;
+// }
+.BG {
+background-color: #06252e;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%2307323d' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%2307404c' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23074f5b' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23075f6b' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%2306717c' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%2305848d' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%2303989e' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}
+.BG1 {
+  background-color: #f4f7f5;
 }
 
 .centered-text {
@@ -198,57 +174,11 @@ export default {
   opacity: 0.3;
 }
 
-.playBut {
-  /*  border: 1px solid red;*/
-  display: inline-block;
-  -webkit-transition: all 0.5s ease;
 
-  .triangle {
-    -webkit-transition: all 0.7s ease-in-out;
-    stroke-dasharray: 240;
-    stroke-dashoffset: 480;
-    stroke: white;
-    transform: translateY(0);
-  }
-
-  &:hover {
-    .triangle {
-      stroke-dashoffset: 0;
-      opacity: 1;
-      stroke: white;
-      animation: nudge 0.7s ease-in-out;
-
-      @keyframes nudge {
-        0% {
-          transform: translateX(0);
-        }
-        30% {
-          transform: translateX(-5px);
-        }
-        50% {
-          transform: translateX(5px);
-        }
-        70% {
-          transform: translateX(-2px);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-    }
-
-    .circle {
-      stroke-dashoffset: 0;
-      opacity: 1;
-    }
-  }
-}
 </style>
 
 <style>
-.btn-play {
-  transition: 0.2s;
-}
+
 
 .svg-border-waves .v-image {
   position: absolute;
@@ -299,5 +229,6 @@ export default {
 <style>
 section {
   position: relative;
+  
 }
 </style>

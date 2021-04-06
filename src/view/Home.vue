@@ -5,7 +5,7 @@
       <home />
       <download />
       <about />
-      <pisico />
+      <profi />
       <contact />
     </v-main>
     <v-scale-transition>
@@ -30,7 +30,11 @@
 </template>
 
 <script>
+
 export default {
+ components: {
+
+  },
 
 }
 </script>
@@ -51,7 +55,7 @@ export default {
 import home from "../components/HomeSection";
 import about from "../components/AboutSection";
 import download from "../components/DownloadSection";
-import pisico from "../components/PisicoDiv";
+import profi from "../components/Profissionais";
 import contact from "../components/ContactSection";
 import navigation from "../components/Navigation";
 
@@ -64,7 +68,7 @@ export default {
     home,
     about,
     download,
-    pisico,
+    profi,
     contact,
 
   
