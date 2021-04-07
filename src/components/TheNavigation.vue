@@ -51,9 +51,10 @@ export default {
 } */
 
 #nav a {
-  color: #03989E;
+  color: #ffff;
   text-decoration: none;
   font-weight: bold;
+  
 }
 
 #nav a.vue-school-active-class {
@@ -61,10 +62,12 @@ export default {
 }
 .nav-links {
   display: flex;
+   color: #ffff;
 }
 .links {
   padding-right: 20px;
   list-style: none;
+   color: #ffff;
 }
 .links:hover {
   text-decoration: underline;

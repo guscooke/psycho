@@ -1,10 +1,9 @@
 <template>
   <v-app> 
     <v-main class="pt-0">
-         <transition name="fade" mode="out-in">
+     <transition name="fade" mode="out-in">
       <router-view :key="$route.path" />
-    </transition>
-     
+    </transition> 
     </v-main>
     <!-- <v-scale-transition>
       <v-btn
@@ -100,23 +99,17 @@
   color: white;
   padding: 10px;
 }
+
 </style>
 
 <script>
 
 import foote from "./components/Footer";
-
-
-
 export default {
   name: "App",
 
   components: {
-  
     foote,
-  
-  
   },
-
 };
 </script>

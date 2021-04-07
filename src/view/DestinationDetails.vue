@@ -1,125 +1,119 @@
 <template>
   <!-- <v-parallax src="@/assets/img/xx.png" height="1080"> -->
   <section id="hero"> 
-      <v-toolbar
-      color="03989E"
+    <v-toolbar
+      color="#06252e"
       dense 
       fixed
-      >
-    <GoBack />
-    <TheNavigation />
-      </v-toolbar>
+    >
+      <GoBack />
+      <TheNavigation />
+    </v-toolbar>
         <!-- <div class="centered-text"> -->
-    <div>
-    <v-row  
-      class="d-flex pa-2" 
-      align="center" 
-      justify="center" 
-      no-gutters
-      align-sm="center"
+      <div class=".destination-details">
+      <v-card
+      class="d-flex flex-wrap pa-2 rounded-card"
+      outlined
+      tile
       >
-    <section>
-     <v-card
-        cols="6"
-        md="12"
-           >
-          <div class="destination-details">
-           <p>sobre {{ destination.name }}</p>
-          </div>
-      
-      </v-card>
-    </section> 
-    
-    <section class="experiences">
-      <v-card>
-      <!-- <h2>Sobre {{ destination.name }}</h2> -->
-      <div class="cards" id="experience">
+        <v-row  
+        align="center" 
+        justify="center" 
+        no-gutters
+        >
+      <v-col cols="12" md="12" xl="3">
+        <section class="experiences">
+          <p>sobre {{ destination.name }}</p>
+            <div class="cards" id="experience">
+              <div
+                v-for="experience in destination.experiences"
+                :key="experience.slug"
+                class="card"
+              >
+                <router-link
+                  :to="{
+                    name: 'experienceDetails',
+                    params: { experienceSlug: experience.slug },
+                    hash: '#experience'
+                  }">
+                    <v-col
+                      cols="12" md="12" xl="3">
+                      <v-card
+                      class="rounded-card dd-sm-inline-flex pa-2"
+                      outlined
+                      tile
+                      elevation="13">
+                        <img
+                          :src="require(`@/assets/img/${experience.image}`)"
+                          :alt="destination.name"
+                        />
+                        </v-card>
+                      </v-col>
+                   <span class="card__text">
+                </span>
+              </router-link>
+            </div> 
+         <v-row  
+          class="d-flex pa-0" 
+          >
+        <v-col cols="12" md="12" xl="3">
+        <v-card
+        class="rounded-card d-sm-inline-flex pa-2"
+        outlined
+        tile
+        elevation="13">
               <v-date-picker
               v-model="picker"
               :landscape="landscape"
               locale="pt-BR">
-              </v-date-picker>
-        <div
-          v-for="experience in destination.experiences"
-          :key="experience.slug"
-          class="card"
-        >
-          <router-link
-            :to="{
-              name: 'experienceDetails',
-              params: { experienceSlug: experience.slug },
-              hash: '#experience'
-            }">
-             <v-col
-              cols="12"
-              md="12">
-              <v-card
-              elevation="13">
-            <img
-              :src="require(`@/assets/img/${experience.image}`)"
-              :alt="destination.name"
-            /></v-card>
-             </v-col>
-            <span class="card__text">
-              {{ experience.name }}
-            </span>
-          </router-link>
+      </v-date-picker>
+    </v-card>
+  </v-col>
+</v-row>
+  <v-row  
+    class="d-flex pa-2" 
+  >
+     <v-col cols="12" md="12" xl="3">
+        <v-card
+        class="rounded-card d-sm-inline-flex pa-2"
+                      outlined
+                      tile
+                      elevation="13">
+          <v-chip-group
+            
+            active-class="deep-purple accent-4 white--text"
+            column
+          >
+                        <v-chip>11:30am</v-chip>
+
+                        <v-chip>13:30PM</v-chip>
+
+                        <v-chip>5:30PM</v-chip>
+
+                        <v-chip>7:30PM</v-chip>
+
+                        <v-chip>8:00PM</v-chip>
+
+                        <v-chip>9:00PM</v-chip>
+
+                      
+                      </v-chip-group>
+                    </v-card>
+                 </v-col>
+               </v-row>
+             <div>  
         </div>
       </div>
-      
-        <router-view :key="$route.path" />
+    <router-view :key="$route.path" />
+  </section>
+  <section>
+    <v-card>
       </v-card>
-    </section>
-    <section>
-           <v-card>
-      <!-- <h2>Sobre {{ destination.name }}</h2> -->
-      <!-- <div class="cards" id="experience">
-
-        <div
-          v-for="experience in destination.experiences"
-          :key="experience.slug"
-          class="card"
-        >
-          <router-link
-            :to="{
-              name: 'experienceDetails',
-              params: { experienceSlug: experience.slug },
-              hash: '#experience'
-            }">
-             <v-col
-              cols="12"
-              md="12">
-              <v-card>
-            <img
-              :src="require(`@/assets/img/${experience.image}`)"
-              :alt="destination.name"
-            /></v-card>
-             </v-col>
-            <span class="card__text">
-              {{ experience.name }}
-            </span>
-          </router-link>
-        </div>
-      </div> -->
-          <!-- <v-col
-                cols="12"
-                md="3"
-              >
-            <v-row align="center">
-              <v-date-picker
-              v-model="picker"
-              :landscape="landscape"
-              locale="pt-BR">
-              </v-date-picker>
-            </v-row>
-          </v-col> -->
-        <!-- <router-view :key="$route.path" /> -->
-      </v-card>
-    </section></v-row>
-    </div>
-    
-    <!-- </div> -->
-        <!-- </v-parallax>       -->
+      </section>
+        </v-col>
+        </v-row>
+          </v-card>
+          </div>
   </section>
 </template>    
 
@@ -137,7 +131,12 @@ data () {
       return {
         picker: new Date().toISOString().substr(0, 7),
         landscape: true,
+        
+        
       }
+    },
+    picker () {
+      console.log()
     },
   props: {
     slug: {
@@ -160,13 +159,14 @@ data () {
   height: 1vh;
 }
 
+.rounded-card{
+    border-radius:50px;
+}
+
 #hero {
   z-index: 0;
 }
 
-.rounded-card{
-    border-radius:50px;
-}
 img {
   max-width: 400px;
   height: auto;
@@ -174,12 +174,15 @@ img {
   max-height: 400px;
 }
 
+
 .experiences {
   padding: 40px 0;
 }
 .destination-details {
-  display: flex;
+
+   display: flex;
   justify-content: space-between;
+  padding: 40px 0;
 }
 p {
   margin: 0 40px;
@@ -193,6 +196,7 @@ p {
 }
 .cards img {
   max-height: 400px;
+  display: flex;
 }
 .card {
   padding: 0 20px;

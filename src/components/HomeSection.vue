@@ -2,15 +2,14 @@
   <section class="BG" id="hero">  
     <v-parallax dark src="" height="780">
       <vue-particles color="#dedede"></vue-particles>
-        <div class="centered-text">
-      
-      <v-row  
-      class="d-flex pa-2" 
-      align="center" 
-      justify="center" 
-      no-gutters
-      align-sm="center"
-     >
+        <div class="centered-text"> 
+          <v-row  
+          class="d-flex pa-2" 
+          align="center" 
+          justify="center" 
+          no-gutters
+          align-sm="center"
+        >
         
         <v-col cols="10"
         md="10">    
@@ -32,19 +31,12 @@
                 <v-icon class="ml-2">mdi-arrow-down</v-icon>
                 </v-btn>  
             </v-col>
-
-              <v-flex sm12 md6>
-                <v-col cols="12" >
-                  <v-row cols="6" >
-                   
-            
-                <v-img  src="@/assets/img/yyy.png" height="800"/>
+            <v-col class=" hidden-sm-and-down" cols="12" md="6" xl="12" sm="6" >
+                  
+                <v-img   src="@/assets/img/yyy.png" height="800"/>
            
-            
-              </v-row>
-             
             </v-col> 
-              </v-flex>
+ 
             <v-col cols="12" md="6" xl="4" class="hidden-md-sm-and-down"> </v-col>
           </v-row>
         </v-col>
@@ -101,9 +93,7 @@
 
     </v-container>
  
-    <v-dialog v-model="dialog" max-width="640px">
-
-    </v-dialog>
+ 
     <div class="svg-border-waves hidden-sm-only">
       <img src="~@/assets/img/wave2.svg" />
     </div>
@@ -146,9 +136,9 @@ export default {
 
 <style lang="scss" scoped>
 
-// .particles-js {
-//   height: 1vh;
-// }
+.particles-js {
+  height: 1vh;
+}
 .BG {
 background-color: #06252e;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%2307323d' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%2307404c' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23074f5b' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23075f6b' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%2306717c' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%2305848d' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%2303989e' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");

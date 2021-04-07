@@ -21,7 +21,7 @@
                   Você não desconfia de que exista uma causa real para seus problemas existirem? É claro que existe! E ela está dentro do seu subconsciente, juntamente com suas crenças e suas emoções.
                   A falta de aprofundamento envolvendo o subconsciente é....
                 </h1>
-              <v-btn rounded outlined href="https://github.com/Joabsonlg/Landing-Page" target="_blank" large color="white" class="mt-4">
+              <v-btn rounded outlined href="" target="_blank" large color="white" class="mt-4">
                 <v-icon class="mr-2">
                   mdi-book
                 </v-icon>

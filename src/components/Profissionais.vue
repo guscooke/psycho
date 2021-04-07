@@ -4,13 +4,14 @@
       <v-container fluid id="features" class="mt-4">   
         <v-row align="center" justify="space-around">
           <v-col
+         
             cols="6"
             md="3" 
           >
-            <h1 class="font-weight-Bold display-1 mb-12 " >
+            <h1 class=" font-weight-Bold display-1 mb-12 " >
                       Nossos Terapeutas      
               </h1 > 
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                <p class= "hidden-sm-and-down">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
                   The point of using Lorem Ipsum.web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
                   will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes</p>
                    </v-col>
@@ -25,13 +26,13 @@
                      
                       <v-card
                           class="rounded-card"
-                          max-width="350"
+                          max-width="300"
                           
                           :key="destination.slug"
                           :elevation="hover ? 19 : 1"
                           :class="{ up: hover }">
                
-                       <v-card-title>{{ destination.name}}</v-card-title>
+                      
                 
                         
                         <v-img
@@ -44,7 +45,8 @@
                       
                         :src="require(`@/assets/img/${destination.image}`)"
                         :alt="destination.name"/>
-                  </v-avatar>
+                  </v-avatar> 
+                  <v-card-title class="white--text">{{ destination.name}}</v-card-title>
                           <v-card-text
                             class="title amber--text pl-3">
                             <v-card-title>{{ destination.title}}</v-card-title>
@@ -68,50 +70,34 @@
                           <div class="my-4 subtitle-0 dark--text">
                             {{ destination.subtitle }}
                           </div>
-                         <div class="white--text">{{ destination.text2 }} </div>
+                         <div class="hidden-sm-and-down white--text">{{ destination.text2 }} </div>
                         </v-card-text>
                       
                       <v-card-text>
-                      <!-- <v-chip-group
-                        v-model="selection"
-                        active-class="deep-purple accent-4 white--text"
-                        column
-                      >
-                        <v-chip>11:30am</v-chip>
 
-                        <v-chip>13:30PM</v-chip>
-
-                        <v-chip>5:30PM</v-chip>
-
-                        <v-chip>7:30PM</v-chip>
-
-                        <v-chip>8:00PM</v-chip>
-
-                        <v-chip>9:00PM</v-chip>
-
-                      
-                      </v-chip-group> -->
                     </v-card-text>
                     <v-divider class="mx-4"></v-divider>
                <v-fade-transition>
           <v-overlay
             v-if="hover"
             absolute
-            color="#ffff"
+            color="black"
           >
            <router-link
-                      :to="{
-                      name: 'DestinationDetails',
-                      params: { slug: destination.slug },
-                    
-                      }">
-            <v-btn
-            
-            >Saiba mais</v-btn>
+              :to="{
+              name: 'DestinationDetails',
+              params: { slug: destination.slug },
+                                                }">
+              <v-btn
+              elevation="24"
+              raised>clique aqui</v-btn>
+         
            </router-link>
           </v-overlay>
         </v-fade-transition>
-                    </v-img>  
+     
+                    </v-img> 
+                    
                   </v-card>
                 </v-hover>
               </v-col>
