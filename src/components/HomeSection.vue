@@ -3,31 +3,32 @@
     <div class="bg">
       <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
         <div class="centered-text">
-          <v-row class="d-flex pa-0" align="center" justify="center" no-gutters align-sm="center">
+          <v-row class="d-flex pa-10" align="center" justify="center" no-gutters align-sm="center">
             <v-col cols="10" md="10">
               <v-row align="center" justify="center">
-                <v-col cols="12" md="6" xl="6">
-                  <h1 class=" display-3 font-weight-bold mb-4">
+                <v-col cols="10" md="5" xl="6">
+                  <h1 class="col-10 display-3 font-weight-bold mb-6">
                     Clínica Szercky
                   </h1>
-                  <h1 class="font-weight-dark col-12 justify">
+                  <h1 class="font-weight-dark col-10 justify">
                     Os sintomas que você vê são somente a ponta do Iceberg!
                   </h1>
-                  <v-btn rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-5">
+                    <v-col cols="10">
+                  <v-btn  rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-5">
                     <h4>Nossa Equipe</h4>
                     <v-icon class="ml-2">mdi-arrow-down</v-icon>
                   </v-btn>
                 </v-col>
+                </v-col>
 
-                <v-flex sm12 md6>
-                  <v-col cols="12">
+                <v-flex sm12 md6 >
+                  <v-col class="hidden-md-sm-and-down">
                     <v-row cols="6">
                       <v-img src="@/assets/img/yyy.png" height="800" />
                     </v-row>
                   </v-col>
                 </v-flex>
-                <v-col cols="12" md="6" xl="4" class="hidden-md-sm-and-down">
-                </v-col>
+              
               </v-row>
             </v-col>
           </v-row>

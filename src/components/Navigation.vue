@@ -36,7 +36,7 @@
       <v-spacer />
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="mr-4" v-if="isXs" />
       <div v-else>
-        <v-btn text @click="$vuetify.goTo('#hero')">
+        <v-btn text dark @click="$vuetify.goTo('#hero')">
           <h4 class="mr-2">Home</h4>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#about')">
@@ -89,10 +89,11 @@
       isXs: false,
       items: [
         ["mdi-home-outline", "Home", "#hero"],
-        ["mdi-information-outline", "Sobre", "#features"],
-        ["mdi-download-box-outline", "Iceberg", "#download"],
-        ["mdi-currency-usd", "Profissionais", "#pricing"],
+        ["mdi-information-outline", "Como Funciona", "#about"],
+        ["mdi-download-box-outline", "Sobre Nós", "#download"],
+        ["mdi-currency-usd", "Especialidades", "#especialidades"],
         ["mdi-email-outline", "Contatos", "#contact"],
+        ["mdi-account-circle", "Entrar", "#"],
       ],
     }),
     props: {

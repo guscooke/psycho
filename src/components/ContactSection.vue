@@ -6,20 +6,20 @@
           <v-row justify="center">
             <v-col cols="12" sm="5">
               <h1 class="font-weight-light display-1">Contate-nos</h1>
-              <h3 class="font-weight mt-3">
+              <h4 class="font-weight mt-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
                 explicabo commodi quisquam asperiores dolore ad enim provident
                 veniam perferendis voluptate, perspiciatis.
-              </h3>
-              <h3 class="font-weight mt-3">
+              </h4>
+              <h4 class="font-weight mt-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing.
-              </h3>
-              <h3 class="font-weight mt-3">
+              </h4>
+              <h4 class="font-weight mt-3">
                 Telefone: +xx (xx) xxxxx-xxxx
-              </h3>
-              <h3 class="font-weight">
+              </h4>
+              <h4 class="font-weight">
                 Email: email@email.com
-              </h3>
+              </h4>
             </v-col>
           
             <v-col cols="12" sm="7"> 

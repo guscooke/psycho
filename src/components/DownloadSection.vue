@@ -12,7 +12,7 @@
             </v-col>
             <v-col cols="12" sm="8" class="dark--text text-center">
               <!-- <h1 class="dark--text font-weight-bold display-2 mb-2">Os sintomas que você vê são somente a ponta do Iceberg!</h1> -->
-                <h3 class="font-weight">
+                <h4 class="font-weight">
            Somos uma clínica multidisciplinar com profissionais qualificados da área da saúde que visam o bem-estar
            emocional e físico de seus pacientes.
            Temos como premissa básica proporcionar momentos de escuta e conforto, com ética, atenção, eficiência,
@@ -22,7 +22,7 @@
            possível diagnóstico de forma saudável e verdadeira, unificando seu cuidado em um espaço de carinho e
            cuidado.
 
-                </h3>
+                </h4>
                 <!-- <v-btn rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-5"> -->
               <v-btn rounded outlined color="#03989E" @click="$vuetify.goTo('#especialidades')" large class="mt-5">
                 <v-icon class="mr-2">

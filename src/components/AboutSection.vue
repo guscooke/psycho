@@ -9,10 +9,10 @@
               <h1 class="pa-4 font-weight display-1 mb-3">
                 Entenda como funciona!
               </h1>
-              <h3>No nosso serviço de telemedicina, você pode realizar a sua consulta com a especialidade desejada via
+              <h3 class="font-weight-black">No nosso serviço de telemedicina, você pode realizar a sua consulta com a especialidade desejada via
                 chamada de vídeo. </h3>
               <br>
-              <h4 class="pa-4">Para agendar a sua primeira consulta é bem simples: </h4>
+              <h3 class="pa-4">Para agendar a sua primeira consulta é bem simples: </h3>
               <v-row>
                 <v-col cols="12" class="pa-6 d-flex align-center">
                   <v-img src="@/assets/img/one.png" max-width="60px" class="mr-4" />
