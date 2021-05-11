@@ -1,80 +1,73 @@
 <template>
-  <nav id="nav">
-   
-    <ul class="nav-links">
-      <li class="links">
-        <router-link to="/">
-          Home
+  <div>
+
+    <v-app-bar app color='#03989E' class="px-15">
+      <router-link to="/">
+        <v-img src="@/assets/img/logo.jpeg" max-width="80px" />
+
+      </router-link>
+      <v-spacer />
+
+      <router-link class="links" to="/">
+        Home
+      </router-link>
+
+      <div v-for="especialidade in especialidades" :key="especialidade.name">
+
+        <router-link :to="{
+            name: 'pisicoDetails',
+            params: { slug: especialidade.slug }
+          }">
+          <h4 class="links">{{ especialidade.name }}</h4>
         </router-link>
-      </li>
-      <li
-        v-for="destination in destinations"
-        :key="destination.name"
-        class="links"
-      >
-        <router-link
-          :to="{
-            name: 'DestinationDetails',
-            params: { slug: destination.slug }
-          }"
-        >
-          {{ destination.name }}
-        </router-link>
-      </li>
+      </div>
       <!-- <li class="links">
         <router-link to="/user">Dashboard</router-link>
       </li> -->
-    </ul>
-  </nav>
+
+
+    </v-app-bar>
+  </div>
 </template>
 
 <script>
-import store from "@/store";
-export default {
-  data() {
-    return {
-      destinations: store.destinations
-    };
-  }
-};
+  import store from "@/store";
+  export default {
+    data() {
+      return {
+        especialidades: store.especialidades
+      };
+    }
+  };
 </script>
 
 <style scoped>
-/* #nav {
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: white;
-  border-bottom: 1px solid grey;
-  z-index: 1;
-} */
+  #nav a {
+    color: #ffff;
+    text-decoration: none;
+    font-weight: bold;
 
-#nav a {
-  color: #ffff;
-  text-decoration: none;
-  font-weight: bold;
-  
-}
+  }
 
-#nav a.vue-school-active-class {
-  color: #ab26ab;
-}
-.nav-links {
-  display: flex;
-   color: #ffff;
-}
-.links {
-  padding-right: 20px;
-  list-style: none;
-   color: #ffff;
-}
-.links:hover {
-  text-decoration: underline;
-}
-.logo {
+
+  .nav-links {
+    display: flex;
+    color: rgb(255, 255, 255);
+  }
+
+  .links {
+    padding-right: 20px;
+    list-style: none;
+    color: #ffff;
+  }
+
+  .links:hover {
+    text-decoration: underline;
+  }
+
+  /* .logo {
   font-size: 20px;
   color: purple;
   font-weight: bold;
-}
+} */
 </style>

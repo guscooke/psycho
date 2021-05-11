@@ -5,27 +5,30 @@
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col sm="4" class="hidden-xs-only">
-            <kinesis-container>
-            <kinesis-element
-             :strength="50"
-              :distance="100"
-            >
-              <v-img src="@/assets/img/psyco.png" class="d-block ml-auto mr-auto" max-width="2000"
+        
+              <v-img :src="require(`@/assets/img/logo.jpeg`)" class="d-block ml-auto mr-auto" max-width="2000"
              />
-                 </Kinesis-element>
-          </Kinesis-container>
+               
             </v-col>
-            <v-col cols="12" sm="8" class="white--text text-left">
-              <h1 class="dark--text font-weight-bold display-2 mb-2">Os sintomas que você vê são somente a ponta do Iceberg!</h1>
-                <h1 class="font-weight-light">
-                  Você não desconfia de que exista uma causa real para seus problemas existirem? É claro que existe! E ela está dentro do seu subconsciente, juntamente com suas crenças e suas emoções.
-                  A falta de aprofundamento envolvendo o subconsciente é....
-                </h1>
-              <v-btn rounded outlined href="" target="_blank" large color="white" class="mt-4">
+            <v-col cols="12" sm="8" class="dark--text text-center">
+              <!-- <h1 class="dark--text font-weight-bold display-2 mb-2">Os sintomas que você vê são somente a ponta do Iceberg!</h1> -->
+                <h3 class="font-weight">
+           Somos uma clínica multidisciplinar com profissionais qualificados da área da saúde que visam o bem-estar
+           emocional e físico de seus pacientes.
+           Temos como premissa básica proporcionar momentos de escuta e conforto, com ética, atenção, eficiência,
+           qualidade e sigilo.
+           Nossa grande paixão, são as pessoas! Com isso, objetivamos nosso trabalho no processo de alívio, facilitando
+           o caminho ao auto entendimento, com sustentação, para que o paciente consiga lidar com suas queixas e/ou
+           possível diagnóstico de forma saudável e verdadeira, unificando seu cuidado em um espaço de carinho e
+           cuidado.
+
+                </h3>
+                <!-- <v-btn rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-5"> -->
+              <v-btn rounded outlined color="#03989E" @click="$vuetify.goTo('#especialidades')" large class="mt-5">
                 <v-icon class="mr-2">
                   mdi-book
                 </v-icon>
-                Agende sua Consulta
+                <h4>Agende sua Consulta</h4>
               </v-btn>
             </v-col>
           </v-row>
@@ -37,7 +40,7 @@
 
 <style scoped>
 #download {
-  background-image: url("~@/assets/img/iceberg4.png");
+  background-image: url("~@/assets/img/bgx.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,12 +54,3 @@
 }
 </style>
 
-<script>
-import Vue from 'vue'
-  import { KinesisContainer, KinesisElement } from 'vue-kinesis'
-  Vue.component('kinesis-container', KinesisContainer)
-  Vue.component('kinesis-element', KinesisElement)
-export default {
-  
-}
-</script>

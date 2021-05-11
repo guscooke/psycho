@@ -5,30 +5,20 @@
       <router-view :key="$route.path" />
     </transition> 
     </v-main>
-    <!-- <v-scale-transition>
-      <v-btn
-        fab
-        v-show="fab"
-        v-scroll="onScroll"
-        dark
-        fixed
-        bottom
-        right
-        color="secondary"
-        @click="toTop"
-      > 
-        <v-icon>mdi-arrow-up</v-icon>
-      </v-btn>
-    </v-scale-transition> -->
     <foote />
   </v-app>
 
-
- 
 </template>
 
-
-
+<script>
+import foote from "./components/Footer";
+export default {
+  name: "App",
+  components: {
+    foote,
+  },
+};
+</script>
 
 <style scoped>
 .v-main {
@@ -38,11 +28,12 @@
   background-size: cover;
 }
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
 }
 
 .slide-enter-active,
@@ -101,15 +92,3 @@
 }
 
 </style>
-
-<script>
-
-import foote from "./components/Footer";
-export default {
-  name: "App",
-
-  components: {
-    foote,
-  },
-};
-</script>
