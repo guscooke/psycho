@@ -1,81 +1,59 @@
 <template>
   <section>
-    <h3 class="mt-4">{{ especialidade.name }} </h3>
-
     <div class="profissionai-details">
-      <!-- <p>{{ profissionai.nome }}</p> --> 
   
 
+  
     </div>
-
     <span></span>
-
-    <v-date-picker     
-      v-model="picker"
-      year-icon="mdi-calendar-blank"
-      prev-icon="mdi-skip-previous"
+    <v-date-picker v-model="picker" year-icon="mdi-calendar-blank" prev-icon="mdi-skip-previous"
       next-icon="mdi-skip-next">
     </v-date-picker>
 
-    <div>
-      ////button to cofirm open a modal to register name email and password////
-    </div>
 
   </section>
 </template>
 <script>
-  import store from "@/store.js";
+  import axios from 'axios';
 
   export default {
     components: {},
 
-    data() {
+      data() {
       return {
-        date: new Date().toISOString().substr(0, 10),
-
+        profissionais: {},
       }
-    },
-    methods: {
-
     },
 
     props: {
-      slug: {
-        type: String,
-        required: true
-      },
+  
       profissionaiId: {
         type: String,
         required: true
       }
     },
-    computed: {
-      especialidade() {
-        return store.especialidades.find(
-          especialidade => especialidade.slug === this.slug
-        );
-      },
-      profissionai() {
-        return this.especialidade.profissionais.find(
-          profissionai => profissionai.id === this.profissionaiId
-        )
-      }
-
-    },
     methods: {
-      getProfissionais() {
+      async getProfissionais() {
         console.log('hello')
-        return axios.get('http://localhost:5000/profissionais')
-          .then(response => {
-            this.profissionais = response.data;
-            console.log(this.profissionais)
-          }, )
+        const response = await axios.get('http://localhost:5000/profissionais');
+        this.profissionais = response.data;
+        console.log(this.profissionais);
 
       }
     },
     created: function () {
       this.getProfissionais();
     },
+        computed: {
+
+      profissionai() {
+        return this.data.profissionais.find(
+          profissionai => profissionai.id === this.profissionaiId
+        )
+      }
+
+    },
+    
   };
 </script>
 

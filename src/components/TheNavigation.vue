@@ -3,7 +3,7 @@
 
     <v-app-bar app color='#03989E' class="px-15">
       <router-link to="/">
-        <v-img src="@/assets/img/logo.jpeg" max-width="80px" />
+        <v-img src="@/assets/img/LogoFinal.png" max-width="200px" />
 
       </router-link>
       <v-spacer />
