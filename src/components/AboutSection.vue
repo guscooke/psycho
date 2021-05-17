@@ -2,11 +2,12 @@
   <section id="about">
     <v-container fluid>
       <v-row align="center" justify="center">
-        <v-col cols="10">
-             <h1 class="pa-6 font-weight display-1 mb-3 mt-6" justify="center">
+        <v-col cols="10" sm="8">
+          
+             <h1 class="pa-8 font-weight display-1 mb-6 mt-6" justify="center">
                 Entenda como funciona!
               </h1>
-              <h3 class="font-weight mb-4" justify="center">No nosso serviço de telemedicina, você pode realizar a sua consulta com a
+              <h3  class="font-weight mb-6" md="8" justify="center">No nosso serviço de telemedicina, você pode realizar a sua consulta com a
                 especialidade desejada via
                 chamada de vídeo. </h3>
               <br>

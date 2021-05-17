@@ -24,7 +24,7 @@
 
                 </h3>
                 <!-- <v-btn rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-5"> -->
-              <v-btn rounded outlined color="#03989E" @click="$vuetify.goTo('#especialidades')" large class="mt-5">
+              <v-btn  rounded outlined color="#03989E" @click="$vuetify.goTo('#especialidades')" large class="mt-12">
                 <v-icon class="mr-2">
                   mdi-book
                 </v-icon>
