@@ -8,7 +8,7 @@
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="title">Clinica</v-list-item-title>
-            <v-list-item-subtitle>Szerckir</v-list-item-subtitle>
+            <v-list-item-subtitle>Szeckir</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>

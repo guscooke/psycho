@@ -3,18 +3,18 @@
     <div class="bg">
       <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
         <div class="centered-text">
-          <v-row class="d-flex pa-11" align="center" justify="center" no-gutters align-sm="center">
+          <v-row class="d-flex pa-6" align="center" justify="center" no-gutters align-sm="center">
             <v-col cols="10" md="10">
               <v-row align="center" justify="center">
-                <v-col cols="10" md="5" xl="6">
-                  <h1 class="display-3 font-weight-bold mb-6">
-                    Clínica Szercki
+                <v-col cols="10" md="5" xl="5">
+                  <h1 class="display-3 font-weight-bold mb-10">
+                    Clínica Szeckir
                   </h1>
-                  <h1 class="font-weight-dark justify">
+                  <h1 class="font-weight-dark justify mb-5">
                     Os sintomas que você vê são somente a ponta do Iceberg!
                   </h1>
                     <v-col>
-                  <v-btn  rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-4">
+                  <v-btn mt-4  rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-4">
                     <h4>ESPECIALIDADES</h4>
                     <v-icon class="ml-2">mdi-arrow-down</v-icon>
                   </v-btn>
