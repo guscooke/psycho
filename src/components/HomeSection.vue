@@ -7,15 +7,15 @@
             <v-col cols="10" md="10">
               <v-row align="center" justify="center">
                 <v-col cols="10" md="5" xl="6">
-                  <h1 class="col-10 display-3 font-weight-bold mb-6">
-                    Clínica Szercky
+                  <h1 class="display-3 font-weight-bold mb-6">
+                    Clínica Szercki
                   </h1>
-                  <h1 class="font-weight-dark col-11 justify">
+                  <h1 class="font-weight-dark justify">
                     Os sintomas que você vê são somente a ponta do Iceberg!
                   </h1>
-                    <v-col cols="10">
+                    <v-col>
                   <v-btn  rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-4">
-                    <h4>Nossa Equipe</h4>
+                    <h4>ESPECIALIDADES</h4>
                     <v-icon class="ml-2">mdi-arrow-down</v-icon>
                   </v-btn>
                 </v-col>
@@ -94,7 +94,8 @@ export default {
 </style>
 <style lang="scss" scoped>
 .centered-text {
-  color: #03989e;
+  color: #037682
+;
   position: absolute;
   text-align: center;
   top: 10%;

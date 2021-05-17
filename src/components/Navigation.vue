@@ -4,7 +4,7 @@
       <v-list>
         <v-list-item>
           <v-list-item-avatar>
-            <img src="@/assets/img/LogoFinal.png" max-width="250px"/>
+            <img src="@/assets/img/LogoFinal.png" alt="Logo" max-width="250px"/>
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="title">Clinica</v-list-item-title>
@@ -29,7 +29,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app :color="color" :flat="flat" dark class="px-15" :class="{ expand: flat }">
+    <v-app-bar app color='#ffff' :flat="flat" light class="px-15" :class="{ expand: flat }">
       <v-toolbar-title>
         <v-img src="@/assets/img/LogoFinal.png" max-width="250px" />
       </v-toolbar-title>

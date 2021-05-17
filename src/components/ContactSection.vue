@@ -1,6 +1,7 @@
 <template>
   <section class="pb-8" id="contact">
     <v-container fluid>
+     
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row justify="center">
@@ -21,13 +22,15 @@
                 Email: email@email.com
               </h4>
             </v-col>
-          
+           
             <v-col cols="12" sm="7"> 
-      
+     
               <v-form ref="form" v-model="valid" :lazy-validation="lazy">
                 <v-text-field v-model="name" :rules="nameRules" label="Nome" required></v-text-field>
 
                 <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+
+                <v-text-field v-model="celular" :rules="celularRules" label="Celular" required></v-text-field>
 
                 <v-textarea v-model="textArea" :rules="textAreaRules" label="Mensagem" required />
 
@@ -35,13 +38,14 @@
                  <h4> Enviar</h4>
                 </v-btn>
               </v-form> 
-          
+       
             </v-col>
           
            
           </v-row>
         </v-col>
       </v-row>
+      
     </v-container>
     <div class="svg-border-waves text-white">
       <v-img src="~@/assets/img/borderWavesBlue.svg" />
@@ -94,6 +98,10 @@
       textAreaRules: [
         (v) => !!v || "O campo de texto é obrigatório",
         (v) => (v && v.length >= 10) || "Mínimo de 10 caracteres",
+      ],
+      celular: "",
+      celularRules: [
+
       ],
       lazy: false,
       snackbar: {

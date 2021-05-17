@@ -17,7 +17,7 @@
             <p>{{ profissionai.descricao }}</p>
             <router-link :to="{
                     name: 'DetalhesDetails',
-                    params: { profissionaiId: profissionai.id },
+                    params: { profissionaiId: profissionai.nome },
 
                     //-- hash: '#profissional' -->
                   }"> 
@@ -59,7 +59,6 @@
     components: {
       GoBack,
       TheNavigation
-
     },
     data() {
       return {
@@ -67,13 +66,7 @@
       }
     },
 
-    props: {
-  
-      profissionaiId: {
-        type: String,
-        required: true
-      }
-    },
+
     methods: {
       async getProfissionais() {
         console.log('hello')

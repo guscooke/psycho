@@ -1,58 +1,49 @@
 <template>
   <section>
-    <div class="profissionai-details">
-  
-
-  
+    <div class="profissionai-details" >
+        <h2>Profissional: {{ profissionaiId }}</h2>
     </div>
     <span></span>
-    <v-date-picker v-model="picker" year-icon="mdi-calendar-blank" prev-icon="mdi-skip-previous"
-      next-icon="mdi-skip-next">
+    <v-date-picker :date="picker"
+     year-icon="mdi-calendar-blank" 
+     prev-icon="mdi-skip-previous"
+      next-icon="mdi-skip-next"
+      elevation="15">
     </v-date-picker>
+    <template>
+  <div class="text-center">
+    <v-btn
+    class="mt-8"
+      rounded
+      color="primary"
+      dark
+    >
+      Agendar
+    </v-btn>
+  </div>
+</template>
 
 
   </section>
 </template>
 <script>
-  import axios from 'axios';
+ 
 
   export default {
     components: {},
+      props: ['profissionaiId'],
 
       data() {
       return {
-        profissionais: {},
+        picker:new Date().toISOString().substr(0, 10), 
       }
     },
+    method:{
 
-    props: {
-  
-      profissionaiId: {
-        type: String,
-        required: true
-      }
-    },
-    methods: {
-      async getProfissionais() {
-        console.log('hello')
-        const response = await axios.get('http://localhost:5000/profissionais');
-        this.profissionais = response.data;
-        console.log(this.profissionais);
+      
+    }
 
-      }
-    },
-    created: function () {
-      this.getProfissionais();
-    },
-        computed: {
 
-      profissionai() {
-        return this.data.profissionais.find(
-          profissionai => profissionai.id === this.profissionaiId
-        )
-      }
-
-    },
     
   };
 </script>
