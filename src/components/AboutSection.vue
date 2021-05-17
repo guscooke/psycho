@@ -2,7 +2,7 @@
   <section id="about">
     <v-container fluid>
       <v-row align="center" justify="center">
-        <v-col cols="10" sm="8">
+        <v-col cols="10" >
           
              <h1 class="pa-8 font-weight display-1 mb-6 mt-6" justify="center">
                 Entenda como funciona!
@@ -15,7 +15,7 @@
             <v-col cols="12" md="7">
               <!-- <h1 class="font-weight-light display-2">la balb</h1> -->
            
-              <h3 class="pa-6" justify="center">Para agendar a sua primeira consulta é bem simples: </h3>
+              <h3 class="pa-8" justify="center">Para agendar a sua primeira consulta é bem simples: </h3>
               <v-row>
                 <v-col cols="12" class="pa-6 d-flex align-center">
                   <v-img src="@/assets/img/one.png" max-width="60px" class="mr-4" />
