@@ -19,8 +19,8 @@
                           }">
                           <v-col >
                       <v-img  :src="require(`@/assets/img/${especialidade.image}`)" :alt="especialidade.name"
-                       max-height="250"
-                        max-width="250" 
+                       max-height="300"
+                        max-width="310" 
                         class="mx-auto"
                         />
                           </v-col>
