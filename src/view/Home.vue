@@ -4,7 +4,7 @@
       <navigation :color="color" :flat="flat" />
       <home />
       <about />
-      <download />
+      <quemsomos />
       <profi />
       <contact />
     </v-main>
@@ -20,7 +20,7 @@
 <script>
   import home from "../components/HomeSection";
   import about from "../components/AboutSection";
-  import download from "../components/DownloadSection";
+  import quemsomos from "../components/QuemSomos";
   import profi from "../components/Profissionais";
   import contact from "../components/ContactSection";
   import navigation from "../components/Navigation";
@@ -34,7 +34,7 @@
       navigation,
       home,
       about,
-      download,
+      quemsomos,
       profi,
       contact,
     },

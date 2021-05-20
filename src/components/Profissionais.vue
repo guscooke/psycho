@@ -1,7 +1,7 @@
 <template>
   <section id="especialidades">
     <div class="home">
-      <h1 class="mt-6 mb-6">
+      <h1 class="dark--text font-weight-bold display-1 mt-6 mb-6">
         Especialidades
       </h1>
       <v-container fluid id="features" class="mt-2 mb-6">
@@ -11,17 +11,25 @@
               <v-col cols="12" sm="4" v-for="especialidade in especialidades" :key="especialidade.name">
                 <v-hover v-slot:default="{ hover }">
                   <v-card :elevation="hover ? 20 : 3" outlined>
+                    <v-col class="ml-auto">
                     <h2 class="mt-6">{{ especialidade.name }}</h2>
                     <router-link :to="{
                             name: 'pisicoDetails',
                             params: { slug: especialidade.slug }
                           }">
-                      <v-img :src="require(`@/assets/img/${especialidade.image}`)" :alt="especialidade.name" />
+                          <v-col>
+                      <v-img  :src="require(`@/assets/img/${especialidade.image}`)" :alt="especialidade.name"
+                       max-height="290"
+                      
+                        class="ml-auto"
+                        />
+                          </v-col>
 
                       <v-btn class="mt-6 mb-6" rounded color="primary" dark>
                         <h4>Ver Profissionais</h4>
                       </v-btn>
                     </router-link>
+                    </v-col>
                   </v-card>
                 </v-hover>
                 <!-- </v-hover> -->

@@ -11,8 +11,8 @@
                
             </v-col>
             <v-col cols="12" sm="8" class="dark--text text-center">
-              <!-- <h1 class="dark--text font-weight-bold display-2 mb-2">Os sintomas que você vê são somente a ponta do Iceberg!</h1> -->
-                <h3 class="font-weight">
+              <h1 class="dark--text font-weight-bold display-2 mb-6">Quem Somos</h1>
+                <h3 class="font-weight mt-6">
            Somos uma clínica multidisciplinar com profissionais qualificados da área da saúde que visam o bem-estar
            emocional e físico de seus pacientes.
            Temos como premissa básica proporcionar momentos de escuta e conforto, com ética, atenção, eficiência,

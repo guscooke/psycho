@@ -10,7 +10,6 @@
 
         <div class="pa-8">
 
-
           <div v-for="profissionai in profissionais.data" :key="profissionai.id" class="card mt-16 mb-12"
             justify="space-around">
             <h3 class="mt-4">{{ profissionai.nome }} {{ profissionai.sobrenome }}</h3>
