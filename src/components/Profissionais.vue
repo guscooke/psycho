@@ -17,11 +17,11 @@
                             name: 'pisicoDetails',
                             params: { slug: especialidade.slug }
                           }">
-                          <v-col>
+                          <v-col >
                       <v-img  :src="require(`@/assets/img/${especialidade.image}`)" :alt="especialidade.name"
-                       max-height="290"
-                      
-                        class="ml-auto"
+                       max-height="250"
+                        max-width="250" 
+                        class="mx-auto"
                         />
                           </v-col>
 
