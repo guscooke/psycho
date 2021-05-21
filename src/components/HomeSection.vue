@@ -38,10 +38,6 @@
         <v-row align="center" justify="space-around">
           <v-col cols="10" sm="8" class="text-center">
 
-
-            <!-- <v-img :src="feature.img" max-width="100px" class="d-block ml-auto mr-auto"
-                      :class="{ 'zoom-efect': hover }">
-                    </v-img> -->
             <h1 class="pa-4 font-weight display-1 mt-8 mb-6">Abordagens Terapêuticas</h1>
             <h3 class="font-weight mt-8 subtitle-0">
               A Psicoterapia não necessariamente precisa estar associada a uma doença. Ela é para todo mundo, por isso é
@@ -51,9 +47,89 @@
             <h1 class="pa-4 font-weight display-0 mt-8 mb-8">TERAPIA COGNITIVO COMPORTAMENTAL e TERAPIA PSICANALÍTICA
             </h1>
 
+            <!-- dialog -->
+            <div class="text-center">
+              <v-col>
+              <v-row justify="center">
+                <v-dialog v-model="dialog" width="600px">
+                  <template v-slot:activator="{ on, attrs }">
+                    <!-- <v-btn color="primary" dark v-bind="attrs" v-on="on">
+                    +++
+                  </v-btn>
+                </template> -->
+                  
+                      <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
+                        <v-icon dark>
+                          mdi-plus
+                        </v-icon>
+                      </v-btn>
+               
+                  </template>
+                  <v-card>
+                    <v-card-title>
+                      <span class="headline">Terapia Cognitiva Comportamental</span>
+                    </v-card-title>
+                    <v-card-text class="font-weight display-0">
+                      <p>
+                        Fundada em 1960 por Aron Beck e Terapia Cognitiva Comportamental é clara e direta. Está baseada
+                        no
+                        entendimento do paciente quanto a seus pensamentos, emoções e sentimentos sobre seu desconforto,
+                        dor, tristeza ou qualquer sensação negativa sobre si e sua vida.
+                        Através de técnicas e exercícios, tem como objetivo identificar padrões de comportamento,
+                        crenças,
+                        pensamentos e hábitos que estão relacionados a origem do problema e modificar para percepções
+                        positivas.
+                        Trabalha no auxilio de diversos transtornos e doenças mentais, bem como em diferentes questões
+                        da
+                        vida como um todo como: dificuldades de relacionamento interpessoal, separações, depressão,
+                        estresse, ansiedade, dificuldades com escolha profissional, luto, dificuldades de aprendizagem,
+                        entre outros.</p>
+                    </v-card-text>
+
+                  </v-card>
+                </v-dialog>
+           
+
+
+
+             
+                <v-dialog v-model="dialog" width="600px">
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
+                      <v-icon dark>
+                        mdi-plus
+                      </v-icon>
+                    </v-btn>
+           
+                  </template>
+                  <v-card>
+                    <v-card-title>
+                      <span class="headline">Terapia Psicanalítica</span>
+                    </v-card-title>
+                    <v-card-text class="font-weight display-0">
+                      <p>
+                        Fundada por Sigmund Freud é normalmente chamada por “análise”, constitui-se pela escuta do
+                        paciente como processo fundamental de cura. É mais profunda e tem como objetivo a transformação
+                        da
+                        personalidade do paciente como um todo. Busca inserir o paciente em seu meio e é um espaço
+                        essencial para o crescimento pessoal interno e enfrentamento do pensamento afetivo. É uma
+                        abordagem que visa um entendimento extremamente profundo de si mesmo, buscando através da
+                        escuta,
+                        as principais palavras, expressões e entendimento sobre seus conflitos.
+                        É indicada tanto para entendimento de pensamentos e incômodos, busca conhecimento interno e
+                        diversas situações específicas como depressão, ansiedade, medo, perdas e demais conflitos.</p>
+                    </v-card-text>
+
+                  </v-card>
+                </v-dialog>
+              </v-row>
+</v-col>
+
+            </div>
 
           </v-col>
         </v-row>
+
 
       </v-container>
     </div>
@@ -112,6 +188,11 @@
   .transt {
     background-color: #037682;
     color: #ffff
+  }
+
+  .v-card__text {
+    color: #037682 !important;
+    font-weight: bold;
   }
 
   section {
