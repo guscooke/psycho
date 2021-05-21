@@ -42,7 +42,7 @@
             <!-- <v-img :src="feature.img" max-width="100px" class="d-block ml-auto mr-auto"
                       :class="{ 'zoom-efect': hover }">
                     </v-img> -->
-            <h1 class="pa-4 font-weight display-1 mt-8 mb-6">Transtornos</h1>
+            <h1 class="pa-4 font-weight display-1 mt-8 mb-6">Abordagens Terapêuticas</h1>
             <h3 class="font-weight mt-8 subtitle-0">
               A Psicoterapia não necessariamente precisa estar associada a uma doença. Ela é para todo mundo, por isso é
               importante avaliar as diferentes abordagens terapêuticas existentes.
