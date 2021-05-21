@@ -48,8 +48,8 @@
             </h1>
 
             <!-- dialog -->
-            <div class="text-center">
-              <v-col>
+            <div class="text-center mt-5 mb-5">
+
               <v-row justify="center">
                 <v-dialog v-model="dialog" width="600px">
                   <template v-slot:activator="{ on, attrs }">
@@ -57,13 +57,13 @@
                     +++
                   </v-btn>
                 </template> -->
-                  
-                      <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
-                        <v-icon dark>
-                          mdi-plus
-                        </v-icon>
-                      </v-btn>
-               
+
+                    <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
+                      <v-icon dark v-bind="attrs" v-on="on">
+                        mdi-library
+                      </v-icon>
+                    </v-btn>
+
                   </template>
                   <v-card>
                     <v-card-title>
@@ -71,9 +71,11 @@
                     </v-card-title>
                     <v-card-text class="font-weight display-0">
                       <p>
-                        Fundada em 1960 por Aron Beck e Terapia Cognitiva Comportamental é clara e direta. Está baseada
+                        Fundada em 1960 por Aron Beck e Terapia Cognitiva Comportamental é clara e direta. Está
+                        baseada
                         no
-                        entendimento do paciente quanto a seus pensamentos, emoções e sentimentos sobre seu desconforto,
+                        entendimento do paciente quanto a seus pensamentos, emoções e sentimentos sobre seu
+                        desconforto,
                         dor, tristeza ou qualquer sensação negativa sobre si e sua vida.
                         Através de técnicas e exercícios, tem como objetivo identificar padrões de comportamento,
                         crenças,
@@ -82,25 +84,33 @@
                         Trabalha no auxilio de diversos transtornos e doenças mentais, bem como em diferentes questões
                         da
                         vida como um todo como: dificuldades de relacionamento interpessoal, separações, depressão,
-                        estresse, ansiedade, dificuldades com escolha profissional, luto, dificuldades de aprendizagem,
+                        estresse, ansiedade, dificuldades com escolha profissional, luto, dificuldades de
+                        aprendizagem,
                         entre outros.</p>
                     </v-card-text>
 
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn color="dark" text @click="dialog = false">
+                        Fechar
+                      </v-btn>
+                    </v-card-actions>
+
                   </v-card>
                 </v-dialog>
-           
 
 
 
-             
-                <v-dialog v-model="dialog" width="600px">
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
-                      <v-icon dark>
-                        mdi-plus
+
+
+                <v-dialog v-model="dialog1" width="600px">
+                  <template v-slot:activator="{ on, attrs1 }">
+                    <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs1" v-on="on">
+                      <v-icon dark v-bind="attrs1" v-on="on">
+                        mdi-brain
                       </v-icon>
                     </v-btn>
-           
+
                   </template>
                   <v-card>
                     <v-card-title>
@@ -109,7 +119,8 @@
                     <v-card-text class="font-weight display-0">
                       <p>
                         Fundada por Sigmund Freud é normalmente chamada por “análise”, constitui-se pela escuta do
-                        paciente como processo fundamental de cura. É mais profunda e tem como objetivo a transformação
+                        paciente como processo fundamental de cura. É mais profunda e tem como objetivo a
+                        transformação
                         da
                         personalidade do paciente como um todo. Busca inserir o paciente em seu meio e é um espaço
                         essencial para o crescimento pessoal interno e enfrentamento do pensamento afetivo. É uma
@@ -119,11 +130,17 @@
                         É indicada tanto para entendimento de pensamentos e incômodos, busca conhecimento interno e
                         diversas situações específicas como depressão, ansiedade, medo, perdas e demais conflitos.</p>
                     </v-card-text>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn color="dark" text @click="dialog1 = false">
+                        Fechar
+                      </v-btn>
+                    </v-card-actions>
 
                   </v-card>
                 </v-dialog>
               </v-row>
-</v-col>
+
 
             </div>
 
@@ -140,6 +157,9 @@
   export default {
     data() {
       return {
+        dialog: false,
+        dialog1: false
+
 
       };
     },
