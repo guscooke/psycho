@@ -47,27 +47,25 @@
             <h1 class="pa-4 font-weight display-0 mt-8 mb-8">TERAPIA COGNITIVO COMPORTAMENTAL e TERAPIA PSICANALÍTICA
             </h1>
 
+
             <!-- dialog -->
             <div class="text-center mt-5 mb-5">
 
               <v-row justify="center">
                 <v-dialog v-model="dialog" width="600px">
                   <template v-slot:activator="{ on, attrs }">
-                    <!-- <v-btn color="primary" dark v-bind="attrs" v-on="on">
-                    +++
-                  </v-btn>
-                </template> -->
+        
 
                     <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
                       <v-icon dark v-bind="attrs" v-on="on">
-                        mdi-library
+                        mdi-library 
                       </v-icon>
                     </v-btn>
 
                   </template>
                   <v-card>
                     <v-card-title>
-                      <span class="headline">Terapia Cognitiva Comportamental</span>
+                      <span class="headline justify-center">Terapia Cognitiva Comportamental</span>
                     </v-card-title>
                     <v-card-text class="font-weight display-0">
                       <p>
@@ -91,6 +89,7 @@
 
                     <v-card-actions>
                       <v-spacer></v-spacer>
+                     
                       <v-btn color="dark" text @click="dialog = false">
                         Fechar
                       </v-btn>
@@ -211,6 +210,9 @@
   .v-card__text {
     color: #037682 !important;
     font-weight: bold;
+  }
+  .headline {
+    text-align: center;
   }
 
   section {

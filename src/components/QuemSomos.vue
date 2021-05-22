@@ -45,8 +45,8 @@
   background-image: url("~@/assets/img/bgx.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  /* background-size: cover; */
+  /* background-position: center; */
   height: 20%;
 }
 
