@@ -2,8 +2,8 @@
   <section id="hero">
     <div class="bg">
       <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
-        <div class="centered-text">
-          <v-row class="d-flex pa-6" align="center" justify="center" no-gutters align-sm="center">
+        <!-- <div class="centered-text"> -->
+          <v-row class="centered-text d-flex pa-6" align="center" justify="center" no-gutters align-sm="center">
             <v-col cols="10" md="10">
               <v-row align="center" justify="center">
                 <v-col cols="10" md="5" xl="5">
@@ -21,9 +21,9 @@
                   </v-col>
                 </v-col>
 
-                <v-flex class="hidden-md-sm-and-down" sm12 md6>
+                <v-flex class="cols hidden-xs-only sm12 md6">
                   <v-col>
-                    <v-row cols="6">
+                    <v-row  >
                       <v-img src="@/assets/img/yyy.png" height="800" />
                     </v-row>
                   </v-col>
@@ -32,7 +32,7 @@
               </v-row>
             </v-col>
           </v-row>
-        </div>
+        <!-- </div> -->
       </v-parallax>
       <v-container fluid id="features" class="transt">
         <v-row align="center" justify="space-around">
@@ -172,10 +172,8 @@
 </style>
 <style lang="scss" scoped>
   .centered-text {
-    color: #037682,
-
-    ;
-    position: absolute;
+    color: #037682;
+    // position: absolute;
     text-align: center;
     top: 10%;
     width: 100%;

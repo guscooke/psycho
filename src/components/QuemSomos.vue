@@ -1,6 +1,6 @@
 <template>
   <section id="download">
-    <v-container fluid>
+    <v-container fluid >
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
@@ -10,10 +10,10 @@
              />
                
             </v-col>
-            <v-col cols="12" sm="8" class="dark--text text-center">
+            <v-col cols="12" sm="8" class="dark--text ">
               <h1 class="dark--text font-weight-bold display-2 mb-6">Sobre nós</h1>
               <v-col>
-                <h3 class="font-weight  mt-6">
+                <h3 class="font-weight mt-4">
            Somos uma clínica multidisciplinar com profissionais qualificados da área da saúde que visam o bem-estar
            emocional e físico de seus pacientes.
            Temos como premissa básica proporcionar momentos de escuta e conforto, com ética, atenção, eficiência,
@@ -47,12 +47,21 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 700px;
+  height: 20%;
 }
 
 #download .container,
 #download .row {
   height: 100%;
 }
+
+  .centered-text {
+    color: #037682;
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    width: 100%;
+  }
+
 </style>
 
