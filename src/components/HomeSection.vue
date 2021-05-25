@@ -239,7 +239,7 @@
     position: fixed;
     width: 50px;
     height: 50px;
-    bottom: 20px;
+    bottom: 30px;
     left: 60px;
     background-color: #03989E;
     border-radius: 50px;
