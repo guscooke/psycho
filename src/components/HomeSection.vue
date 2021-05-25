@@ -10,7 +10,7 @@
                 <h1 class="display-3 font-weight-bold mb-10">
                   Clínica Szeckir
                 </h1>
-                <h1 class="font-weight-dark justify-center mb-5">
+                <h1 class="font-weight-dark justify-center mt-4 mb-6">
                   Os sintomas que você vê são somente a ponta do Iceberg!
                 </h1>
                 <v-col>
@@ -25,7 +25,7 @@
               <v-flex class="cols hidden-xs-only sm12 md6">
                 <v-col>
                   <v-row class="mt-6">
-                    <v-img src="@/assets/img/yyy.png" height="800" />
+                    <v-img  src="@/assets/img/yyy.png" height="780" />
                   </v-row>
                 </v-col>
               </v-flex>
