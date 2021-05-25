@@ -71,16 +71,16 @@
                         mdi-library
                       </v-icon>
                     </v-btn>
-                      <i class="beacon" />
+                      
+                  </template><i class="beacon" />
                       <i class="before" />
 
-                  </template>
                   <v-card>
                     <v-card-title>
                       <span class="headline justify-center">Terapia Cognitiva Comportamental</span>
                     </v-card-title>
                     <v-card-text class="font-weight display-0">
-                      <p>
+                      <p >
                         Fundada em 1960 por Aron Beck e Terapia Cognitiva Comportamental é clara e direta. Está
                         baseada
                         no
@@ -102,7 +102,7 @@
                     <v-card-actions>
                       <v-spacer></v-spacer>
 
-                      <v-btn color="dark" text @click="dialog = false">
+                      <v-btn class="" color="dark" text @click="dialog = false">
                         Fechar
                       </v-btn>
                     </v-card-actions>
@@ -135,7 +135,7 @@
                     <v-card-title>
                       <span class="headline">Terapia Psicanalítica</span>
                     </v-card-title>
-                    <v-card-text class="font-weight display-0">
+                    <v-card-text class="font-weight display-0 text-justify-center">
                       <p>
                         Fundada por Sigmund Freud é normalmente chamada por “análise”, constitui-se pela escuta do
                         paciente como processo fundamental de cura. É mais profunda e tem como objetivo a
@@ -151,7 +151,7 @@
                     </v-card-text>
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn color="dark" text @click="dialog1 = false">
+                      <v-btn class=" " color="dark" text @click="dialog1 = false">
                         Fechar
                       </v-btn>
                     </v-card-actions>
@@ -226,8 +226,9 @@
   }
 
   .v-card__text {
-    color: #037682 !important;
+    color: rgba(54, 54, 54, 0.959) !important;
     font-weight: bold;
+    
   }
 
   .headline {
