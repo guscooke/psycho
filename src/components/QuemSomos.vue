@@ -13,7 +13,7 @@
             <v-col cols="12" sm="8" class="dark--text ">
               <h1 class="dark--text font-weight-bold display-2 mb-6">Sobre nós</h1>
               <v-col>
-                <h3 class="font-weight mt-4">
+                <h3 class="font-weight text-justify mt-4">
            Somos uma clínica multidisciplinar com profissionais qualificados da área da saúde que visam o bem-estar
            emocional e físico de seus pacientes.
            Temos como premissa básica proporcionar momentos de escuta e conforto, com ética, atenção, eficiência,

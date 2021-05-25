@@ -10,7 +10,7 @@
                 <h1 class="display-3 font-weight-bold mb-10">
                   Clínica Szeckir
                 </h1>
-                <h1 class="font-weight-dark justify mb-5">
+                <h1 class="font-weight-dark justify-center mb-5">
                   Os sintomas que você vê são somente a ponta do Iceberg!
                 </h1>
                 <v-col>
@@ -40,7 +40,7 @@
           <v-col cols="10" sm="8" class="text-center">
 
             <h1 class="pa-4 font-weight display-1 mt-8 mb-6">Abordagens Terapêuticas</h1>
-            <h3 class="font-weight mt-8 subtitle-0">
+            <h3 class="font-weight mt-8 subtitle-0 text">
               A Psicoterapia não necessariamente precisa estar associada a uma doença. Ela é para todo mundo, por isso é
               importante avaliar as diferentes abordagens terapêuticas existentes.
               Em nossa clínica, os profissionais atuam em duas principais abordagens
@@ -79,7 +79,7 @@
                     <v-card-title>
                       <span class="headline justify-center">Terapia Cognitiva Comportamental</span>
                     </v-card-title>
-                    <v-card-text class="font-weight display-0">
+                    <v-card-text class="font-weight display-0 text-justify">
                       <p >
                         Fundada em 1960 por Aron Beck e Terapia Cognitiva Comportamental é clara e direta. Está
                         baseada
@@ -135,7 +135,7 @@
                     <v-card-title>
                       <span class="headline">Terapia Psicanalítica</span>
                     </v-card-title>
-                    <v-card-text class="font-weight display-0 text-justify-center">
+                    <v-card-text class="font-weight display-0 text-justify">
                       <p>
                         Fundada por Sigmund Freud é normalmente chamada por “análise”, constitui-se pela escuta do
                         paciente como processo fundamental de cura. É mais profunda e tem como objetivo a
@@ -239,7 +239,7 @@
     position: fixed;
     width: 50px;
     height: 50px;
-    bottom: 80px;
+    bottom: 20px;
     left: 60px;
     background-color: #03989E;
     border-radius: 50px;
