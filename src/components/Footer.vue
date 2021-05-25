@@ -22,7 +22,7 @@
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Psycho WEB</strong>
+        {{ new Date().getFullYear() }} — <strong>Clinica Szercki</strong>
       </v-card-text>
     </v-card>
    
@@ -74,12 +74,12 @@ svg-border-waves .v-image {
 #hero {
   z-index: 0;
 }
-.svg-border-waves img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin-bottom: -2px;
-  z-index: -1;
-}
+// .svg-border-waves img {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   margin-bottom: -2px;
+//   z-index: -1;
+// }
 </style>

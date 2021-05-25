@@ -3,35 +3,36 @@
     <div class="bg">
       <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
         <!-- <div class="centered-text"> -->
-          <v-row class="centered-text d-flex pa-6" align="center" justify="center" no-gutters align-sm="center">
-            <v-col cols="10" md="10">
-              <v-row align="center" justify="center">
-                <v-col cols="10" md="5" xl="5">
-                  <h1 class="display-3 font-weight-bold mb-10">
-                    Clínica Szeckir
-                  </h1>
-                  <h1 class="font-weight-dark justify mb-5">
-                    Os sintomas que você vê são somente a ponta do Iceberg!
-                  </h1>
-                  <v-col>
-                    <v-btn mt-4 rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-4">
-                      <h4>ESPECIALIDADES</h4>
-                      <v-icon class="ml-2">mdi-arrow-down</v-icon>
-                    </v-btn>
-                  </v-col>
+        <v-row class="centered-text d-flex pa-6" align="center" justify="center" no-gutters align-sm="center">
+          <v-col cols="10" md="10">
+            <v-row align="center" justify="center">
+              <v-col cols="10" md="5" xl="5">
+                <h1 class="display-3 font-weight-bold mb-10">
+                  Clínica Szeckir
+                </h1>
+                <h1 class="font-weight-dark justify mb-5">
+                  Os sintomas que você vê são somente a ponta do Iceberg!
+                </h1>
+                <v-col>
+                  <v-btn mt-4 rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-4">
+                    <h4>ESPECIALIDADES</h4>
+                    <v-icon class="ml-2">mdi-arrow-down</v-icon>
+                  </v-btn>
                 </v-col>
+              </v-col>
 
-                <v-flex class="cols hidden-xs-only sm12 md6">
-                  <v-col>
-                    <v-row  >
-                      <v-img src="@/assets/img/yyy.png" height="800" />
-                    </v-row>
-                  </v-col>
-                </v-flex>
 
-              </v-row>
-            </v-col>
-          </v-row>
+              <v-flex class="cols hidden-xs-only sm12 md6">
+                <v-col>
+                  <v-row class="mt-6">
+                    <v-img src="@/assets/img/yyy.png" height="800" />
+                  </v-row>
+                </v-col>
+              </v-flex>
+
+            </v-row>
+          </v-col>
+        </v-row>
         <!-- </div> -->
       </v-parallax>
       <v-container fluid id="features" class="transt">
@@ -46,21 +47,32 @@
             </h3>
             <h1 class="pa-4 font-weight display-0 mt-8 mb-8">TERAPIA COGNITIVO COMPORTAMENTAL e TERAPIA PSICANALÍTICA
             </h1>
-
-
+    
+        <v-btn class="mt-6 mb-6" small rounded color="primary" dark>
+                        <h5>Psicanalítica</h5>
+                      </v-btn>
+  
+                           <v-btn class="mt-6 mb-6" small rounded color="primary" dark>
+                        <h5>Cognitiva</h5>
+                      </v-btn>
+       
+        
             <!-- dialog -->
             <div class="text-center mt-5 mb-5">
 
               <v-row justify="center">
                 <v-dialog v-model="dialog" width="600px">
                   <template v-slot:activator="{ on, attrs }">
-        
+
 
                     <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
+                    
                       <v-icon dark v-bind="attrs" v-on="on">
-                        mdi-library 
+                        mdi-library
                       </v-icon>
                     </v-btn>
+                      <i class="beacon" />
+                      <i class="before" />
 
                   </template>
                   <v-card>
@@ -89,7 +101,7 @@
 
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                     
+
                       <v-btn color="dark" text @click="dialog = false">
                         Fechar
                       </v-btn>
@@ -98,6 +110,13 @@
                   </v-card>
                 </v-dialog>
 
+                <a ref="float"
+                  href="https://api.whatsapp.com/send?phone=5511996888048&text=Olá, Seja bem vindo a Clínica Szeckir!"
+                  class="float">
+                   <v-icon large color="white">mdi-whatsapp</v-icon>
+
+
+                </a>
 
 
 
@@ -108,9 +127,10 @@
                       <v-icon dark v-bind="attrs1" v-on="on">
                         mdi-brain
                       </v-icon>
+                    
                     </v-btn>
 
-                  </template>
+                  </template>  
                   <v-card>
                     <v-card-title>
                       <span class="headline">Terapia Psicanalítica</span>
@@ -172,10 +192,8 @@
 <style lang="scss" scoped>
   .centered-text {
     color: #037682;
-    // position: absolute;
-    text-align: center;
-    top: 10%;
-    width: 100%;
+
+
   }
 
   .card {
@@ -211,8 +229,71 @@
     color: #037682 !important;
     font-weight: bold;
   }
+
   .headline {
     text-align: center;
+  }
+
+  .float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 80px;
+    left: 60px;
+    background-color: #03989E;
+    border-radius: 50px;
+
+    font-size: 30px;
+    box-shadow: 1px 2px 2px #999;
+    z-index: 100;
+  }
+
+  .my-float {
+    margin-top: 16px;
+  }
+
+  .branco {
+    color: "white"
+  }
+
+  .beacon {
+    position: absolute;
+    top: 96%;
+    left: 48%;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+  }
+
+  .beacon:before {
+    position: absolute;
+    content: "";
+    height: 3em;
+    width: 3em;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0px 1px 1px 2px #d3d8db;
+    -webkit-animation: active 1s infinite linear;
+    animation: active 2s infinite linear;
+  }
+
+  @-webkit-keyframes active {
+    0% {
+      -webkit-transform: scale(.5);
+      opacity: 1;
+    }
+
+    70% {
+      -webkit-transform: scale(5.5);
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
   }
 
   section {

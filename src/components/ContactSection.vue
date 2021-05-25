@@ -34,7 +34,7 @@
 
                 <v-textarea v-model="textArea" :rules="textAreaRules" label="Mensagem" required />
 
-                <v-btn  color="primary"  rounded block  @click="submit" large class="mt-5">
+                <v-btn  color="primary"  rounded block  @click="submit" large class="mt-2">
                  <h4> Enviar</h4>
                 </v-btn>
               </v-form> 
