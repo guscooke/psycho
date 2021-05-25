@@ -64,7 +64,8 @@
                 <v-dialog v-model="dialog" width="600px">
                   <template v-slot:activator="{ on, attrs }">
 
-
+<i class="beacon" />
+                      <i class="before" />
                     <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
                     
                       <v-icon dark v-bind="attrs" v-on="on">
@@ -72,8 +73,8 @@
                       </v-icon>
                     </v-btn>
                       
-                  </template><i class="beacon" />
-                      <i class="before" />
+                  </template>
+                  
 
                   <v-card>
                     <v-card-title>
