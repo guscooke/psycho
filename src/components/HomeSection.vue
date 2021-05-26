@@ -45,16 +45,10 @@
               importante avaliar as diferentes abordagens terapêuticas existentes.
               Em nossa clínica, os profissionais atuam em duas principais abordagens
             </h3>
-            <h1 class="pa-4 font-weight display-0 mt-8 mb-8">TERAPIA COGNITIVO COMPORTAMENTAL e TERAPIA PSICANALÍTICA
-            </h1>
+            <h3 class="pa-4 font-weight display-0 mt-8 mb-8">TERAPIA COGNITIVO COMPORTAMENTAL <br> <br> TERAPIA PSICANALÍTICA
+            </h3>
     
-        <v-btn class="mt-6 mb-6" small rounded color="primary" dark>
-                        <h5>Psicanalítica</h5>
-                      </v-btn>
-  
-                           <v-btn class="mt-6 mb-6" small rounded color="primary" dark>
-                        <h5>Cognitiva</h5>
-                      </v-btn>
+    
        
         
             <!-- dialog -->
@@ -66,12 +60,11 @@
 
 <i class="beacon" />
                       <i class="before" />
-                    <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs" v-on="on">
-                    
-                      <v-icon dark v-bind="attrs" v-on="on">
-                        mdi-library
-                      </v-icon>
-                    </v-btn>
+                   <v-btn class="mt-6 mb-6 mx-4" small rounded color="primary" dark v-bind="attrs" v-on="on">
+                        <h5>Cognitiva</h5>
+                      </v-btn>
+  
+                     
                       
                   </template>
                   
@@ -123,13 +116,10 @@
 
 
                 <v-dialog v-model="dialog1" width="600px">
-                  <template v-slot:activator="{ on, attrs1 }">
-                    <v-btn class="mx-2" fab dark small color="primary" v-bind="attrs1" v-on="on">
-                      <v-icon dark v-bind="attrs1" v-on="on">
-                        mdi-brain
-                      </v-icon>
-                    
-                    </v-btn>
+                  <template v-slot:activator="{ on, attrs }">
+                        <v-btn class="mt-6 mb-6 mx-4" small rounded color="primary" dark v-bind="attrs" v-on="on" >
+                        <h5>Psicanalítica</h5>
+                      </v-btn>
 
                   </template>  
                   <v-card>
@@ -261,7 +251,7 @@
   .beacon {
     position: absolute;
     top: 96%;
-    left: 48%;
+    left: 50%;
     height: 3em;
     width: 3em;
     border-radius: 50%;
