@@ -14,7 +14,7 @@
                   Os sintomas que você vê são somente a ponta do Iceberg!
                 </h1>
                 <v-col>
-                  <v-btn mt-4 rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-4">
+                  <v-btn mt-4 rounded outlined large color="#03989E" @click="$vuetify.goTo('#especialidades')" class="mt-4">
                     <h4>ESPECIALIDADES</h4>
                     <v-icon class="ml-2">mdi-arrow-down</v-icon>
                   </v-btn>
