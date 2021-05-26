@@ -4,7 +4,7 @@
       <v-list>
         <v-list-item>
           <v-list-item-avatar>
-            <img src="@/assets/img/LogoFinal.png" alt="Logo" max-width="250px"/>
+            <img src="@/assets/img/LogoFinal.png" alt="Logo" max-width="220px"/>
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="title">Clinica</v-list-item-title>
