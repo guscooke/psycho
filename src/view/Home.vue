@@ -7,6 +7,7 @@
       <quemsomos />
       <profi />
       <contact />
+      <foote />
     </v-main>
     <v-scale-transition>
       <v-btn fab v-show="fab" v-scroll="onScroll" dark fixed bottom right color="primary" @click="toTop">
@@ -24,6 +25,7 @@
   import profi from "../components/Profissionais";
   import contact from "../components/ContactSection";
   import navigation from "../components/Navigation";
+  import foote from "../components/Footer";
 
 
 
@@ -37,6 +39,7 @@
       quemsomos,
       profi,
       contact,
+      foote
     },
 
     data: () => ({

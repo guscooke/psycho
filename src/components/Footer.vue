@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark padless>
+  <v-footer padless >
     <v-card flat tile class="phsyco white--text text-center">
       <v-card-text>
         <v-btn
@@ -14,9 +14,10 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-        Mauris cursus commodo interdum.
+      <v-card-text class="white--text  pt-1">
+        
+<strong>Clínica Szeckir | Cnpj: 16.978.353/0001-09 | 2021 Todos os direitos reservados.</strong>
+
       </v-card-text>
 
       <v-divider></v-divider>
@@ -25,14 +26,22 @@
         {{ new Date().getFullYear() }} — <strong>Clinica Szercki</strong>
       </v-card-text>
     </v-card>
-   
-  </v-footer>   
+    
+  </v-footer>    
 </template>
 
 <style scoped>
 .v-card {
-  width: 100%;
+  width: 100%; 
 }
+.v-footer{
+
+  position: relative;
+ bottom: 0;
+ width: 100%;
+}
+
+
 </style>
 
 <script>
@@ -61,25 +70,3 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
-svg-border-waves .v-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3rem;
-  width: 100%;
-  overflow: hidden;
-}
-
-#hero {
-  z-index: 0;
-}
-// .svg-border-waves img {
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-//   margin-bottom: -2px;
-//   z-index: -1;
-// }
-</style>

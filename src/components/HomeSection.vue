@@ -14,7 +14,8 @@
                   Os sintomas que você vê são somente a ponta do Iceberg!
                 </h1>
                 <v-col>
-                  <v-btn mt-4 rounded outlined large color="#03989E" @click="$vuetify.goTo('#especialidades')" class="mt-4">
+                  <v-btn mt-4 rounded outlined large color="#03989E" @click="$vuetify.goTo('#especialidades')"
+                    class="mt-4">
                     <h4>ESPECIALIDADES</h4>
                     <v-icon class="ml-2">mdi-arrow-down</v-icon>
                   </v-btn>
@@ -23,9 +24,10 @@
 
 
               <v-flex class=" cols hidden-xs-only sm6 md6">
-                <v-col >
+                <v-col>
                   <v-row class="mt-6">
-                    <v-img  src="@/assets/img/yyy.png" height="800" />
+                    <v-img  :aspect-ratio="16/9"
+      :width="width" src="@/assets/img/yyy.png" height="800" />
                   </v-row>
                 </v-col>
               </v-flex>
@@ -45,12 +47,13 @@
               importante avaliar as diferentes abordagens terapêuticas existentes.
               Em nossa clínica, os profissionais atuam em duas principais abordagens
             </h3>
-            <h3 class="pa-4 font-weight display-0 mt-8 mb-8">TERAPIA COGNITIVO COMPORTAMENTAL <br> <br> TERAPIA PSICANALÍTICA
+            <h3 class="pa-4 font-weight display-0 mt-8 mb-8">TERAPIA COGNITIVO COMPORTAMENTAL <br> <br> TERAPIA
+              PSICANALÍTICA
             </h3>
-    
-    
-       
-        
+
+
+
+
             <!-- dialog -->
             <div class="text-center mt-5 mb-5">
 
@@ -58,23 +61,23 @@
                 <v-dialog v-model="dialog" width="600px">
                   <template v-slot:activator="{ on, attrs }">
 
-<i class="beacon" />
-                      <i class="before" />
-                   <v-btn class="mt-6 mb-6 mx-4" small rounded color="primary" dark v-bind="attrs" v-on="on">
-                        <h5>Cognitiva</h5>
-                      </v-btn>
-  
-                     
-                      
+                    <i class="beacon" />
+                    <i class="before" />
+                    <v-btn class="mt-6 mb-6 mx-4" small rounded color="primary" dark v-bind="attrs" v-on="on">
+                      <h5>Cognitiva</h5>
+                    </v-btn>
+
+
+
                   </template>
-                  
+
 
                   <v-card>
                     <v-card-title>
                       <span class="headline justify-center">Terapia Cognitiva Comportamental</span>
                     </v-card-title>
                     <v-card-text class="font-weight display-0 text-justify">
-                      <p >
+                      <p>
                         Fundada em 1960 por Aron Beck e Terapia Cognitiva Comportamental é clara e direta. Está
                         baseada
                         no
@@ -107,7 +110,7 @@
                 <a ref="float"
                   href="https://api.whatsapp.com/send?phone=5511996888048&text=Olá, Seja bem vindo a Clínica Szeckir!"
                   class="float">
-                   <v-icon large color="white">mdi-whatsapp</v-icon>
+                  <v-icon large color="white">mdi-whatsapp</v-icon>
 
 
                 </a>
@@ -117,11 +120,11 @@
 
                 <v-dialog v-model="dialog1" width="600px">
                   <template v-slot:activator="{ on, attrs }">
-                        <v-btn class="mt-6 mb-6 mx-4" small rounded color="primary" dark v-bind="attrs" v-on="on" >
-                        <h5>Psicanalítica</h5>
-                      </v-btn>
+                    <v-btn class="mt-6 mb-6 mx-4" small rounded color="primary" dark v-bind="attrs" v-on="on">
+                      <h5>Psicanalítica</h5>
+                    </v-btn>
 
-                  </template>  
+                  </template>
                   <v-card>
                     <v-card-title>
                       <span class="headline">Terapia Psicanalítica</span>
@@ -187,50 +190,20 @@
 
   }
 
-  .card {
-    min-height: 300px;
-    padding: 10px;
-    transition: 0.5s ease-out;
-  }
 
-  .card .v-image {
-    margin-bottom: 15px;
-    transition: 0.75s;
-  }
-
-  .card h1 {
-    margin-bottom: 10px;
-  }
-
-  .zoom-efect {
-    transform: scale(1.1);
-  }
-
-  .up {
-    transform: translateY(-20px);
-    transition: 0.5s ease-out;
-  }
 
   .transt {
     background-color: #037682;
     color: #ffff
   }
 
-  .v-card__text {
-    color: rgba(54, 54, 54, 0.959) !important;
-    font-weight: bold;
-    
-  }
 
-  .headline {
-    text-align: center;
-  }
 
   .float {
     position: fixed;
     width: 50px;
     height: 50px;
-    bottom: 30px;
+    bottom: 100px;
     left: 60px;
     background-color: #03989E;
     border-radius: 50px;
