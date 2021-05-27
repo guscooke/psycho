@@ -47,7 +47,7 @@
   background-repeat: no-repeat;
   /* background-size: cover; */
   /* background-position: center; */
-  height: 20%;
+  height: 17%;
 }
 
 #download .container,

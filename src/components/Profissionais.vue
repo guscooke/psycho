@@ -1,5 +1,5 @@
 <template>
-  <section id="especialidades">
+  <section fluid  fluidclass="fill-height mt-6 mb-6" id="especialidades">
     <div class="home">
       <h1 class="dark--text font-weight-bold display-1 mt-6 mb-6">
         Especialidades
@@ -67,4 +67,5 @@ export default {
   padding: 10px;
   transition: 0.5s ease-out;
 }
+
 </style>

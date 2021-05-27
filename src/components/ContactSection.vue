@@ -1,8 +1,10 @@
 <template>
-  <section class="pb-8" id="contact">
-    <v-container fluid>
-
-      <v-row align="center" justify="center">
+  <section class="color"  id="contact">
+    <v-container  fluid>
+ <h1 class="dark--text font-weight-bold display-1 mt-6 mb-6">
+        Fale com a Gente
+      </h1>
+      <v-row class="mt-6" align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" sm="5">
@@ -18,7 +20,7 @@
               <h4 class="font-weight mt-3">
                 Telefone: +xx (xx) xxxxx-xxxx
               </h4>
-              <h4 class="font-weight">
+              <h4 class="font-weight">e
                 Email: email@email.com
               </h4>
  
@@ -26,12 +28,12 @@
 
             <v-col cols="12" sm="7">
        
-                <div class="main">
+                <div class="main mb-6">
                   <div class="container1">
                     <v-form class="form">
                       <h1 class="mb-3 mt-4">Contato</h1>
                       <h4 class="mb-4 mt-4">Deixe sua Mensagem</h4>
-                      <input placeholder="Your Name" type="text" tabindex="5" class=" font-weight form__field">
+                      <input placeholder="Seu nome" type="text" tabindex="5" class=" font-weight form__field">
 
                       <input placeholder="Seu melhor Email" type="text" tabindex="5" class=" font-weight form__field">
 
@@ -49,9 +51,7 @@
         </v-col>
       </v-row>
     </v-container>
-  <!-- <div class="svg-border-waves text-white">
-      <v-img src="~@/assets/img/borderWavesBlue.svg"/>
-    </div> -->
+
  
   </section>
 
@@ -67,6 +67,14 @@
 </script>
 
 <style scoped>
+#contact {
+  background-image: url("~@/assets/img/bgx.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* background-position: center; */
+  max-height: 20%;
+}
   .main {
     max-width: 350px;
     margin: 0 auto;
@@ -81,18 +89,20 @@
   overflow: hidden;
 } */
 
-
+  .color {
+     background: #e9e8e8;
+  }
   .container1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: justify;
-    background: #f8f8f8;
+    background: #fffefe;
     border: 1px solid #EEEEEE;
     border-radius: 20px;
     padding: 0 30px 20px 30px;
     margin-top: 35px;
-    box-shadow: 10px 5px 10px #E8EAF6;
+    box-shadow: 4px 10px 20px #acaaaa;
 
   }
 
