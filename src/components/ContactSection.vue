@@ -10,13 +10,11 @@
             <v-col cols="12" sm="5">
               <h5 class="font-weight-light display-1">Clinica Szeckir</h5>
               <h4 class="font-weight mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                explicabo commodi quisquam asperiores dolore ad enim provident
-                veniam perferendis voluptate, perspiciatis.
+                Preencha o formulário que retornaremos em breve
               </h4>
-              <h4 class="font-weight mt-3">
+              <!-- <h4 class="font-weight mt-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing.
-              </h4>
+              </h4> -->
               <h4 class="font-weight mt-3">
                 Telefone: +xx (xx) xxxxx-xxxx
               </h4>
@@ -36,6 +34,8 @@
                       <input placeholder="Seu nome" type="text" tabindex="5" class=" font-weight form__field">
 
                       <input placeholder="Seu melhor Email" type="text" tabindex="5" class=" font-weight form__field">
+
+                      <input placeholder="Deixe seu Celular" type="text" tabindex="5" class=" font-weight form__field">
 
                       <textarea placeholder="Deixe a sua mensagem..."></textarea>
 

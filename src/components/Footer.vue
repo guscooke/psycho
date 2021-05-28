@@ -1,6 +1,6 @@
 <template>
   <v-footer padless >
-    <v-card flat tile class="phsyco white--text text-center">
+    <v-card flat tile class="Igor white--text text-center">
       <v-card-text>
         <v-btn
           v-for="(icon, i) in icons"
@@ -36,7 +36,7 @@
 }
 .v-footer{
 
-  position: relative;
+position: relative;
  bottom: 0;
  width: 100%;
 }
