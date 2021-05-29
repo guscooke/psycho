@@ -1,35 +1,27 @@
 <template>
-  <!-- <v-parallax src="@/assets/img/xx.png" height="1080"> -->
-
-  <v-container class="grey lighten-5">
+<div>
     <GoBack />
-    <TheNavigation />
+    <TheNavigation /> <!-- <v-parallax src="@/assets/img/xx.png" height="1080"> -->
+<v-container grid-list-md  class="grey lighten-5 my-5 mt-6">
+  <v-layout row wrap>
+ 
 
-    <v-row no gutters class="card-details">
-      <v-col xs="12" md="4" justify="center">
+<!--   
+      <v-row :align="align">
+        <v-col class="col-md-3"> -->
 
-        <div class="pa-8">
+          <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id" >
 
-          <div v-for="profissionai in profissionais.data" :key="profissionai.id" class="card mt-16 mb-12"
-            justify="space-around">
-            <h3 class="mt-4">{{ profissionai.nome }} {{ profissionai.sobrenome }}</h3>
-            <p>{{ profissionai.descricao }}</p>
-            <router-link :to="{
-                    name: 'DetalhesDetails',
-                    params: { profissionaiId: profissionai.nome },
+         <Card class="mt-6" :profile="profissionai" />
 
-                    //-- hash: '#profissional' -->
-                  }"> 
-              <img :src="require(`@/assets/img/doutora.jpg`)" />
-
-            </router-link>
-            <p>{{ profissionai.tipo }}</p>
-          </div>
-        </div>
-      </v-col>
-      <v-divider vertical></v-divider>
+       
+        </v-flex>
+        <!-- </v-col>
+        </v-row> -->
+  
+      <!-- <v-divider vertical></v-divider> -->
       <!-- </div> -->
-      <v-col xs="12" md="6">
+      <!-- <v-col xs="12" md="6">
 
         <div class="pa-2">
           <v-card class=" mt-16 mb-12">
@@ -39,10 +31,10 @@
           </v-card>
         </div>
 
-      </v-col>
-    </v-row>
+      </v-col> -->
+  </v-layout>
   </v-container>
-
+</div>
 </template>
 
 <script>
@@ -50,6 +42,7 @@
   // import store from "@/store";
   import GoBack from "@/components/GoBack";
   import axios from 'axios';
+  import Card from "@/components/Cards";
 
 
 
@@ -57,7 +50,8 @@
   export default {
     components: {
       GoBack,
-      TheNavigation
+      TheNavigation,
+      Card,
     },
     data() {
       return {
@@ -92,7 +86,7 @@
 </script>
 
 <style>
-  img {
+  /* img {
     width: 60%;
     height: 40%;
     border: 3px solid rgb(255, 255, 255);
@@ -132,5 +126,5 @@
     position: relative;
     padding: 80px 0;
 
-  }
+  } */
 </style>
