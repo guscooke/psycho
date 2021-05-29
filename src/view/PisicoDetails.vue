@@ -1,40 +1,15 @@
 <template>
-<div>
+  <div>
     <GoBack />
     <TheNavigation /> <!-- <v-parallax src="@/assets/img/xx.png" height="1080"> -->
-<v-container grid-list-md  class="grey lighten-5 my-5 mt-6">
-  <v-layout row wrap>
- 
-
-<!--   
-      <v-row :align="align">
-        <v-col class="col-md-3"> -->
-
-          <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id" >
-
-         <Card class="mt-6" :profile="profissionai" />
-
-       
+    <v-container grid-list-md class="grey lighten-5 my-5 mt-6">
+      <v-layout row wrap>
+        <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id">
+          <Card class="mt-6" :profile="profissionai" />
         </v-flex>
-        <!-- </v-col>
-        </v-row> -->
-  
-      <!-- <v-divider vertical></v-divider> -->
-      <!-- </div> -->
-      <!-- <v-col xs="12" md="6">
-
-        <div class="pa-2">
-          <v-card class=" mt-16 mb-12">
-            <router-view 
-          :key="$route.path"
-            />
-          </v-card>
-        </div>
-
-      </v-col> -->
-  </v-layout>
-  </v-container>
-</div>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -72,7 +47,7 @@
     created: function () {
       this.getProfissionais();
     },
-        computed: {
+    computed: {
 
       profissionai() {
         return this.data.profissionais.find(
@@ -81,7 +56,7 @@
       }
 
     },
-   
+
   };
 </script>
 
