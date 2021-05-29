@@ -13,7 +13,7 @@ export default new Vuetify({
                 secondary: "#171b34",
                 accent: "3D87E4",
                 phsyco: "#03989E",
-                Igor: "#037682"
+                Igor: "#037682",
             }
         }
     }

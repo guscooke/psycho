@@ -51,7 +51,12 @@
               PSICANALÍTICA
             </h3>
 
-
+          <!-- WHATSAPP -->
+              <a ref="float"
+                href="https://api.whatsapp.com/send?phone=5511996888048&text=Olá, Seja bem vindo a Clínica Szeckir!"
+                class="float">
+                <v-icon large color="white">mdi-whatsapp</v-icon>
+              </a>
 
 
             <!-- dialog -->
@@ -70,8 +75,6 @@
 
 
                   </template>
-
-
                   <v-card>
                     <v-card-title>
                       <span class="headline justify-center">Terapia Cognitiva Comportamental</span>
@@ -95,35 +98,21 @@
                         aprendizagem,
                         entre outros.</p>
                     </v-card-text>
-
                     <v-card-actions>
                       <v-spacer></v-spacer>
-
                       <v-btn class="" color="dark" text @click="dialog = false">
                         Fechar
                       </v-btn>
                     </v-card-actions>
-
                   </v-card>
                 </v-dialog>
 
-                <a ref="float"
-                  href="https://api.whatsapp.com/send?phone=5511996888048&text=Olá, Seja bem vindo a Clínica Szeckir!"
-                  class="float">
-                  <v-icon large color="white">mdi-whatsapp</v-icon>
-
-
-                </a>
-
-
-
-
+                <!-- SECOND DIALOG -->
                 <v-dialog v-model="dialog1" width="600px">
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn class="mt-6 mb-6 mx-4" small rounded color="primary" dark v-bind="attrs" v-on="on">
                       <h5>Psicanalítica</h5>
                     </v-btn>
-
                   </template>
                   <v-card>
                     <v-card-title>
@@ -149,18 +138,12 @@
                         Fechar
                       </v-btn>
                     </v-card-actions>
-
                   </v-card>
                 </v-dialog>
               </v-row>
-
-
             </div>
-
           </v-col>
         </v-row>
-
-
       </v-container>
     </div>
   </section>
