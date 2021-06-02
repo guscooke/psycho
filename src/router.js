@@ -41,19 +41,19 @@ const router = new Router({
       props: true,
 
     },
-    {
-      path: "/booking",
-      name: "booking",
-      component: booking,
-      props: true,
+    // {
+    //   path: "/booking",
+    //   name: "booking",
+    //   component: booking,
+    //   props: true,
 
-    },
+    // },
     {
-      path: "/admin",
-      name: "admin",
+      path: "/:profissionaiId",
+      name: "DetalhesDetails",
       props: true,
       component: () =>
-      import( /* webpackChunkName: "DestinationDetails"*/ "./view/Admin"),
+      import( /* webpackChunkName: "DestinationDetails"*/ "./view/DetalhesDetails"),
 
     },
 
@@ -63,13 +63,13 @@ const router = new Router({
       name: "pisicoDetails",
       props: true,
       component: () =>
-        import( /* webpackChunkName: "DestinationDetails"*/ "./view/PisicoDetails"),
+        import( /* webpackChunkName: "PsicoDetails"*/ "./view/PisicoDetails"),
       children: [{
         path: ":profissionaiId",
         name: "DetalhesDetails",
         props: true,
         component: () =>
-          import( /*webpackChunkName: "ExperienceDetails"*/ "./view/DetalhesDetails")
+          import( /*webpackChunkName: "DetalhesDetails"*/ "./view/DetalhesDetails")
       }],
       beforeEnter: (to, from, next) => {
         const exists = store.especialidades.find(

@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <v-app-bar app color='#03989E' class="px-15">
+    <v-app-bar app color='#ffff' class="px-15">
       <router-link to="/">
         <v-img src="@/assets/img/LogoFinal.png" max-width="200px" />
 
@@ -9,7 +9,15 @@
       <v-spacer />
 
       <router-link class="links" to="/">
-        Home
+        <v-btn
+              color="Igor"
+              fab
+              x-small
+              dark
+            >
+              <v-icon>mdi-home</v-icon>
+            </v-btn>
+
       </router-link>
 
       <div v-for="especialidade in especialidades" :key="especialidade.name">
@@ -18,7 +26,10 @@
             name: 'pisicoDetails',
             params: { slug: especialidade.slug }
           }">
-          <h4 class="links">{{ especialidade.name }}</h4>
+          <v-btn class="mx-2" rounded
+      color="primary"
+      dark>
+          <h4>{{ especialidade.name }}</h4></v-btn>
         </router-link>
       </div>
       <!-- <li class="links">

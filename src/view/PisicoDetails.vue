@@ -1,25 +1,33 @@
 <template>
   <div>
     <GoBack />
-    <TheNavigation /> <!-- <v-parallax src="@/assets/img/xx.png" height="1080"> -->
+    <TheNavigation />
     <v-container grid-list-md class="grey lighten-5 my-5 mt-6">
       <v-layout row wrap>
         <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id">
-          <Card class="mt-6" :profile="profissionai" />
+          <router-link :to="{
+                    name: 'DetalhesDetails',
+                    params: { profissionaiId: profissionai.nome },
+                    //-- hash: '#profissional' -->
+                  }">
+            <Card class="mt-6" :profile="profissionai" />
+          </router-link>
         </v-flex>
+        <!-- <router-view :key="$route.path" /> -->
       </v-layout>
     </v-container>
+    <Foote />
   </div>
 </template>
 
 <script>
   import TheNavigation from "@/components/TheNavigation";
+  import Foote from "@/components/Footer";
+
   // import store from "@/store";
   import GoBack from "@/components/GoBack";
   import axios from 'axios';
   import Card from "@/components/Cards";
-
-
 
 
   export default {
@@ -27,13 +35,13 @@
       GoBack,
       TheNavigation,
       Card,
+      Foote
     },
     data() {
       return {
         profissionais: {},
       }
     },
-
 
     methods: {
       async getProfissionais() {

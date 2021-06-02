@@ -1,50 +1,51 @@
 <template>
   <section>
-    <div class="profissionai-details" >
-        <h2>Profissional: {{ profissionaiId }}</h2>
-    </div>
-    <span></span>
-    <v-date-picker :date="picker"
-     year-icon="mdi-calendar-blank" 
-     prev-icon="mdi-skip-previous"
-      next-icon="mdi-skip-next"
-      elevation="15">
-    </v-date-picker>
-    <template>
-  <div class="text-center">
-    <v-btn
-    class="mt-8"
-      rounded
-      color="primary"
-      dark
-    >
-      Agendar
-    </v-btn>
-  </div>
-</template>
+    <GoBack />
+    <TheNavigation />
+    <v-container grid-list-md class="grey lighten-5 my-5 mt-6">
+      <v-layout row wrap>
+        <div class="profissionai-details">
+          <h2>Especialista: {{ profissionaiId }}</h2>
+        </div>
+        <v-flex>
+          <!-- <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id"> -->
 
+          <span></span>
 
+          <div class="text-center">
+            <v-btn class="mt-8" rounded color="primary" dark>
+              Agendar
+            </v-btn>
+          </div>
+        </v-flex>
+
+      </v-layout>
+    </v-container>
   </section>
+
 </template>
 <script>
- 
+  import TheNavigation from "@/components/TheNavigation";
+  // import store from "@/store";
+  import GoBack from "@/components/GoBack";
+  import Foote from "@/components/Footer";
 
   export default {
-    components: {},
-      props: ['profissionaiId'],
+    components: {
+      TheNavigation,
+      GoBack,
+      Foote
 
-      data() {
+    },
+    props: ['profissionaiId'],
+
+    data() {
       return {
-        picker:new Date().toISOString().substr(0, 10), 
+        
       }
     },
-    method:{
-
-      
-    }
 
 
-    
   };
 </script>
 

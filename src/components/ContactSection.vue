@@ -80,15 +80,6 @@
     margin: 0 auto;
   }
 
-  /* .svg-border-waves .v-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3rem;
-  width: 100%;
-  overflow: hidden;
-} */
-
   .color {
      background: #e9e8e8;
   }
