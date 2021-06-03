@@ -1,155 +1,118 @@
 <template>
-  <validation-observer
-    ref="observer"
-    v-slot="{ invalid }"
-  >
-    <form @submit.prevent="submit">
-      <validation-provider
-        v-slot="{ errors }"
-        name="Name"
-        rules="required|max:10"
-      >
+  <form>
+    <v-text-field
+      v-model="nome"
+      :error-messages="nomeErrors"
+      :counter="10"
+      label="nome"
+      required
+      @input="$v.nome.$touch()"
+      @blur="$v.nome.$touch()"
+    ></v-text-field>
         <v-text-field
-          v-model="name"
-          :counter="10"
-          :error-messages="errors"
-          label="Name"
-          required
-        ></v-text-field>
-      </validation-provider>
-      <validation-provider
-        v-slot="{ errors }"
-        name="phoneNumber"
-        :rules="{
-          required: true,
-          digits: 7,
-          regex: '^(71|72|74|76|81|82|84|85|86|87|88|89)\\d{5}$'
-        }"
-      >
-        <v-text-field
-          v-model="phoneNumber"
-          :counter="7"
-          :error-messages="errors"
-          label="Phone Number"
-          required
-        ></v-text-field>
-      </validation-provider>
-      <validation-provider
-        v-slot="{ errors }"
-        name="email"
-        rules="required|email"
-      >
-        <v-text-field
-          v-model="email"
-          :error-messages="errors"
-          label="E-mail"
-          required
-        ></v-text-field>
-      </validation-provider>
-      <validation-provider
-        v-slot="{ errors }"
-        name="select"
-        rules="required"
-      >
-        <v-select
-          v-model="select"
-          :items="items"
-          :error-messages="errors"
-          label="Select"
-          data-vv-name="select"
-          required
-        ></v-select>
-      </validation-provider>
-      <validation-provider
-        v-slot="{ errors }"
-        rules="required"
-        name="checkbox"
-      >
-        <v-checkbox
-          v-model="checkbox"
-          :error-messages="errors"
-          value="1"
-          label="Option"
-          type="checkbox"
-          required
-        ></v-checkbox>
-      </validation-provider>
+      v-model="sobrenome"
+      :error-messages="sobrenomeErrors"
+      :counter="10"
+      label="sobrenome"
+      required
+      @input="$v.sobrenome.$touch()"
+      @blur="$v.sobrenome.$touch()"
+    ></v-text-field>
+    <v-text-field
+      v-model="email"
+      :error-messages="emailErrors"
+      label="E-mail"
+      required
+      @input="$v.email.$touch()"
+      @blur="$v.email.$touch()"
+    ></v-text-field>
+    <!-- <v-select
+      v-model="select"
+      :items="items"
+      :error-messages="selectErrors"
+      label="Item"
+      required
+      @change="$v.select.$touch()"
+      @blur="$v.select.$touch()"
+    ></v-select> -->
+    <!-- <v-checkbox
+      v-model="checkbox"
+      :error-messages="checkboxErrors"
+      label="Do you agree?"
+      required
+      @change="$v.checkbox.$touch()"
+      @blur="$v.checkbox.$touch()"
+    ></v-checkbox> -->
 
-      <v-btn
-        class="mr-4"
-        type="submit"
-        :disabled="invalid"
-      >
-        submit
-      </v-btn>
-      <v-btn @click="clear">
-        clear
-      </v-btn>
-    </form>
-  </validation-observer>
+    <v-btn
+      class="mr-4"
+      @click="submit"
+    >
+      submit
+    </v-btn>
+    <v-btn @click="clear">
+      clear
+    </v-btn>
+  </form>
 </template>
-
 <script>
-//   import { required, digits, email, max, regex } from 'vee-validate/dist/rules'
-//   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
-
-  setInteractionMode('eager')
-
-  extend('digits', {
-    ...digits,
-    message: '{_field_} needs to be {length} digits. ({_value_})',
-  })
-
-  extend('required', {
-    ...required,
-    message: '{_field_} can not be empty',
-  })
-
-  extend('max', {
-    ...max,
-    message: '{_field_} may not be greater than {length} characters',
-  })
-
-  extend('regex', {
-    ...regex,
-    message: '{_field_} {_value_} does not match {regex}',
-  })
-
-  extend('email', {
-    ...email,
-    message: 'Email must be valid',
-  })
+  import { validationMixin } from 'vuelidate'
+  import { required, maxLength, email } from 'vuelidate/lib/validators'
 
   export default {
-    components: {
-      ValidationProvider,
-      ValidationObserver,
+    mixins: [validationMixin],
+
+    validations: {
+      nome: { required, maxLength: maxLength(10) },
+      sobrenome: { required, maxLength: maxLength(10) },
+      email: { required, email },
+    
+    
     },
+
     data: () => ({
-      name: '',
-      phoneNumber: '',
+      nome: '',
+      sobrenome: '',
       email: '',
-      select: null,
-      items: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
-      ],
-      checkbox: null,
+      
     }),
+
+    computed: {
+   
+ 
+      nomeErrors () {
+        const errors = []
+        if (!this.$v.nome.$dirty) return errors
+        !this.$v.nome.maxLength && errors.push('Nome pode ter no máximo 10 caracteres')
+        !this.$v.nome.required && errors.push('Precisamos do seu nome.')
+        return errors
+      },
+         sobrenomeErrors () {
+        const errors = []
+        if (!this.$v.nome.$dirty) return errors
+        !this.$v.nome.maxLength && errors.push('Nome pode ter no máximo 10 caracteres')
+        !this.$v.nome.required && errors.push('Precisamos do seu nome.')
+        return errors
+      },
+      emailErrors () {
+        const errors = []
+        if (!this.$v.email.$dirty) return errors
+        !this.$v.email.email && errors.push('precisa ser um email válido')
+        !this.$v.email.required && errors.push('E-mail é necessáro')
+        return errors
+      },
+    },
 
     methods: {
       submit () {
-        this.$refs.observer.validate()
+        this.$v.$touch()
       },
       clear () {
-        this.name = ''
-        this.phoneNumber = ''
+        this.$v.$reset()
+        this.nome = ''
+        this.sobrenome = ''
         this.email = ''
-        this.select = null
-        this.checkbox = null
-        this.$refs.observer.reset()
+       
       },
     },
   }

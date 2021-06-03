@@ -45,7 +45,8 @@
           <v-stepper-step :complete="fw > 3" step="3">
             <strong>Seus dados</strong></v-stepper-step>
           <v-stepper-content step="3">
-            <v-card color="grey lighten-1" class="mb-5" height="200px">
+            <v-card  class="mb-5" height="500px">
+
               <!-- <Form /> -->
 
 

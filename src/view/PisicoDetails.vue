@@ -69,45 +69,5 @@
 </script>
 
 <style>
-  /* img {
-    width: 60%;
-    height: 40%;
-    border: 3px solid rgb(255, 255, 255);
 
-    position: absolute;
-    top: -30px;
-    right: 60px;
-    border-radius: 10%;
-    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
-
-
-
-  }
-
-
-  p {
-    margin: 0 100px;
-    font-size: 20px;
-    text-align: center;
-    display: flex;
-
-  }
-
-  .card-details {
-    display: flex;
-    justify-content: center;
-    padding: 40px 0;
-  }
-
-  .card {
-
-
-    background: #fff;
-    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
-    max-width: 300px;
-
-    position: relative;
-    padding: 80px 0;
-
-  } */
 </style>
