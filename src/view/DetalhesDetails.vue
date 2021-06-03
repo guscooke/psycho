@@ -11,12 +11,70 @@
           <!-- <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id"> -->
 
           <span></span>
+          <v-stepper v-model="fw" vertical>
+          <v-stepper-step :complete="fw > 1" step="1">
+            <strong>Data</strong>
+            <small>Selecione o dia que deseja atendimento.</small>
+          </v-stepper-step>
+          <v-stepper-content bold step="1">
+              <v-date-picker
+                v-model="selected_date"
+                full-width
+                landscape
+                class="mt-3"
+                style="margin: 30px 0;"
+              ></v-date-picker>
+            <v-btn color="primary" @click.native="fw = 2"><strong>Continuar</strong></v-btn>
+            <v-btn flat>Cancelar</v-btn>
+          </v-stepper-content>
+          <v-stepper-step :complete="fw > 2" step="2">
+           <strong> Horário</strong>
+            <small>Selecione o Horário Desejado</small>
+          </v-stepper-step>
+          <v-stepper-content step="2">
+            <v-card color="grey lighten-1" class="mb-5" height="200px">
+            aqui vão os Horarios
 
-          <div class="text-center">
+
+
+            </v-card>
+            <v-btn color="primary" @click.native="fw = 3"><strong>Continuar</strong></v-btn>
+            <v-btn flat>Cancelar</v-btn>
+          </v-stepper-content>
+
+          <v-stepper-step :complete="fw > 3" step="3">
+            <strong>Seus dados</strong></v-stepper-step>
+          <v-stepper-content step="3">
+            <v-card color="grey lighten-1" class="mb-5" height="200px">
+              <!-- <Form /> -->
+
+
+
+            </v-card>
+            <v-btn color="primary" @click.native="fw = 4"><strong>Continuar</strong></v-btn>
+            <v-btn flat>Cancelar</v-btn>
+          </v-stepper-content>
+          <v-stepper-step step="4">
+            <strong>Confirmação do seu Agendamento</strong>
+
+            </v-stepper-step>
+          <v-stepper-content step="4">
+            <v-card color="grey lighten-1" class="mb-5" height="200px">
+              
+            confirmação
+
+
+            </v-card>
+            <v-btn color="primary" @click.native="fw = 1"><strong>Continuar</strong></v-btn>
+            <v-btn flat>Cancelar</v-btn>
+          </v-stepper-content>
+        </v-stepper>
+
+          <!-- <div class="text-center">
             <v-btn class="mt-8" rounded color="primary" dark>
               Agendar
             </v-btn>
-          </div>
+          </div> -->
         </v-flex>
 
       </v-layout>
@@ -29,18 +87,23 @@
   // import store from "@/store";
   import GoBack from "@/components/GoBack";
   import Foote from "@/components/Footer";
-
+  // import Form from "@/components/Form";
   export default {
     components: {
       TheNavigation,
       GoBack,
-      Foote
+      Foote,
+      // Form
 
     },
     props: ['profissionaiId'],
 
     data() {
       return {
+        fw: 1,
+        
+
+      selected_date: ''
         
       }
     },
