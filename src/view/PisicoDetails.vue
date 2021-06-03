@@ -10,11 +10,11 @@
                     params: { profissionaiId: profissionai.nome },
                     //-- hash: '#profissional' -->
                   }">
-            <Card class="mt-6" :profile="profissionai" />
+            <Card class="mt-6" :profile="profissionai" />            
           </router-link>
         </v-flex>
         <!-- <router-view :key="$route.path" /> -->
-      </v-layout>
+      </v-layout>      
     </v-container>
     <Foote />
   </div>
@@ -45,8 +45,8 @@
 
     methods: {
       async getProfissionais() {
-        console.log('hello')
-        const response = await axios.get('http://localhost:5000/profissionais');
+        console.log(this.$route.params.slug);
+        const response = await axios.get('http://localhost:5000/profissionais/especialidade/' + this.$route.params.slug);
         this.profissionais = response.data;
         console.log(this.profissionais);
 
