@@ -3,7 +3,7 @@ import Vue from "vue";
 
 import store from "@/store";
 import home from "./view/Home.vue";
-import booking from "./view/Booking.vue";
+
 
 
 Vue.use(Router);

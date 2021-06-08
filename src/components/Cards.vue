@@ -20,7 +20,7 @@
 
             </v-card-text>
             <div class="text-center">
-              <v-btn class="mt-6" rounded color="primary" dark v-bind="attrs" v-on="on">
+              <v-btn class="mt-6" rounded color="primary" dark>
                 <strong>
                   Ver Agenda</strong>
               </v-btn>
