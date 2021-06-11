@@ -5,7 +5,7 @@
     <v-container grid-list-md class="grey lighten-5 my-5 mt-6">
       <v-layout row wrap>
         <div class="profissionai-details">
-          <h2>Especialista: {{ profissionaiId }}</h2>
+          <h2>Especialista: {{ profissionalNome }}</h2>
           <v-avatar>
           <img src="@/assets/img/doutora.jpg" size="128">
           </v-avatar>
@@ -27,38 +27,32 @@
                 v-model="selected_date"
                 full-width
                 landscape
+                header-color="primary"
                 locale="pt-br"
                 class="mt-3"
                 style="margin: 30px 0;"
-              >
-                <v-btn
-                  text
-                  color="primary"
-                  @click="$refs.menu.save(date)"
-                >
-                Buscar
-                </v-btn>
-              </v-date-picker>
-           
+                @click:date="selectDate"
+              />
              
-            <v-btn color="primary" @click.native="fw = 2"><strong>Continuar</strong></v-btn>
+            <v-btn color="primary" @click.native="getHours(selected_date)"><strong>Continuar</strong></v-btn>
             <v-btn text>Cancelar</v-btn>
 
 
           </v-stepper-content>
+          
           <v-stepper-step :complete="fw > 2" step="2">
            <strong> Horário</strong>
             <small>Selecione o Horário Desejado</small>
           </v-stepper-step>
+
           <v-stepper-content step="2">
             <v-card color="grey lighten-1" class="mb-5" height="200px">
-            aqui vão os Horarios
-
-
-
+              <v-flex xs12 sm6 md4 v-for="horario in horarios.data" :key="horario.id">
+                <v-btn color="primary" @click.native="selectHorario(horario.id)">{{horario.horario}}</v-btn>
+              </v-flex>
             </v-card>
-            <v-btn color="primary" @click.native="fw = 3"><strong>Continuar</strong></v-btn>
-            <v-btn text>Cancelar</v-btn>
+            <!--v-btn color="primary" @click.native="fw = 3"><strong>Continuar</strong></v-btn-->
+            <v-btn text @click.native="fw=1">Cancelar</v-btn>
           </v-stepper-content>
 
           <v-stepper-step :complete="fw > 3" step="3">
@@ -66,26 +60,47 @@
           <v-stepper-content step="3">
             <v-card  class="mb-5" height="350px">
 
-              <Form />
+              <form>
+                <v-row>
+                  <v-col cols="12" sm="6" md="6">
+                    <v-text-field v-model.trim="nome" :error-messages="nomeErrors" :counter="10" label="nome" ref="nome" required
+                      @input="$v.nome.$touch()" @blur="$v.nome.$touch()"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="6">
+                    <v-text-field v-model.trim="sobrenome" :error-messages="sobrenomeErrors" :counter="10" label="sobrenome" required
+                      @input="$v.sobrenome.$touch()" @blur="$v.sobrenome.$touch()"></v-text-field>
+                  </v-col>
+
+                  <v-col cols="12" sm="6" md="6">
+                    <v-text-field v-model.trim="email" :error-messages="emailErrors" label="E-mail" required @input="$v.email.$touch()"
+                      @blur="$v.email.$touch()"></v-text-field>
+                  </v-col>
+
+                  <v-col cols="12" sm="6" md="6">
+                    <v-text-field v-model.trim="mobile" :error-messages="mobileErrors" :counter="11" label="Telefone" 
+                    required 
+                    @input="$v.mobile.$touch()"
+                    @blur="$v.mobile.$touch()"></v-text-field>
+                  </v-col>
+                </v-row>
+                <v-btn color="primary" @click.prevent="formValues()"><strong>Continuar</strong></v-btn>
+                <v-btn text @click.native="fw=2">Cancelar</v-btn>
+              </form>
 
             </v-card>
-            <v-btn color="primary" @click.native="fw = 4"><strong>Continuar</strong></v-btn>
-            <v-btn text>Cancelar</v-btn>
+            
           </v-stepper-content>
           <v-stepper-step step="4">
             <strong>Confirmação do seu Agendamento</strong>
 
             </v-stepper-step>
           <v-stepper-content step="4">
-            <v-card color="grey lighten-1" class="mb-5" height="200px">
-              
-            confirmação
-
-
+            <v-card color="grey lighten-1" class="mb-5" height="200px">              
+              Ao clicar no botão <strong>Confirmar</strong> abaixo, você estará finalizando o agendamento.
             </v-card>
 
-            <v-btn color="primary" @click.native="fw = 1"><strong>Continuar</strong></v-btn>
-            <v-btn text>Cancelar</v-btn>
+            <v-btn color="primary" @click.native="confirmarAgendamento()"><strong>Confirmar</strong></v-btn>
+            <v-btn text @click.native="fw=3">Cancelar</v-btn>
           </v-stepper-content>
         </v-stepper>
 
@@ -103,19 +118,26 @@
 </template>
 <script>
   import TheNavigation from "@/components/TheNavigation";
+  import axios from 'axios';
   // import store from "@/store";
   import GoBack from "@/components/GoBack";
   import Foote from "@/components/Footer";
-  import Form from "@/components/Form";
+  import { validationMixin } from 'vuelidate'
+  import { required, maxLength, email } from 'vuelidate/lib/validators'
   export default {
+    mixins: [validationMixin],
+    validations: {
+      nome: { required, maxLength: maxLength(10) },
+      sobrenome: { required, maxLength: maxLength(10) },
+      email: { required, email },
+      mobile: { required, maxLength: maxLength(11)},
+    },
     components: {
       TheNavigation,
       GoBack,
-      Foote,
-      Form
-
+      Foote
     },
-    props: ['profissionaiId'],
+    props: ['profissionalId', 'profissionalNome'],
     agendamento: [],
     
 
@@ -123,24 +145,103 @@
       return {
         fw: 1,
         rw: 1,
-        
-      selected_date: '',
-       
+        horarios: [],
+        selected_date: '',
+        selected_hour: '',
+        nome: '',
+        sobrenome: '',
+        email: '',
+        mobile: '',
       }
+    },
+    computed: {
+   
+      nomeErrors () {
+        const errors = []
+        if (!this.$v.nome.$dirty) return errors
+        !this.$v.nome.maxLength && errors.push('Nome pode ter no máximo 10 caracteres')
+        !this.$v.nome.required && errors.push('Precisamos do seu nome.')
+        return errors
+      },
+        sobrenomeErrors () {
+        const errors = []
+        if (!this.$v.sobrenome.$dirty) return errors
+        !this.$v.sobrenome.maxLength && errors.push('Nome pode ter no máximo 10 caracteres')
+        !this.$v.sobrenome.required && errors.push('Precisamos do seu nome.')
+        return errors
+      },
+      emailErrors () {
+        const errors = []
+        if (!this.$v.email.$dirty) return errors
+        !this.$v.email.email && errors.push('precisa ser um email válido')
+        !this.$v.email.required && errors.push('E-mail é necessáro')
+        return errors
+      },
+        mobileErrors () {
+        const errors = []
+        if (!this.$v.mobile.$dirty) return errors
+        !this.$v.mobile.maxLength && errors.push('precisa ser um telefone válido')
+        !this.$v.mobile.required && errors.push('Telefone é necessáro')
+        return errors
+      },
     },
     methods:{
       loadAgendamento() { 
-      this.agendamento = [];
-      axios.get('http://localhost:5000/agenda')
-      .then((response) => {
+        this.agendamento = [];
+        axios.get('http://localhost:5000/agenda')
+          .then((response) => {
             this.agendamento = response.data.data;
                 console.log(this.agendamento);
-         
-
-        }).catch((error) => {
+          }).catch((error) => {
             console.log(error)
+          })
+      },
+      selectDate(date) {         
+        this.selected_date = date;        
+      },
+      selectHorario(horario) {         
+        this.selected_hour = horario;        
+        this.fw = 3;
+      },
+      formValues(horario) {         
+        this.$v.$touch();
+        if (this.$v.$invalid) {
+          alert('Por favor, corrija as informações')
+        } else {
+          console.log("form validated");
+          console.log(this.nome, this.sobrenome, this.email, this.mobile);
+          this.fw= 4;
+        }
+      },
+      getHours(date) {         
+        
+        axios.get('http://localhost:5000/agenda/horarios/'+ this.profissionalId + '/' + date)
+          .then((response) => {            
+              this.horarios = response.data;
+              this.fw = 2;
+
+          }).catch((error) => {
+            console.log(error)
+          })
+      },
+      confirmarAgendamento() {
+        
+        axios.post('http://localhost:5000/agenda/confirmar/', {
+          nome: this.nome,
+          sobrenome: this.sobrenome,
+          email: this.email,
+          mobile: this.mobile,
+          horario: this.selected_hour,
+          profissional: this.profissionalId
         })
-    },
+          .then((response) => {            
+              this.horarios = response.data;
+              this.fw = 1;
+
+          }).catch((error) => {
+            console.log(error)
+          })
+      },
     }
   };
 </script>

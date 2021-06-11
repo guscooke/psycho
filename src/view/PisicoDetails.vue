@@ -7,7 +7,7 @@
         <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id">
           <router-link :to="{
                     name: 'DetalhesDetails',
-                    params: { profissionaiId: profissionai.nome },
+                    params: { profissionalNome: profissionai.nome, profissionalId: profissionai.id },
                     //-- hash: '#profissional' -->
                   }">
             <Card class="mt-6" :profile="profissionai" />            
