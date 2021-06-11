@@ -14,12 +14,15 @@
           <!-- <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id"> -->
 
           <span></span>
+
           <v-stepper v-model="fw" vertical>
           <v-stepper-step :complete="fw > 1" step="1">
             <strong>Data</strong>
             <small>Selecione o dia do seu atendimento.</small>
           </v-stepper-step>
           <v-stepper-content bold step="1">
+
+            <!-- ESCOLHER A DATA -->
               <v-date-picker
                 v-model="selected_date"
                 full-width
@@ -27,9 +30,21 @@
                 locale="pt-br"
                 class="mt-3"
                 style="margin: 30px 0;"
-              ></v-date-picker>
+              >
+                <v-btn
+                  text
+                  color="primary"
+                  @click="$refs.menu.save(date)"
+                >
+                Buscar
+                </v-btn>
+              </v-date-picker>
+           
+             
             <v-btn color="primary" @click.native="fw = 2"><strong>Continuar</strong></v-btn>
             <v-btn text>Cancelar</v-btn>
+
+
           </v-stepper-content>
           <v-stepper-step :complete="fw > 2" step="2">
            <strong> Horário</strong>
@@ -101,6 +116,8 @@
 
     },
     props: ['profissionaiId'],
+    agendamento: [],
+    
 
     data() {
       return {
@@ -111,6 +128,20 @@
        
       }
     },
+    methods:{
+      loadAgendamento() { 
+      this.agendamento = [];
+      axios.get('http://localhost:5000/agenda')
+      .then((response) => {
+            this.agendamento = response.data.data;
+                console.log(this.agendamento);
+         
+
+        }).catch((error) => {
+            console.log(error)
+        })
+    },
+    }
   };
 </script>
 
