@@ -27,7 +27,7 @@
                 <v-col>
                   <v-row class="mt-6">
                     <v-img  :aspect-ratio="16/9"
-      :width="width" src="@/assets/img/yyy.png" height="800" />
+                    :width="width" src="@/assets/img/yyy.png" height="800" />
                   </v-row>
                 </v-col>
               </v-flex>
@@ -35,8 +35,8 @@
             </v-row>
           </v-col>
         </v-row>
-        <!-- </div> -->
       </v-parallax>
+
       <v-container fluid id="features" class="transt">
         <v-row align="center" justify="space-around">
           <v-col cols="10" sm="8" class="text-center">
@@ -54,7 +54,8 @@
           <!-- WHATSAPP -->
               <a ref="float"
                 href="https://api.whatsapp.com/send?phone=5511996888048&text=Olá, Seja bem vindo a Clínica Szeckir!"
-                class="float">
+                class="float"
+                target="_blank">
                 <v-icon large color="white">mdi-whatsapp</v-icon>
               </a>
 
@@ -63,7 +64,7 @@
             <div class="text-center mt-5 mb-5">
 
               <v-row justify="center">
-                <v-dialog v-model="dialog" width="600px">
+                <v-dialog transition="fab-transition" v-model="dialog" width="600px">
                   <template v-slot:activator="{ on, attrs }">
 
                     <i class="beacon" />
@@ -73,7 +74,7 @@
                     </v-btn>
 
 
-
+                  <!-- FIRST DIALOG -->
                   </template>
                   <v-card>
                     <v-card-title>
@@ -108,7 +109,7 @@
                 </v-dialog>
 
                 <!-- SECOND DIALOG -->
-                <v-dialog v-model="dialog1" width="600px">
+                <v-dialog transition="fab-transition" v-model="dialog1" width="600px">
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn class="mt-6 mb-6 mx-4" small rounded color="primary" dark v-bind="attrs" v-on="on">
                       <h5>Psicanalítica</h5>

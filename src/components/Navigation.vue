@@ -58,7 +58,9 @@
         <!-- <v-btn rounded outlined text @click="$vuetify.goTo('')">
           <h5 center class="mr-2">Entre</h5>
         </v-btn> -->
-        <router-link class="links" to="/login">
+
+        <!-- MANDAR PARA ADMIN -->
+        <router-link class="links" to="/">
           <v-btn class="mx-2" fab dark small color="primary">
             <v-icon dark>
               mdi-account-circle
