@@ -5,6 +5,11 @@
     <v-container grid-list-md class="grey lighten-5 my-5 mt-6">
       <v-layout row wrap>
         <div class="profissionai-details">
+           <!-- <router-link class="links" to="/">
+        <v-btn color="Igor" fab x-small dark>
+          <v-icon>mdi-home</v-icon>
+        </v-btn>
+      </router-link> -->
           <h2>Especialista: {{ profissionalNome }}</h2>
           <v-avatar>
           <img src="@/assets/img/doutora.jpg" size="128">
@@ -14,7 +19,7 @@
           <v-dialog :value="visible">
                 <v-alert  dense                    
                     prominent
-                    type="success" >Agendamento realizado com sucesso</v-alert>
+                    type="success"><strong>Agendamento realizado com sucesso</strong></v-alert>
           </v-dialog>
 
           <span></span>
@@ -50,15 +55,27 @@
           </v-stepper-step>
 
           <v-stepper-content step="2">
-            <v-card color="grey lighten-1" class="mb-5 pa-6" height="200px">
+            <v-card color="grey lighten-4" class="mb-5 pa-6" height="350px">
               <v-row v-if="horarios.length">
-                <v-col sm=1 md=2 lg=5 v-for="horario in horarios" :key="horario.id">
-                  <v-btn color="primary" @click.native="selectHorario(horario.id)">{{horario.horario}}</v-btn>
+                <v-col  
+      sm="7"
+      md="7"
+      lg="3" v-for="horario in horarios" :key="horario.id">
+                   <!-- <v-chip-group
+                    column
+                    multiple> -->
+                
+                  <v-btn
+                  solid
+                  outlined
+                  :elevation="hover ? 24 : 6"
+                  class="mx-auto pa-6" color="primary" @click.native="selectHorario(horario.id)"><strong>{{horario.horario}}</strong></v-btn>
+                   <!-- </v-chip-group> -->
                 </v-col>
               </v-row>
               <v-row v-else color="white">
-                <p>A data selecionada não possui horários disponíveis.</p>
-                <p>Por favor, <v-btn color="primary" @click.native="fw=1">selecione outra data</v-btn></p>
+                <p><strong>A data selecionada não possui horários disponíveis.</strong></p>
+                <p><strong>Por favor,</strong> <v-btn color="primary" @click.native="fw=1"><strong>selecione outra data</strong></v-btn></p>
               </v-row>
             </v-card>
             <!--v-btn color="primary" @click.native="fw = 3"><strong>Continuar</strong></v-btn-->
