@@ -11,7 +11,11 @@
           </v-avatar>
         </div>
         <v-flex>
-          <!-- <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id"> -->
+          <v-dialog :value="visible">
+                <v-alert  dense                    
+                    prominent
+                    type="success" >Agendamento realizado com sucesso</v-alert>
+          </v-dialog>
 
           <span></span>
 
@@ -46,10 +50,16 @@
           </v-stepper-step>
 
           <v-stepper-content step="2">
-            <v-card color="grey lighten-1" class="mb-5" height="200px">
-              <v-flex xs12 sm6 md4 v-for="horario in horarios.data" :key="horario.id">
-                <v-btn color="primary" @click.native="selectHorario(horario.id)">{{horario.horario}}</v-btn>
-              </v-flex>
+            <v-card color="grey lighten-1" class="mb-5 pa-6" height="200px">
+              <v-row v-if="horarios.length">
+                <v-col sm=1 md=2 lg=5 v-for="horario in horarios" :key="horario.id">
+                  <v-btn color="primary" @click.native="selectHorario(horario.id)">{{horario.horario}}</v-btn>
+                </v-col>
+              </v-row>
+              <v-row v-else color="white">
+                <p>A data selecionada não possui horários disponíveis.</p>
+                <p>Por favor, <v-btn color="primary" @click.native="fw=1">selecione outra data</v-btn></p>
+              </v-row>
             </v-card>
             <!--v-btn color="primary" @click.native="fw = 3"><strong>Continuar</strong></v-btn-->
             <v-btn text @click.native="fw=1">Cancelar</v-btn>
@@ -113,6 +123,7 @@
 
       </v-layout>
     </v-container>
+    
   </section>
 
 </template>
@@ -152,6 +163,7 @@
         sobrenome: '',
         email: '',
         mobile: '',
+        visible: false
       }
     },
     computed: {
@@ -209,7 +221,7 @@
           alert('Por favor, corrija as informações')
         } else {
           console.log("form validated");
-          console.log(this.nome, this.sobrenome, this.email, this.mobile);
+          console.log(this.nome, this.sobrenome, this.email, this.mobile);          
           this.fw= 4;
         }
       },
@@ -217,7 +229,7 @@
         
         axios.get('http://localhost:5000/agenda/horarios/'+ this.profissionalId + '/' + date)
           .then((response) => {            
-              this.horarios = response.data;
+              this.horarios = response.data.data;
               this.fw = 2;
 
           }).catch((error) => {
@@ -226,6 +238,8 @@
       },
       confirmarAgendamento() {
         
+        this.visible = false;
+
         axios.post('http://localhost:5000/agenda/confirmar/', {
           nome: this.nome,
           sobrenome: this.sobrenome,
@@ -236,6 +250,7 @@
         })
           .then((response) => {            
               this.horarios = response.data;
+              this.visible = true;
               this.fw = 1;
 
           }).catch((error) => {
