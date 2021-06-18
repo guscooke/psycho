@@ -2,6 +2,7 @@
   <section>
     <GoBack />
     <TheNavigation />
+   
     <v-container grid-list-md class="grey lighten-5 my-5 mt-6">
       <v-layout row wrap>
         <div class="profissionai-details">
@@ -58,9 +59,9 @@
             <v-card color="grey lighten-4" class="mb-5 pa-6" height="350px">
               <v-row v-if="horarios.length">
                 <v-col  
-      sm="7"
-      md="7"
-      lg="3" v-for="horario in horarios" :key="horario.id">
+                    sm="7"
+                    md="7"
+                    lg="3" v-for="horario in horarios" :key="horario.id">
                    <!-- <v-chip-group
                     column
                     multiple> -->
@@ -140,7 +141,7 @@
 
       </v-layout>
     </v-container>
-    
+     <Foote />
   </section>
 
 </template>
