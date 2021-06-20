@@ -5,8 +5,8 @@
    
     <v-container grid-list-md class="grey lighten-5 my-5 mt-6">
       <v-layout row wrap>
-        <div class="profissionai-details">
-           <!-- <router-link class="links" to="/">
+        <!-- <div class="profissionai-details">
+           <router-link class="links" to="/">
         <v-btn color="Igor" fab x-small dark>
           <v-icon>mdi-home</v-icon>
         </v-btn>

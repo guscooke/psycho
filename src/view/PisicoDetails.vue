@@ -5,9 +5,10 @@
     <v-container grid-list-md class="grey lighten-5 my-5 mt-6">
       <v-layout row wrap>
         <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id">
+          <h3 class="mt-3">{{ profissionai.tipo }}</h3>
           <router-link :to="{
                     name: 'DetalhesDetails',
-                    params: { profissionalNome: profissionai.nome, profissionalId: profissionai.id },
+                    params: { profissionalNome: profissionai.nome, profissionalId: profissionai.id, profissionalTipo: profissionai.tipo },
                     //-- hash: '#profissional' -->
                   }">
             <Card class="mt-6" :profile="profissionai" />            

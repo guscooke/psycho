@@ -27,7 +27,7 @@
             <v-col cols="12" sm="7">
        
                 <div class="main mb-6">
-                  <div class="container1">
+                  <div class="container1 fontBold">
                     <v-form class="form">
                       <h1 class="mb-3 mt-4">Contato</h1>
                       <h4 class="mb-4 mt-4">Deixe sua Mensagem</h4>
@@ -127,6 +127,9 @@
     box-shadow: 2px 2px 10px #f0f0f5;
 
     color: #263238;
+  }
+   .fontBold {
+    font-weight: bold;
   }
 
   /*btn*/

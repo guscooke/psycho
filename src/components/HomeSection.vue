@@ -80,7 +80,7 @@
                     <v-card-title>
                       <span class="headline justify-center">Terapia Cognitiva Comportamental</span>
                     </v-card-title>
-                    <v-card-text class="font-weight display-0 text-justify">
+                    <v-card-text class="fontBold display-0 text-justify">
                       <p>
                         Fundada em 1960 por Aron Beck e Terapia Cognitiva Comportamental é clara e direta. Está
                         baseada
@@ -119,7 +119,7 @@
                     <v-card-title>
                       <span class="headline">Terapia Psicanalítica</span>
                     </v-card-title>
-                    <v-card-text class="font-weight display-0 text-justify">
+                    <v-card-text class="fontBold display-0 text-justify">
                       <p>
                         Fundada por Sigmund Freud é normalmente chamada por “análise”, constitui-se pela escuta do
                         paciente como processo fundamental de cura. É mais profunda e tem como objetivo a
@@ -244,6 +244,11 @@
       opacity: 0;
     }
   }
+   .fontBold {
+    font-weight: bold;
+  }
+
+  
 
   section {
     position: relative;
