@@ -15,12 +15,12 @@
               <!-- <h4 class="font-weight mt-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing.
               </h4> -->
-              <h4 class="font-weight mt-3">
+              <!-- <h4 class="font-weight mt-3">
                 Telefone: +xx (xx) xxxxx-xxxx
               </h4>
               <h4 class="font-weight">e
                 Email: email@email.com
-              </h4>
+              </h4> -->
  
             </v-col>
 

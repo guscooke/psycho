@@ -27,7 +27,7 @@
                 <v-col>
                   <v-row class="mt-6">
                     <v-img  :aspect-ratio="16/9"
-                    :width="width" src="@/assets/img/yyy.png" height="800" />
+                   src="@/assets/img/yyy.png" height="800" />
                   </v-row>
                 </v-col>
               </v-flex>
