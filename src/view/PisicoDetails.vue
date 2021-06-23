@@ -47,7 +47,8 @@
     methods: {
       async getProfissionais() {
         console.log(this.$route.params.slug);
-        const response = await axios.get('http://localhost:5000/profissionais/especialidade/' + this.$route.params.slug);
+        console.log(process.env.VUE_APP_ROOT_API)
+        const response = await axios.get(process.env.VUE_APP_ROOT_API +  '/profissionais/especialidade/' + this.$route.params.slug);
         this.profissionais = response.data;
         console.log(this.profissionais);
 

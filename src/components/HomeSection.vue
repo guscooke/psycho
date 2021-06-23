@@ -187,8 +187,8 @@
     position: fixed;
     width: 50px;
     height: 50px;
-    bottom: 100px;
-    left: 60px;
+    bottom: 10px;
+    left: 10px;
     background-color: #03989E;
     border-radius: 50px;
 

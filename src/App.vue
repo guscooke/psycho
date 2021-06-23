@@ -16,28 +16,10 @@
     components: {
       // foote,
     },
-    // data: () => ({
-    //     fab: null,
-    //     color: "",
-    //     flat: null,
-    //   }),
-    //   created() {
-    //     const top = window.pageYOffset || 0;
-    //     if (top <= 60) {
-    //       this.color = "transparent";
-    //       this.flat = true;
-    //     }
-    //   },
-    //   watch: {
-    //     fab(value) {
-    //       if (value) {
-    //         this.color = "secondary";
-    //         this.flat = false;
-    //       } else {
-    //         this.color = "transparent";
-    //         this.flat = true;
-    //       }
-    //     },
+     mounted() {
+    console.log(process.env.VUE_APP_ROOT_API)
+  },
+  
     //   },
     methods: {
       onScroll(e) {
@@ -61,7 +43,9 @@
   }
 
   #app {
-    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
