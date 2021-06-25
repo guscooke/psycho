@@ -1,15 +1,17 @@
 <template>
   <section class="color"  id="contact">
+     <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
     <v-container  fluid>
- <h1 class="dark--text font-weight-bold display-1 mt-6 mb-6">
+
+ <h1 class="dark--text centered-text font-weight-bold display-1 mt-6 mb-6">
         Fale com a Gente
       </h1>
       <v-row class="mt-6" align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" sm="5">
-              <h5 class="font-weight-light display-1">Clínica Szeckir</h5>
-              <h4 class="font-weight mt-3">
+              <h5 class="centered-text font-weight-light display-1">Clínica Szeckir</h5>
+              <h4 class=" centered-text font-weight mt-3">
                 Preencha o formulário que retornaremos em breve
               </h4>
               <!-- <h4 class="font-weight mt-3">
@@ -27,7 +29,7 @@
             <v-col cols="12" sm="7">
        
                 <div class="main mb-6">
-                  <div class="container1 fontBold">
+                  <div class="centered-text container1 fontBold">
                     <v-form class="form">
                       <h1 class="mb-3 mt-4">Contato</h1>
                       <h4 class="mb-4 mt-4">Deixe sua Mensagem</h4>
@@ -52,7 +54,7 @@
       </v-row>
     </v-container>
 
- 
+     </v-parallax>
   </section>
 
 </template>
@@ -68,7 +70,7 @@
 
 <style scoped>
 #contact {
-  background-image: url("~@/assets/img/bgx.jpg");
+ /* background-image: url("~@/assets/img/bgx.jpg");` */
   background-attachment: fixed;
   background-repeat: no-repeat;
   /* background-size: cover; */
@@ -152,5 +154,10 @@
 
   .btn:hover {
     background-color: #706d6d;
+  }
+    .centered-text {
+    color: #037682;
+
+
   }
 </style>
