@@ -23,7 +23,7 @@
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Clinica Szercki</strong>
+        {{ new Date().getFullYear() }} — <strong>Clínica Szeckir</strong>
       </v-card-text>
     </v-card>
     

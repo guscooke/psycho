@@ -7,7 +7,7 @@
             <img src="@/assets/img/LogoFinal.png" alt="Logo" max-width="220px"/>
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title">Clinica</v-list-item-title>
+            <v-list-item-title class="title">Clínica</v-list-item-title>
             <v-list-item-subtitle>Szeckir</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
@@ -91,9 +91,9 @@
       isXs: false,
       items: [
         ["mdi-home-outline", "Home", "#hero"],
-        ["mdi-information-outline", "Como Funciona", "#about"],
-        ["mdi-download-box-outline", "Sobre Nós", "#download"],
-        ["mdi-currency-usd", "Especialidades", "#especialidades"],
+        ["mdi-question-outline", "Como Funciona", "#about"],
+        ["mdi-account-multiple-outline", "Sobre Nós", "#download"],
+        ["mdi-account-multiple-outline", "Especialidades", "#especialidades"],
         ["mdi-email-outline", "Contatos", "#contact"],
         ["mdi-account-circle", "Entrar", "#"],
       ],

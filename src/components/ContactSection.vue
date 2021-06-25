@@ -8,7 +8,7 @@
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" sm="5">
-              <h5 class="font-weight-light display-1">Clinica Szeckir</h5>
+              <h5 class="font-weight-light display-1">Clínica Szeckir</h5>
               <h4 class="font-weight mt-3">
                 Preencha o formulário que retornaremos em breve
               </h4>

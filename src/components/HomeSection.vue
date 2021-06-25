@@ -147,11 +147,16 @@
         </v-row>
       </v-container>
     </div>
+       
   </section>
 </template>
 
 <script>
+
   export default {
+    component:{
+ 
+    },
     data() {
       return {
         dialog: false,

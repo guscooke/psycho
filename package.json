@@ -20,6 +20,7 @@
     "deepai": "^1.0.17",
     "firebase": "^7.24.0",
     "vue": "^2.6.12",
+    "vue-cookie-law": "^1.13.3",
     "vue-electron": "^1.0.6",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.5.1",
