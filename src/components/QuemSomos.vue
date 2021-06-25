@@ -1,6 +1,6 @@
 <template>
   <section id="download">
-     <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
+     <!-- <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800"> -->
     <v-container fluid >
       <v-row align="center" justify="center">
         <v-col cols="10">
@@ -38,15 +38,15 @@
         </v-col>
       </v-row>
     </v-container>
-     </v-parallax>
+     <!-- </v-parallax> -->
   </section>
 </template>
 
 <style scoped>
 #download {
-  /* background-image: url("~@/assets/img/bgx.jpg") !important; */
-  /* background-attachment: fixed;
-  background-repeat: no-repeat; */
+  background-image: url("~@/assets/img/bgx.jpg") !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat; 
   /* background-size: cover; */
   /* background-position: center; */
 
