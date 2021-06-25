@@ -1,5 +1,6 @@
 <template>
   <section id="download">
+     <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
     <v-container fluid >
       <v-row align="center" justify="center">
         <v-col cols="10">
@@ -11,9 +12,9 @@
                
             </v-col>
             <v-col cols="12" sm="8" class="dark--text ">
-              <h1 class="dark--text font-weight-bold display-2 mb-6">Sobre nós</h1>
+              <h1 class="centered-text font-weight-bold display-2 mb-6">Sobre nós</h1>
               <v-col>
-                <h3 class="font-weight  mt-4">
+                <h3 class="font-weight centered-text mt-4">
            Somos uma clínica multidisciplinar com profissionais qualificados da área da saúde que visam o bem-estar
            emocional e físico de seus pacientes.
            Temos como premissa básica proporcionar momentos de escuta e conforto, com ética, atenção, eficiência,
@@ -25,7 +26,7 @@
 
                 </h3>
                 </v-col>
-                <!-- <v-btn rounded outlined large color="#03989E" @click="$vuetify.goTo('#features')" class="mt-5"> -->
+               
               <v-btn  rounded outlined color="#03989E" @click="$vuetify.goTo('#especialidades')" large class="mt-12">
                 <v-icon class="mr-3">
                   mdi-book
@@ -37,30 +38,28 @@
         </v-col>
       </v-row>
     </v-container>
+     </v-parallax>
   </section>
 </template>
 
 <style scoped>
 #download {
-  background-image: url("~@/assets/img/bgx.jpg") !important;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  /* background-image: url("~@/assets/img/bgx.jpg") !important; */
+  /* background-attachment: fixed;
+  background-repeat: no-repeat; */
   /* background-size: cover; */
   /* background-position: center; */
-  height: 17%;
+
 }
 
 #download .container,
 #download .row {
-  height: 100%;
+  /* height: 100%; */
 }
 
   .centered-text {
     color: #037682;
-    position: absolute;
-    text-align: center;
-    top: 10%;
-    width: 100%;
+
   }
 
 </style>
