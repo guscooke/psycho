@@ -4,7 +4,7 @@
      <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="700">
    
 
- <h1 class="dark--text centered-text font-weight-bold display-1 mt-12 mb-6">
+ <h1 class="dark--text centered-text font-weight-bold display-1 mt-8 mb-6">
         Fale com a Gente
       </h1>
       <v-row class="" align="center" justify="center">
@@ -28,7 +28,6 @@
             </v-col>
 
             <v-col cols="12" sm="7">
-       
                 <div class="main mb-6">
                   <div class="centered-text container1 fontBold">
                     <v-form class="form">
@@ -92,9 +91,9 @@
     align-items: center;
     justify-content: justify;
     background: #fffefe;
-    border: 1px solid #EEEEEE;
-    border-radius: 20px;
-    padding: 0 30px 20px 30px;
+    border: 5px solid #EEEEEE;
+    border-radius: 50px;
+    padding: 0 30px 30px 30px;
     margin-top: 35px;
     box-shadow: 4px 10px 20px #acaaaa;
 
