@@ -52,11 +52,6 @@
 
 }
 
-#download .container,
-#download .row {
-  /* height: 100%; */
-}
-
   .centered-text {
     color: #037682;
 
