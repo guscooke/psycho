@@ -1,12 +1,13 @@
 <template>
-  <section class="color"  id="contact">
-     <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
+  <section class="color"  id="contact"> 
     <v-container  fluid>
+     <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="700">
+   
 
- <h1 class="dark--text centered-text font-weight-bold display-1 mt-6 mb-6">
+ <h1 class="dark--text centered-text font-weight-bold display-1 mt-12 mb-6">
         Fale com a Gente
       </h1>
-      <v-row class="mt-6" align="center" justify="center">
+      <v-row class="" align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" sm="5">
@@ -52,9 +53,9 @@
           </v-row>
         </v-col>
       </v-row>
+     </v-parallax>
     </v-container>
 
-     </v-parallax>
   </section>
 
 </template>
