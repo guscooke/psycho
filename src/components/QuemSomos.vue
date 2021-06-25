@@ -45,7 +45,7 @@
 <style scoped>
 #download {
   background-image: url("~@/assets/img/bgx.jpg") !important;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-repeat: no-repeat; 
   /* background-size: cover; */
   /* background-position: center; */
