@@ -1,6 +1,8 @@
 <template>
-  <section class="color"  id="contact">
-    <v-container  fluid>
+  <section class="color" id="contact">
+    <v-container :style="{'background-image':'url(`@/assets/img/bgx.jpg`)'}" height="800" >
+ 
+  
  <h1 class="dark--text font-weight-bold display-1 mt-6 mb-6">
         Fale com a Gente
       </h1>
@@ -44,8 +46,6 @@
                     </v-form>
                   </div>
                 </div>
-       
-
             </v-col>
           </v-row>
         </v-col>
@@ -60,7 +60,8 @@
   export default {
     data() {
       return {
-        formValues: {}
+        formValues: {},
+       
       }
     }
   }
@@ -68,8 +69,8 @@
 
 <style >
 #contact {
-  background-image: url("~@/assets/img/bgx.jpg");
-  background-attachment: fixed;
+  background-image: url("~@/assets/img/bgx.jpg") !important;
+  background-attachment: fixed !important;
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
   /* background-position: center; */
@@ -89,7 +90,7 @@
     align-items: center;
     justify-content: justify;
     background: #fffefe;
-    border: 1px solid #EEEEEE;
+    border: 5px solid #EEEEEE;
     border-radius: 20px;
     padding: 0 30px 20px 30px;
     margin-top: 35px;
