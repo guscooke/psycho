@@ -1,7 +1,7 @@
 <template>
   <section id="hero">
     <div class="bg">
-      <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
+      <v-parallax :src="require(`@/assets/img/doutora.jpg`)" height="800">
         <!-- <div class="centered-text"> -->
         <v-row class="centered-text d-flex pa-6" align="center" justify="center" no-gutters align-sm="center">
           <v-col cols="10" md="10">
