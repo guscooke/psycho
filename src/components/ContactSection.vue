@@ -1,19 +1,15 @@
 <template>
-  <section  id="contact"> 
-     <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="700">
+  <section class="color"  id="contact">
     <v-container  fluid>
-    
-   
-
- <h1 class="dark--text centered-text font-weight-bold display-1 mt-8 mb-6">
+ <h1 class="dark--text font-weight-bold display-1 mt-6 mb-6">
         Fale com a Gente
       </h1>
-      <v-row class="" align="center" justify="center">
+      <v-row class="mt-6" align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" sm="5">
-              <h5 class="centered-text font-weight-light display-1">Clínica Szeckir</h5>
-              <h4 class=" centered-text font-weight mt-3">
+              <h5 class="font-weight-light display-1">Clínica Szeckir</h5>
+              <h4 class="font-weight mt-3">
                 Preencha o formulário que retornaremos em breve
               </h4>
               <!-- <h4 class="font-weight mt-3">
@@ -29,9 +25,10 @@
             </v-col>
 
             <v-col cols="12" sm="7">
+       
                 <div class="main mb-6">
-                  <div class="centered-text container1 fontBold">
-                    <v-form class="form mb-6">
+                  <div class="container1 fontBold">
+                    <v-form class="form">
                       <h1 class="mb-3 mt-4">Contato</h1>
                       <h4 class="mb-4 mt-4">Deixe sua Mensagem</h4>
                       <input placeholder="Seu nome" type="text" tabindex="5" class=" font-weight form__field">
@@ -53,9 +50,9 @@
           </v-row>
         </v-col>
       </v-row>
-    
     </v-container>
- </v-parallax>
+
+ 
   </section>
 
 </template>
@@ -69,11 +66,11 @@
   }
 </script>
 
-<style scoped>
+<style >
 #contact {
- /* background-image: url("~@/assets/img/bgx.jpg");` */
+  background-image: url("~@/assets/img/bgx.jpg");
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   /* background-size: cover; */
   /* background-position: center; */
   max-height: 20%;
@@ -92,9 +89,9 @@
     align-items: center;
     justify-content: justify;
     background: #fffefe;
-    border: 5px solid #EEEEEE;
-    border-radius: 50px;
-    padding: 0 30px 30px 30px;
+    border: 1px solid #EEEEEE;
+    border-radius: 20px;
+    padding: 0 30px 20px 30px;
     margin-top: 35px;
     box-shadow: 4px 10px 20px #acaaaa;
 
@@ -155,10 +152,5 @@
 
   .btn:hover {
     background-color: #706d6d;
-  }
-    .centered-text {
-    color: #037682;
-
-
   }
 </style>
