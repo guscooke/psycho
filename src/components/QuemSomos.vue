@@ -12,7 +12,7 @@
                
             </v-col>
             <v-col cols="12" sm="8" class="dark--text ">
-              <h1 class="centered-text font-weight-bold display-2 mb-6">Sobre nós</h1>
+              <h1 class="centered-text font-weight-bold mt-6 display-2 mt-12 mb-6">Sobre nós</h1>
               <v-col>
                 <h3 class="font-weight centered-text mt-4">
            Somos uma clínica multidisciplinar com profissionais qualificados da área da saúde que visam o bem-estar
@@ -27,7 +27,7 @@
                 </h3>
                 </v-col>
                
-              <v-btn  rounded outlined color="#03989E" @click="$vuetify.goTo('#especialidades')" large class="mt-12">
+              <v-btn  rounded outlined color="#03989E" @click="$vuetify.goTo('#especialidades')" large class="mt-12 mb-12">
                 <v-icon class="mr-3">
                   mdi-book
                 </v-icon>
