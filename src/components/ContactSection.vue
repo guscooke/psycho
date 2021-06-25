@@ -1,7 +1,8 @@
 <template>
-  <section class="color"  id="contact"> 
-    <v-container  fluid>
+  <section  id="contact"> 
      <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="700">
+    <v-container  fluid>
+    
    
 
  <h1 class="dark--text centered-text font-weight-bold display-1 mt-8 mb-6">
@@ -30,7 +31,7 @@
             <v-col cols="12" sm="7">
                 <div class="main mb-6">
                   <div class="centered-text container1 fontBold">
-                    <v-form class="form">
+                    <v-form class="form mb-6">
                       <h1 class="mb-3 mt-4">Contato</h1>
                       <h4 class="mb-4 mt-4">Deixe sua Mensagem</h4>
                       <input placeholder="Seu nome" type="text" tabindex="5" class=" font-weight form__field">
@@ -52,9 +53,9 @@
           </v-row>
         </v-col>
       </v-row>
-     </v-parallax>
+    
     </v-container>
-
+ </v-parallax>
   </section>
 
 </template>

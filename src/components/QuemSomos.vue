@@ -1,7 +1,8 @@
 <template>
-  <section id="download">
-     <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
-    <v-container fluid >
+  <section id="download"> 
+    <!-- <v-container fluid > -->
+     <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="750">
+   
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
@@ -36,10 +37,12 @@
             </v-col>
           </v-row>
         </v-col>
-      </v-row>
-    </v-container>
-     </v-parallax>
-  </section>
+      </v-row>  
+      </v-parallax>
+    <!-- </v-container> -->
+    
+  </section> 
+
 </template>
 
 <style scoped>
