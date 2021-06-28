@@ -8,6 +8,13 @@
       <profi />
       <contact />
       <foote />
+      <cookie-law   transitionName="fade"  buttonText='Sim, eu concordo!' theme="dark-lime--rounded ">
+  <div slot="message">
+    <strong>Utilizamos cookies para que você tenha a melhor experiência do nosso site. 
+    Por sua visita contínua ao nosso site, sem alterar suas configurações, você concorda com o uso de cookies da Clínica Szeckir .</strong>
+  </div>
+</cookie-law>
+
     </v-main>
     <v-scale-transition>
       <v-btn fab v-show="fab" v-scroll="onScroll" dark fixed bottom right color="primary" @click="toTop">
@@ -19,6 +26,7 @@
 </template>
 
 <script>
+
   import home from "../components/HomeSection";
   import about from "../components/AboutSection";
   import quemsomos from "../components/QuemSomos";
@@ -26,6 +34,7 @@
   import contact from "../components/ContactSection";
   import navigation from "../components/Navigation";
   import foote from "../components/Footer";
+  import CookieLaw from 'vue-cookie-law'
 
 
 
@@ -39,7 +48,9 @@
       quemsomos,
       profi,
       contact,
-      foote
+      foote,
+      CookieLaw
+   
     },
 
     data: () => ({
@@ -85,3 +96,14 @@
     },
   };
 </script>
+<style scoped>
+
+   .Cookie__message {
+    color: white;
+  }
+
+  
+  
+
+
+</style>
