@@ -192,7 +192,12 @@
         sobrenome: '',
         email: '',
         mobile: '',
-        visible: false
+        visible: false,
+        token: '',
+        checkout_code: '',
+        cartao_creditos_options: [],
+        debito_online_options: [],
+        boleto_options: []
       }
     },
     computed: {
@@ -251,7 +256,8 @@
           alert('Por favor, corrija as informações')
         } else {
           console.log("form validated");
-          console.log(this.nome, this.sobrenome, this.email, this.mobile);          
+          console.log(this.nome, this.sobrenome, this.email, this.mobile);        
+          console.log(process.env.VUE_APP_PAGSEGURO_URL);  
           this.fw= 4;
         }
       },
@@ -277,11 +283,42 @@
           mobile: this.mobile,
           horario: this.selected_hour,
           profissional: this.profissionalId,
+          item: this.profissionalTipo,
+          valor: this.profissionalTipo == 'psiquiatria' ? '300.00' : '180.00'
         })
           .then((response) => {            
               this.horarios = response.data;
               this.visible = true;
               this.fw = 1;
+
+              PagSeguroDirectPayment.setSessionId(response.data.token);
+
+              this.checkout_code = response.data.checkout_code;
+
+              localStorage.setItem('checkoutCode', response.data.checkout_code);
+
+              window.location.replace(process.env.VUE_APP_PAGSEGURO_URL + this.checkout_code);
+              
+              /*var test = PagSeguroDirectPayment.getPaymentMethods({
+                  amount: 100.00,
+                  success: function(response) {
+                      
+                  },
+                  error: function(response) {
+                      // Callback para chamadas que falharam.
+                      console.log('falha');
+                  },
+                  complete: function(response) {
+                      // Callback para todas chamadas.
+                      this.cartao_creditos_options = response.paymentMethods.CREDIT_CARD.options;
+                      this.boleto_options = response.paymentMethods.BOLETO;
+                      this.debito_online_options = response.paymentMethods.ONLINE_DEBIT.options;
+
+                      console.log('mounting', this.cartao_creditos_options);
+                  }
+              });
+
+              console.log('test', test);*/
 
           }).catch((error) => {
             console.log(error)

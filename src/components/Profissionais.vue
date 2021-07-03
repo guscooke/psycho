@@ -50,7 +50,7 @@ export default {
   components: {},
   data() {
     return {
-      especialidades: store.especialidades
+      especialidades: this.$store.state.especialidades
     };
   }
 };

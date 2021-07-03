@@ -35,7 +35,7 @@ const router = new Router({
   routes: [
 
     {
-      path: "/",
+      path: "/:transaction_id?",
       name: "home",
       component: home,
       props: true,
@@ -72,7 +72,7 @@ const router = new Router({
           import( /*webpackChunkName: "DetalhesDetails"*/ "./view/DetalhesDetails")
       }],
       beforeEnter: (to, from, next) => {
-        const exists = store.especialidades.find(
+        const exists = store.state.especialidades.find(
           especialidade => especialidade.slug === to.params.slug
         );
         if (exists) {
