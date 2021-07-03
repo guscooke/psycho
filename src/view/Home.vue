@@ -27,6 +27,7 @@
 
 <script>
 
+  import axios from 'axios';
   import home from "../components/HomeSection";
   import about from "../components/AboutSection";
   import quemsomos from "../components/QuemSomos";
@@ -52,7 +53,7 @@
       CookieLaw
    
     },
-
+    props: ['transaction_id'],
     data: () => ({
       fab: null,
       color: "",
@@ -61,6 +62,19 @@
 
 
     created() {
+
+      if( this.$route.query.transaction_id != null){
+        axios.put(process.env.VUE_APP_ROOT_API + '/agenda/confirmar/' + localStorage.getItem('checkoutCode'), {              
+              transaction_id: this.$route.query.transaction_id
+            })
+            .then(response => {
+              if(response.status == 200)
+                alert('Agendamento realizado com sucesso.');
+              else
+                alert('Erro ao processar pagamento.');
+            })  
+      }
+      
       const top = window.pageYOffset || 0;
       if (top <= 60) {
         this.color = "#03989E";
