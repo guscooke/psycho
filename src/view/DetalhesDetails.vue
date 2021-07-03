@@ -76,7 +76,7 @@
             <v-stepper-step :complete="fw > 3" step="3">
               <strong>Seus dados</strong></v-stepper-step>
             <v-stepper-content step="3">
-              <v-card  class="mb-5" height="400px">
+              <v-card class="mb-5" height="400px">
 
                 <form>
                   <v-row>
@@ -100,40 +100,19 @@
                         required @input="$v.mobile.$touch()" @blur="$v.mobile.$touch()"></v-text-field>
                     </v-col>
                   </v-row>
-                
-                </form>
-              </v-card>
-               <v-btn color="primary" @click.prevent="formValues()"><strong>Continuar</strong></v-btn>
+                  <v-btn color="primary" @click.prevent="formValues()"><strong>Continuar</strong></v-btn>
                   <v-btn text @click.native="fw=2">Cancelar</v-btn>
+                </form>
+
+              </v-card>
             </v-stepper-content>
 
             <v-stepper-step step="4">
               <strong>Confirmação do seu Agendamento</strong>
             </v-stepper-step>
-
-
             <v-stepper-content step="4">
-              <v-card   elevation="4"
-                        outlined 
-                        color="Igor" 
-                        class="white--text mb-5"  
-                        height="300px" 
-                        align="left">
-                <h3 align='center'>Ao clicar no botão <strong>Confirmar</strong> abaixo, você será redirecionado ao Pagseguro.</h3>
-
-                <h4 class="mt-3"><strong>Especialista: {{ profissionalNome }} {{ profissionalSobrenome }} </strong> </h4>
-                <h4><strong>Especialidade:</strong> {{ profissionalTipo }} </h4>
-                <h4><strong>Data:</strong> {{selected_date}}</h4>
-                <h4><strong>Horário:</strong> {{selected_hour}}</h4>
-
-                 <v-divider class="white--text mx-4 mb-3 mt-3"></v-divider>
-
-                <h4><strong>Seu nome:</strong> {{ nome}} {{ sobrenome }}</h4>
-                <h4><strong>Email:</strong> {{email}}</h4>
-                <h4><strong>contato:</strong> {{mobile}}</h4>
-                
-
-            
+              <v-card color="grey lighten-1" class="mb-5" height="300px">
+                Ao clicar no botão <strong>Confirmar</strong> abaixo, você estará finalizando o agendamento.
               </v-card>
 
               <v-btn color="primary" @click.native="confirmarAgendamento()"><strong>Confirmar</strong></v-btn>
@@ -154,7 +133,6 @@
   </section>
 
 </template>
-
 <script>
   import TheNavigation from "@/components/TheNavigation";
   import axios from 'axios';
@@ -176,12 +154,13 @@
       GoBack,
       Foote
     },
-    props: ['profissionalId', 'profissionalNome', 'profissionalSobrenome', 'profissionalTipo' ],
+    props: ['profissionalId', 'profissionalNome', 'profissionalTipo' ],
     agendamento: [],
   
+    
+
     data() {
       return {
-              
         fw: 1,
         rw: 1,
         horarios: [],

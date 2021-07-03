@@ -1,6 +1,5 @@
 <template>
   <section id="hero">
-    
     <div class="bg">
       <v-parallax :src="require(`@/assets/img/bgx.jpg`)" height="800">
         <!-- <div class="centered-text"> -->

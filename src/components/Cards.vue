@@ -10,10 +10,14 @@
           <div class="main">
 
             <h2 class="font-weight">{{ profile.nome }} {{ profile.sobrenome }}</h2>
-            <p class="text-center">{{ profile.tipo }}</p>         
+            <h4 class="mt-3">{{ profile.descricao }}</h4>
+            <p class="text-center">{{ profile.motto }}</p>
             <v-divider class="mx-4"></v-divider>
             <v-card-text>
-            <h4 class="mt-3">{{ profile.descricao }}</h4>
+
+              TEXTO
+
+
             </v-card-text>
             <div class="text-center">
               <v-btn class="mt-6" rounded color="primary" dark>
