@@ -324,18 +324,18 @@
             console.log(error)
           })
       },
-      loadRelatorio() {
-        this.relatorio = [];
-        console.log(process.env.VUE_APP_ROOT_API)
-        axios.get(process.env.VUE_APP_ROOT_API + '/relatorio')
-         .then((response) => {
-            this.relatorio = response.data.data;
-            console.log('esse' + this.relatorio)
+      // loadRelatorio() {
+      //   this.agendado = [];
+      //   console.log(process.env.VUE_APP_ROOT_API)
+      //   axios.get(process.env.VUE_APP_ROOT_API + '/relatorio')
+      //    .then((response) => {
+      //       this.relatorio = response.data.data;
+      //       console.log('esse' + this.relatorio)
         
-          }).catch((error) => {
-            console.log(error)
-          })
-      }
+      //     }).catch((error) => {
+      //       console.log(error)
+      //     })
+      // }
     }
   };
 </script>

@@ -1,6 +1,5 @@
 import Router from "vue-router";
 import Vue from "vue";
-
 import store from "@/store";
 import home from "./view/Home.vue";
 
@@ -49,28 +48,25 @@ const router = new Router({
 
     // },
     {
-      path: "/:profissionaiId",
+      path: "/",
       name: "DetalhesDetails",
       props: true,
       component: () =>
       import( /* webpackChunkName: "DestinationDetails"*/ "./view/DetalhesDetails"),
-
     },
-
-
     {
       path: "/especialidade/:slug",
       name: "pisicoDetails",
       props: true,
       component: () =>
         import( /* webpackChunkName: "PsicoDetails"*/ "./view/PisicoDetails"),
-      children: [{
-        path: ":profissionaiId",
-        name: "DetalhesDetails",
-        props: true,
-        component: () =>
-          import( /*webpackChunkName: "DetalhesDetails"*/ "./view/DetalhesDetails")
-      }],
+      // children: [{
+      //   path: "/:profissionaiId",
+      //   name: "DetalhesDetails",
+      //   props: true,
+      //   component: () =>
+      //     import( /*webpackChunkName: "DetalhesDetails"*/ "./view/DetalhesDetails")
+      // }],
       beforeEnter: (to, from, next) => {
         const exists = store.state.especialidades.find(
           especialidade => especialidade.slug === to.params.slug

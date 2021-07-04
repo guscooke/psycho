@@ -55,11 +55,11 @@
           </v-btn>
         </router-link>
           </v-list-item-icon>
-          <!-- <v-list-item-content>
+          <v-list-item-content>
             <v-list-item-title class="subtitile-1">{{
               especialidade.name
             }}</v-list-item-title>
-          </v-list-item-content> -->
+          </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -72,9 +72,9 @@
   export default {
     data() {
       return {
-        especialidades: store.especialidades,
+        especialidades: this.$store.state.especialidades,
         drawer: null,
-      isXs: false,        
+        isXs: false,        
       }
     },
 

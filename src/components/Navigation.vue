@@ -91,9 +91,9 @@
       isXs: false,
       items: [
         ["mdi-home-outline", "Home", "#hero"],
-        ["mdi-question-outline", "Como Funciona", "#about"],
+        ["mdi-information-outline", "Como Funciona", "#about"],
         ["mdi-account-multiple-outline", "Sobre Nós", "#download"],
-        ["mdi-account-multiple-outline", "Especialidades", "#especialidades"],
+        ["mdi-library", "Especialidades", "#especialidades"],
         ["mdi-email-outline", "Contatos", "#contact"],
         ["mdi-account-circle", "Entrar", "#"],
       ],
