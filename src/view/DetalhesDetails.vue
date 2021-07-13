@@ -12,14 +12,14 @@
             </v-btn> -->
           </router-link>
          
-          <h2>Especialista: {{ profissionalNome }} {{ profissionalSobrenome}} </h2>
+          <h2>Especialista: </h2><h2 class="text--secondary">{{ profissionalNome }} {{ profissionalSobrenome}}</h2>
           (<h5>{{profissionalTipo}} </h5>)
           
           <v-avatar>
             <img src="@/assets/img/avatar.png" size="128">
           </v-avatar>
         
-          <h5>Valor da Consulta: {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h5>
+          <h4>Valor da Consulta:</h4><h4 class="text--secondary"> {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h4>
           
         </div>
         <v-flex>
@@ -47,7 +47,7 @@
             </v-stepper-content>
 
             <v-stepper-step :complete="fw > 2" step="2">
-              <strong> Horário</strong>
+              <strong>Horário</strong>
               <small>Selecione o Horário Desejado</small>
             </v-stepper-step>
 
@@ -133,8 +133,6 @@
                 <h4><strong>Email:</strong> {{email}}</h4>
                 <h4><strong>contato:</strong> {{mobile}}</h4>
                 
-
-            
               </v-card>
 
               <v-btn color="primary" @click="confirmarAgendamento()"><strong>Confirmar</strong></v-btn>
