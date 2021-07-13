@@ -6,12 +6,13 @@
     <v-container grid-list-md class="grey lighten-5 my-5 mt-6 fontBold">
       <v-layout row wrap>
         <div class="profissionai-details">
-          <router-link class="links" to="/">
+          <!-- <router-link class="links" to="/"> -->
             <!-- <v-btn color="Igor" fab x-small dark>
               <v-icon>mdi-home</v-icon>
             </v-btn> -->
-          </router-link>
-         
+          <!-- </router-link> -->
+           <v-row align="center" justify="center">
+              
           <h2>Especialista: </h2><h2 class="text--secondary">{{ profissionalNome }} {{ profissionalSobrenome}}</h2>
           (<h5>{{profissionalTipo}} </h5>)
           
@@ -20,7 +21,8 @@
           </v-avatar>
         
           <h4>Valor da Consulta:</h4><h4 class="text--secondary"> {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h4>
-          
+           
+           </v-row>
         </div>
         <v-flex>
           <v-dialog :value="visible">
