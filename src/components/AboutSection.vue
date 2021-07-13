@@ -40,7 +40,6 @@
                   <h4 class="text-justify">
                     4º - Receba seu acesso e instruções por e-mail. No dia e hora marcada, basta acessar o link enviado
                     por e-mail e aguardar a sua consulta.
-
                   </h4>
 
                 </v-col>

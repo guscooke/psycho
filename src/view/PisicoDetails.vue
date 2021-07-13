@@ -8,7 +8,7 @@
           <h3 class="mt-3">{{ profissionai.tipo }}</h3>
           <router-link :to="{
                     name: 'DetalhesDetails',
-                    params: { profissionalNome: profissionai.nome, profissionalId: profissionai.id, profissionalTipo: profissionai.tipo, profissionalSobrenome: profissionai.sobrenome },
+                    params: { profissionalNome: profissionai.nome, profissionalId: profissionai.id, profissionalTipo: profissionai.tipo, profissionalSobrenome: profissionai.sobrenome},
                     //-- hash: '#profissional' -->
                   }">
             <Card class="mt-6" :profile="profissionai" />            
@@ -25,7 +25,7 @@
   import TheNavigation from "@/components/TheNavigation";
   import Foote from "@/components/Footer";
 
-  // import store from "@/store";
+  import store from "@/store";
   import GoBack from "@/components/GoBack";
   import axios from 'axios';
   import Card from "@/components/Cards";

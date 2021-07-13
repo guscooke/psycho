@@ -10,6 +10,7 @@ export default new Vuex.Store({
         especialidades: [{
                 name: 'Psicologia',
                 slug: 'psicologia',
+                valor: 'R$ 180,00',
                 image: "Psicologo.png",
                 id: 1,
                 description: 'bla bla bla bla bla bla',
@@ -45,6 +46,7 @@ export default new Vuex.Store({
             {
                 name: 'Psiquiatria',
                 slug: 'psiquiatria',
+                valor: 'R$ 300,00',
                 image: "Psiquiatras.png",
                 id: 2,
                 description: 'bla bla bla bla bla bla',
@@ -79,6 +81,7 @@ export default new Vuex.Store({
             {
                 name: 'Nutricionista',
                 slug: 'nutricionista',
+                valor: 'R$ 300,00',
                 image: "nutri.png",
                 id: 3,
                 description: 'bla bla bla bla bla bla',

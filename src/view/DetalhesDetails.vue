@@ -12,15 +12,15 @@
             </v-btn> -->
           </router-link>
          
-          <h2>Especialista: {{ profissionalNome }} </h2>
-       (<h5>{{profissionalTipo}} </h5>)
+          <h2>Especialista: {{ profissionalNome }} {{ profissionalSobrenome}} </h2>
+          (<h5>{{profissionalTipo}} </h5>)
           
           <v-avatar>
-            <img src="@/assets/img/doutora.jpg" size="128">
+            <img src="@/assets/img/avatar.png" size="128">
           </v-avatar>
+        
+          <h5>Valor da Consulta: {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h5>
           
-         
-         
         </div>
         <v-flex>
           <v-dialog :value="visible">
@@ -40,7 +40,7 @@
               <v-date-picker v-model="selected_date" full-width dark  header-color="primary" locale="pt-br"
                 class="mt-3" style="margin:30px 0;" @click:date="selectDate" />
 
-              <v-btn color="primary" @click.native="getHours(selected_date)"><strong>Continuar</strong></v-btn>
+              <v-btn color="primary" @click="getHours(selected_date)"><strong>Continuar</strong></v-btn>
               <v-btn text>Cancelar</v-btn>
 
 
@@ -57,7 +57,7 @@
                   <v-col sm="7" md="7" lg="3" v-for="horario in horarios" :key="horario.id">
 
                     <v-btn solid outlined :elevation=" 24" class="mx-auto pa-6" color="primary"
-                      @click.native="selectHorario(horario.id)">
+                      @click="selectHorario(horario.id)">
                       <strong>{{horario.horario}}</strong></v-btn>
                     <!-- </v-chip-group> -->
                   </v-col>
@@ -65,12 +65,12 @@
                 <v-row v-else color="white">
                   <p><strong>A data selecionada não possui horários disponíveis.</strong></p>
                   <p><strong>Por favor,</strong>
-                    <v-btn color="primary" @click.native="fw=1"><strong>selecione outra data</strong></v-btn>
+                    <v-btn color="primary" @click="fw=1"><strong>selecione outra data</strong></v-btn>
                   </p>
                 </v-row>
               </v-card>
-              <!--v-btn color="primary" @click.native="fw = 3"><strong>Continuar</strong></v-btn-->
-              <v-btn text @click.native="fw=1">Cancelar</v-btn>
+              <!--v-btn color="primary" @click="fw = 3"><strong>Continuar</strong></v-btn-->
+              <v-btn text @click="fw=1">Cancelar</v-btn>
             </v-stepper-content>
 
             <v-stepper-step :complete="fw > 3" step="3">
@@ -104,11 +104,11 @@
                 </form>
               </v-card>
                <v-btn color="primary" @click.prevent="formValues()"><strong>Continuar</strong></v-btn>
-                  <v-btn text @click.native="fw=2">Cancelar</v-btn>
+                  <v-btn text @click="fw=2">Cancelar</v-btn>
             </v-stepper-content>
 
             <v-stepper-step step="4">
-              <strong>Confirmação do seu Agendamento</strong>
+              <strong>Redirecionando ao pagamento para finalizar o agendamento</strong>
             </v-stepper-step>
 
 
@@ -117,17 +117,18 @@
                         outlined 
                         color="Igor" 
                         class="white--text mb-5"  
-                        height="300px" 
+                        height="400px" 
                         align="left">
-                <h3 align='center'>Ao clicar no botão <strong>Confirmar</strong> abaixo, você será redirecionado ao Pagseguro.</h3>
+                <h3 class='mt-3' align='center'>Ao clicar no botão <strong>Confirmar</strong> abaixo, você será redirecionado ao Pagseguro. </h3>
+                </br>
+                <h4 align='center'>Assim que o pagamento for aprovado você receberá um e-mail de confirmação do agendamento e instruções para a consulta online.</h4>
 
                 <h4 class="mt-3"><strong>Especialista: {{ profissionalNome }} {{ profissionalSobrenome }} </strong> </h4>
                 <h4><strong>Especialidade:</strong> {{ profissionalTipo }} </h4>
-                <h4><strong>Data:</strong> {{selected_date}}</h4>
-                <h4><strong>Horário:</strong> {{selected_hour}}</h4>
-
+                <h4><strong>Data:</strong> {{ selected_date | moment("DD/MM/YYYY") }}</h4>
+                <h4><strong>Horário:</strong> {{ selected_hour }}</h4>
+                <h4><strong>Valor:</strong> {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h4>
                  <v-divider class="white--text mx-4 mb-3 mt-3"></v-divider>
-
                 <h4><strong>Seu nome:</strong> {{ nome}} {{ sobrenome }}</h4>
                 <h4><strong>Email:</strong> {{email}}</h4>
                 <h4><strong>contato:</strong> {{mobile}}</h4>
@@ -136,8 +137,8 @@
             
               </v-card>
 
-              <v-btn color="primary" @click.native="confirmarAgendamento()"><strong>Confirmar</strong></v-btn>
-              <v-btn text @click.native="fw=3">Cancelar</v-btn>
+              <v-btn color="primary" @click="confirmarAgendamento()"><strong>Confirmar</strong></v-btn>
+              <v-btn text @click="fw=3">Cancelar</v-btn>
             </v-stepper-content>
           </v-stepper>
 
@@ -156,14 +157,17 @@
 </template>
 
 <script>
-  import TheNavigation from "@/components/TheNavigation";
-  import axios from 'axios';
-  // import store from "@/store";
+  import TheNavigation from "@/components/TheNavigation"
+  
+  import axios from 'axios'
   import GoBack from "@/components/GoBack";
   import Foote from "@/components/Footer";
   import { validationMixin } from 'vuelidate'
   import { required, maxLength, email } from 'vuelidate/lib/validators'
   export default {
+
+ 
+    
     mixins: [validationMixin],
     validations: {
       nome: { required, maxLength: maxLength(10) },
@@ -176,12 +180,12 @@
       GoBack,
       Foote
     },
-    props: ['profissionalId', 'profissionalNome', 'profissionalSobrenome', 'profissionalTipo' ],
+    props: ['profissionalId', 'profissionalNome', 'profissionalSobrenome', 'profissionalTipo'],
     agendamento: [],
   
     data() {
-      return {
-              
+      return { 
+        
         fw: 1,
         rw: 1,
         horarios: [],
@@ -197,11 +201,12 @@
         checkout_code: '',
         cartao_creditos_options: [],
         debito_online_options: [],
-        boleto_options: []
+        boleto_options: [],
       }
     },
     computed: {
-   
+
+      
       nomeErrors () {
         const errors = []
         if (!this.$v.nome.$dirty) return errors
@@ -231,7 +236,11 @@
         return errors
       },
     },
+
+    
+    
     methods:{
+ 
 
       loadAgendamento() { 
         this.agendamento = [];
@@ -244,7 +253,8 @@
           })
       },
       selectDate(date) {         
-        this.selected_date = date;        
+        this.selected_date = date;
+            
       },
       selectHorario(horario) {         
         this.selected_hour = horario;        
@@ -324,19 +334,9 @@
             console.log(error)
           })
       },
-      // loadRelatorio() {
-      //   this.agendado = [];
-      //   console.log(process.env.VUE_APP_ROOT_API)
-      //   axios.get(process.env.VUE_APP_ROOT_API + '/relatorio')
-      //    .then((response) => {
-      //       this.relatorio = response.data.data;
-      //       console.log('esse' + this.relatorio)
-        
-      //     }).catch((error) => {
-      //       console.log(error)
-      //     })
-      // }
-    }
+    
+    },
+    
   };
 </script>
 

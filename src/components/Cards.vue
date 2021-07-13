@@ -4,7 +4,7 @@
       <div class="front">
         <div class="cover"></div>
         <div class="user">
-          <img class="img-circle" alt src="@/assets/img/doutora.jpg">
+          <img class="img-circle" alt src="@/assets/img/avatar.png">
         </div>
         <div class="content">
           <div class="main">
