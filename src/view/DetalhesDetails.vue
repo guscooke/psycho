@@ -57,7 +57,7 @@
                   <v-col sm="7" md="7" lg="3" v-for="horario in horarios" :key="horario.id">
 
                     <v-btn solid outlined :elevation=" 24" class="mx-auto pa-6" color="primary"
-                      @click="selectHorario(horario.id)">
+                      @click="selectHorario(horario.id, horario.horario)">
                       <strong>{{horario.horario}}</strong></v-btn>
                     <!-- </v-chip-group> -->
                   </v-col>
@@ -126,7 +126,7 @@
                 <h4 class="mt-3"><strong>Especialista: {{ profissionalNome }} {{ profissionalSobrenome }} </strong> </h4>
                 <h4><strong>Especialidade:</strong> {{ profissionalTipo }} </h4>
                 <h4><strong>Data:</strong> {{ selected_date | moment("DD/MM/YYYY") }}</h4>
-                <h4><strong>Horário:</strong> {{ selected_hour }}</h4>
+                <h4><strong>Horário:</strong> {{ selected_hour_label }}</h4>
                 <h4><strong>Valor:</strong> {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h4>
                  <v-divider class="white--text mx-4 mb-3 mt-3"></v-divider>
                 <h4><strong>Seu nome:</strong> {{ nome}} {{ sobrenome }}</h4>
@@ -190,6 +190,7 @@
         relatorio: [],
         selected_date: '',
         selected_hour: '',
+        selected_hour_label: '',
         nome: '',
         sobrenome: '',
         email: '',
@@ -254,8 +255,9 @@
         this.selected_date = date;
             
       },
-      selectHorario(horario) {         
+      selectHorario(horario, horario_label) {         
         this.selected_hour = horario;        
+        this.selected_hour_label = horario_label;
         this.fw = 3;
       },
       formValues(horario) {         
