@@ -26,7 +26,7 @@
         </div>
         <v-flex>
           <v-dialog :value="visible">
-            <v-alert dense prominent type="success"><strong>Agendamento realizado com sucesso</strong></v-alert>
+            <v-alert dense prominent type="success"><strong>Redirecionando ao pagamento para finalizar o agendamento</strong></v-alert>
           </v-dialog>
 
           <span></span>
@@ -110,7 +110,7 @@
             </v-stepper-content>
 
             <v-stepper-step step="4">
-              <strong>Redirecionando ao pagamento para finalizar o agendamento</strong>
+              <strong>Confirmação do Agendamento</strong>
             </v-stepper-step>
 
 
