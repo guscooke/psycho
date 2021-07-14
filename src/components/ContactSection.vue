@@ -27,22 +27,24 @@
             </v-col>
 
             <v-col cols="12" sm="7">
-       
                 <div class="main mb-6">
                   <div class="container1 fontBold">
-                    <v-form class="form">
+                    <v-form class="form" @submit.prevent="submit" @reset="onReset"  >
                       <h1 class="mb-3 mt-4">Contato</h1>
                       <h4 class="mb-4 mt-4">Deixe sua Mensagem</h4>
-                      <input placeholder="Seu nome" type="text" tabindex="5" class=" font-weight form__field">
+                      <input placeholder="Seu nome" type="text" tabindex="5" class=" font-weight form__field" v-model="nome">
 
-                      <input placeholder="Seu melhor Email" type="text" tabindex="5" class=" font-weight form__field">
+                      <input placeholder="Seu melhor Email" type="text" tabindex="5" class=" font-weight form__field" v-model="email">
 
-                      <input placeholder="Deixe seu Celular" type="text" tabindex="5" class=" font-weight form__field">
+                      <input placeholder="Deixe seu Celular" type="text" tabindex="5" class=" font-weight form__field" v-model="celular">
 
-                      <textarea placeholder="Deixe a sua mensagem..."></textarea>
+                      <textarea placeholder="Deixe a sua mensagem..." v-model="mensagem"></textarea>
 
-                      <button name="submit" type="submit"
-                        class=" font-weight btn btn--primary btn--inside uppercase mt-4">enviar</button>
+                      <button type="submit"
+                        class="font-weight btn btn--primary btn--inside uppercase mt-4">enviar</button>
+
+                         <v-btn type="reset"
+                         class="Igor--text font-weight btn uppercase mt-4">Limpar</v-btn>
                     </v-form>
                   </div>
                 </div>
@@ -57,14 +59,52 @@
 
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        formValues: {},
-       
+export default {
+  name: "App",
+  data() {
+    return {
+      nome: "",
+      email: "",
+      mensagem: "",
+      celular:""
+    };
+  },
+  computed: {
+    formValid() {
+      const { nome, email, mensagem} = this;
+      return (
+        nome.length > 0 &&
+        /(.+)@(.+){2,}.(.+){2,}/.test(email) &&
+        mensagem.length > 0
+      );
+    },
+  },
+  methods: {
+    onReset() {
+      this.nome = "";
+      this.email = "";
+      this.celular = "";
+      this.mensagem = "";
+    },
+    submit() {
+      if (!this.formValid) {
+        return;
       }
-    }
-  }
+      if (!localStorage.getItem("messages")) {
+        localStorage.setItem("messages", JSON.stringify([]));
+      }
+      const messages = JSON.parse(localStorage.getItem("messages"));
+      const { nome, email, mensagem, celular } = this;
+      messages.push({
+        nome,
+        email,
+        mensagem,
+        celular
+      });
+      localStorage.setItem("messages", JSON.stringify(messages));
+    },
+  },
+};
 </script>
 
 <style >
