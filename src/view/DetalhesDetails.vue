@@ -6,22 +6,22 @@
     <v-container grid-list-md class="grey lighten-5 my-5 mt-6 fontBold">
       <v-layout row wrap>
         <div class="profissionai-details">
-          <!-- <router-link class="links" to="/"> -->
-            <!-- <v-btn color="Igor" fab x-small dark>
-              <v-icon>mdi-home</v-icon>
-            </v-btn> -->
-          <!-- </router-link> -->
-           <v-row align="center" justify="center">
+    
+           <v-row  align="center" justify="center" >
+             
               
-          <h2>Especialista: </h2><h2 class="text--secondary">{{ profissionalNome }} {{ profissionalSobrenome}}</h2>
+          <h2>Especialista: </h2><h3 class="text--secondary">{{ profissionalNome }} {{ profissionalSobrenome}}</h3>
+      
+        
+          <h4>| Valor da Consulta:</h4><h3 class="text--secondary">R$ {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h3>
+               
           (<h5>{{profissionalTipo}} </h5>)
+          
+
           
           <v-avatar>
             <img src="@/assets/img/avatar.png" size="128">
           </v-avatar>
-        
-          <h4>Valor da Consulta:</h4><h4 class="text--secondary"> {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h4>
-           
            </v-row>
         </div>
         <v-flex>
@@ -129,7 +129,7 @@
                 <h4><strong>Especialidade:</strong> {{ profissionalTipo }} </h4>
                 <h4><strong>Data:</strong> {{ selected_date | moment("DD/MM/YYYY") }}</h4>
                 <h4><strong>Horário:</strong> {{ selected_hour_label }}</h4>
-                <h4><strong>Valor:</strong> {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h4>
+                <h4><strong>Valor:R$</strong> {{profissionalTipo == 'psiquiatria' ? '300.00' : '180.00' }}</h4>
                  <v-divider class="white--text mx-4 mb-3 mt-3"></v-divider>
                 <h4><strong>Seu nome:</strong> {{ nome}} {{ sobrenome }}</h4>
                 <h4><strong>Email:</strong> {{email}}</h4>
@@ -348,12 +348,12 @@
     height: auto;
     width: 100%;
     max-height: 400px;
+  
   }
 
 
   .profissionai-details {
     display: flex;
-    justify-content: space-between;
     padding: 40px 0;
   }
 
@@ -364,8 +364,12 @@
     font-weight: 500;
   }
 
-  .fontBold {
-    font-weight: bold;
+  h3 {
+    margin: 0 15px;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 700;
+    
   }
 
   /* #v-date-picker {

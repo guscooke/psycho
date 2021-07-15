@@ -63,6 +63,7 @@ export default {
   name: "App",
   data() {
     return {
+      errors: [],
       nome: "",
       email: "",
       mensagem: "",
@@ -80,6 +81,29 @@ export default {
     },
   },
   methods: {
+    checkForm: function (e) {
+      this.errors = [];
+
+      if (!this.nome) {
+        this.errors.push('O nome é obrigatório.');
+      }
+      if (!this.email) {
+        this.errors.push('O e-mail é obrigatório.');
+      } else if (!this.validEmail(this.email)) {
+        this.errors.push('Utilize um e-mail válido.');
+      }
+
+      if (!this.errors.length) {
+        return true;
+      }
+
+      e.preventDefault();
+    },
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    
+  },
     onReset() {
       this.nome = "";
       this.email = "";
@@ -87,11 +111,13 @@ export default {
       this.mensagem = "";
     },
     submit() {
+      
       if (!this.formValid) {
         return;
       }
       if (!localStorage.getItem("messages")) {
         localStorage.setItem("messages", JSON.stringify([]));
+        
       }
       const messages = JSON.parse(localStorage.getItem("messages"));
       const { nome, email, mensagem, celular } = this;
