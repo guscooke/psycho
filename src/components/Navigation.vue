@@ -60,13 +60,13 @@
         </v-btn> -->
 
         <!-- MANDAR PARA ADMIN -->
-        <router-link class="links" to="/">
+        <a href=https://admin.clinicaszeckir.com.br/>
           <v-btn class="mx-2" fab dark small color="primary">
             <v-icon dark>
               mdi-account-circle
             </v-icon>
           </v-btn>
-        </router-link>
+        </a>
 
       </div>
     </v-app-bar>

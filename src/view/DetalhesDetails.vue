@@ -19,9 +19,9 @@
           
 
           
-          <v-avatar>
-            <img src="@/assets/img/avatar.png" size="128">
-          </v-avatar>
+          <!-- <v-avatar>
+            <img src:{{ profissionalImagem }} size="128">
+          </v-avatar> -->
            </v-row>
         </div>
         <v-flex>
@@ -157,8 +157,8 @@
 </template>
 
 <script>
+
   import TheNavigation from "@/components/TheNavigation"
-  
   import axios from 'axios'
   import GoBack from "@/components/GoBack";
   import Foote from "@/components/Footer";
@@ -207,7 +207,12 @@
     },
     computed: {
 
-      
+       profissionai() {
+        return this.data.profissionais.find(
+          profissionai => profissionai.id === this.profissionaiId
+        )
+      },
+
       nomeErrors () {
         const errors = []
         if (!this.$v.nome.$dirty) return errors
@@ -375,5 +380,7 @@
   /* #v-date-picker {
      font-weight: bold;
   } */
+
+
 
 </style>

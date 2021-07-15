@@ -8,7 +8,7 @@
       <profi />
       <contact />
       <foote />
-      <cookie-law   transitionName="fade" buttonText='Sim, eu concordo!' theme="blood-orange">
+      <cookie-law   transitionName="fade" buttonText='Sim, eu concordo!' theme="dark-lime">
   <div slot="message">
     <strong>Utilizamos cookies para que você tenha a melhor experiência do nosso site. 
     Por sua visita contínua ao nosso site, sem alterar suas configurações, você concorda com o uso de cookies da Clínica Szeckir .</strong>
