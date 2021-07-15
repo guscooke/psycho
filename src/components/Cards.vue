@@ -4,7 +4,7 @@
       <div class="front">
         <div class="cover"></div>
         <div class="user">
-          <img class="img-circle" alt src="@/assets/img/avatar.png">
+          <img class="img-circle" alt :src="profile.imagem">
         </div>
         <div class="content">
           <div class="main">
