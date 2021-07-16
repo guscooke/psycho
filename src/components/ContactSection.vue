@@ -29,22 +29,38 @@
             <v-col cols="12" sm="7">
                 <div class="main mb-6">
                   <div class="container1 fontBold">
-                    <v-form class="form" @submit.prevent="submit" @reset="onReset"  >
+                    <v-form 
+                    @submit="checkForm"
+                        action="https://api.staticforms.xyz/submit"
+                        method="post"
+                        novalidate="true"
+                    >
                       <h1 class="mb-3 mt-4">Contato</h1>
                       <h4 class="mb-4 mt-4">Deixe sua Mensagem</h4>
-                      <input placeholder="Seu nome" type="text" tabindex="5" class=" font-weight form__field" v-model="nome">
+                      
+                      <input id="nome" placeholder="Seu nome" type="text" tabindex="5" class=" font-weight form__field"  v-model="data.name" >
+                     
+                      <input placeholder="Seu melhor Email" type="email" tabindex="5"  class=" font-weight form__field" v-model="data.email" >
 
-                      <input placeholder="Seu melhor Email" type="text" tabindex="5" class=" font-weight form__field" v-model="email">
+                      <input placeholder="Deixe seu Celular" type="text" tabindex="5" class=" font-weight form__field" v-model="data.phone" >
 
-                      <input placeholder="Deixe seu Celular" type="text" tabindex="5" class=" font-weight form__field" v-model="celular">
+                      <!-- <label for="mensagem">Mensagem <small>(<span>{{ mensagem.length }}</span> / <span>{{ maxLength }}</span>)</small></label> -->
+                      <textarea placeholder="Deixe a sua mensagem..." v-model="data.message"  name="mensagem"></textarea>
+                       <div class="form-field" style="display:none">
+                        <label for="honeypot" >Honeypot</label>
+                        <input type="text" name="honeypot" v-model="data.honeypot" placeholder="honeypot" >
+                      </div>
 
-                      <textarea placeholder="Deixe a sua mensagem..." v-model="mensagem"></textarea>
-
-                      <button type="submit"
+                        <div v-if="errors.length" class="info-message">
+          
+            <p v-for="error in errors" :key="error.id">{{error}}</p>
+          
+      </div>
+                      <button type="submit" value="enviar"
                         class="font-weight btn btn--primary btn--inside uppercase mt-4">enviar</button>
-
+<!-- 
                          <v-btn type="reset"
-                         class="Igor--text font-weight btn uppercase mt-4">Limpar</v-btn>
+                         class="Igor--text font-weight btn uppercase mt-4">Limpar</v-btn> -->
                     </v-form>
                   </div>
                 </div>
@@ -59,77 +75,95 @@
 
 </template>
 <script>
+import axios from 'axios';
+
 export default {
-  name: "App",
+
   data() {
     return {
-      errors: [],
-      nome: "",
-      email: "",
-      mensagem: "",
-      celular:""
-    };
-  },
-  computed: {
-    formValid() {
-      const { nome, email, mensagem} = this;
-      return (
-        nome.length > 0 &&
-        /(.+)@(.+){2,}.(.+){2,}/.test(email) &&
-        mensagem.length > 0
-      );
+
+       errors: [],
+    data: {
+      name:null,
+      email:null,
+      phone:null,
+      subject: 'Acaba de chegar uma mensagem para Clinica Szeckir',
+      // honeypot:'',
+      message:null,
+      replyTo:'clinica.szeckir@gmail.com',
+      accessKey: 'cc9f79f4-2787-40c2-8d20-ca7a7e8729ef' 
     },
-  },
-  methods: {
-    checkForm: function (e) {
-      this.errors = [];
-
-      if (!this.nome) {
-        this.errors.push('O nome é obrigatório.');
+    response:{
+      type:'',
+      message:''
+    }
+  }
+},
+methods: {
+    checkForm: function(e) {
+      this.errors= [];
+      if(!this.data.name) {
+        this.errors.push('O nome é obrigatório!')
       }
-      if (!this.email) {
-        this.errors.push('O e-mail é obrigatório.');
-      } else if (!this.validEmail(this.email)) {
-        this.errors.push('Utilize um e-mail válido.');
+      if(isNaN(this.data.phone)){
+        this.errors.push('Celular precisa ser válido!')
       }
-
-      if (!this.errors.length) {
-        return true;
+      if(!this.data.email) {
+        this.errors.push('O email é obrigatório!')
+      }else if (!this.validEmail(this.data.email)) {
+        this.errors.push('O email precisa ser válido.')
       }
-
+      if(!this.data.message) {
+          this.errors.push('Por favor, deixe a sua mensagem')
+      }
+      if(!this.errors.length){
+        return this.submitHandle(e);
+      }
       e.preventDefault();
-    },
-    validEmail: function (email) {
-      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    
-  },
-    onReset() {
-      this.nome = "";
-      this.email = "";
-      this.celular = "";
-      this.mensagem = "";
-    },
-    submit() {
       
-      if (!this.formValid) {
-        return;
-      }
-      if (!localStorage.getItem("messages")) {
-        localStorage.setItem("messages", JSON.stringify([]));
-        
-      }
-      const messages = JSON.parse(localStorage.getItem("messages"));
-      const { nome, email, mensagem, celular } = this;
-      messages.push({
-        nome,
-        email,
-        mensagem,
-        celular
-      });
-      localStorage.setItem("messages", JSON.stringify(messages));
     },
-  },
+    validEmail: function(email){
+      var re= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email)
+    },
+    // funcion para comunicarse con la API
+    async submitHandle(e) {
+      e.preventDefault();
+      let data = this.data
+      try {
+        let response = await axios.post("https://api.staticforms.xyz/submit", data, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json' }
+        })
+        if(response.data.success){
+          this.errors.push('Mensagem enviada com sucesso')
+          this.resetForm();
+        }else{
+          this.errors.push('Tivemos um problema com a sua mensagem.')
+        }
+        
+      } catch (error) {
+        this.errors.push['Tivemos um problema ao enviar a sua mensagem.']
+      }
+      this.cleanErrors(5000)
+    },
+    cleanErrors: function(t) {
+        setTimeout(() => {
+        this.errors = []
+      },t)
+    },
+
+    resetForm: function() {
+      this.data.name= null
+      this.data.email= null
+      this.data.phone=null
+      this.data.message=null
+      // this.data.honeypot=''
+    }
+}
+  
+  
 };
 </script>
 
@@ -220,4 +254,45 @@ export default {
   .btn:hover {
     background-color: #706d6d;
   }
+
+  .info-message{
+  list-style: none;
+  margin: 10px;
+  line-height: 0.1rem;
+  
+}
+.form-contact{
+  display: inline-block;
+  margin: auto;
+  background-color: lightcyan;
+  padding: 20px;
+}
+.form-field{
+  display: flex;
+  flex-direction: column;
+  margin: 2px 10px;
+}
+.form-field-input{
+  background-color: #fff;
+  border: 1px solid grey;
+  height: 23px;
+  padding: 5px;
+}
+.form-field-txt{
+  border: 1px solid grey;
+  padding: 5px;
+  resize: none;
+}
+.form-field-input:focus, .form-field-txt:focus{
+  outline: 1px solid orange;
+  border: 1px solid orange;
+}
+.form-button {
+  background-color: orange;
+  border: none;
+  padding: 5px;
+}
+.form-button:hover {
+  background-color: rgb(255, 187, 0);
+}
 </style>
