@@ -265,6 +265,7 @@
       selectHorario(horario, horario_label) {         
         this.selected_hour = horario;        
         this.selected_hour_label = horario_label;
+        console.log(this.selected_hour_label);
         this.fw = 3;
       },
       formValues(horario) {         
