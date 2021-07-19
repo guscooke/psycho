@@ -17,7 +17,7 @@
             </v-card-text>
 
              <v-card-text>
-            <h4 class="mt-3">{{ profile.descricao1 }}</h4>
+            <h4 class="mt-3">{{ profile.cpr }}</h4>
             </v-card-text>
             <div class="text-center">
               <v-btn class="mt-6" rounded color="primary" dark>

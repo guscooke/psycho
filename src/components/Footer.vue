@@ -62,7 +62,7 @@ export default {
       },
       {
         text: "mdi-instagram",
-        link: "",
+        link: "https://www.instagram.com/clinica_szeckir/",
       },
     ],
   }),
