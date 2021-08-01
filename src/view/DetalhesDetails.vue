@@ -54,7 +54,7 @@
             </v-stepper-step>
 
             <v-stepper-content step="2">
-              <v-card color="grey lighten-4" class="mb-5 pa-6" height="350px">
+              <v-card color="grey lighten-4" class="mb-5 pa-6" height="450px">
                 <v-row v-if="horarios.length">
                   <v-col sm="7" md="7" lg="3" v-for="horario in horarios" :key="horario.id">
 
