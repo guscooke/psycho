@@ -6,13 +6,14 @@
       <v-layout row wrap>
         <v-flex xs12 sm6 md4 v-for="profissionai in profissionais.data" :key="profissionai.id">
           <h3 class="mt-3">{{ profissionai.tipo }}</h3>
-          <router-link :to="{
-                    name: 'DetalhesDetails',
-                    params: { profissionalNome: profissionai.nome, profissionalId: profissionai.id, profissionalTipo: profissionai.tipo, profissionalSobrenome: profissionai.sobrenome},
-                    //-- hash: '#profissional' -->
+            
+          <a :to="{
+                 
+                    params: { profissionalLink: profissionai.link},
+                     
                   }">
             <Card class="mt-6" :profile="profissionai" />            
-          </router-link>
+          </a >
         </v-flex>
         <!-- <router-view :key="$route.path" /> -->
       </v-layout>      

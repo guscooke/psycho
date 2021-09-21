@@ -21,6 +21,7 @@
             </v-card-text>
             <div class="text-center">
               <v-btn class="mt-6" rounded color="primary" dark>
+              
                 <strong>
                   Ver Agenda</strong>
               </v-btn>

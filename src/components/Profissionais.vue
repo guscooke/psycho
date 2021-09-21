@@ -13,10 +13,10 @@
                   <v-card :elevation="hover ? 20 : 3" outlined>
                     <v-col class="ml-auto">
                     <h2 class="mt-6">{{ especialidade.name }}</h2>
-                    <router-link :to="{
+                    <!-- <router-link :to="{
                             name: 'pisicoDetails',
                             params: { slug: especialidade.slug }
-                          }">
+                          }"> -->
                           <v-col >
                       <v-img  :src="require(`@/assets/img/${especialidade.image}`)" :alt="especialidade.name"
                        max-height="300"
@@ -28,7 +28,7 @@
                       <v-btn class="mt-6 mb-6" rounded color="primary" dark>
                         <h4>Ver Profissionais</h4>
                       </v-btn>
-                    </router-link>
+                    <!-- </router-link> -->
                     </v-col>
                   </v-card>
                 </v-hover>
